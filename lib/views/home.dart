@@ -1,5 +1,9 @@
 import 'package:flutter/material.dart';
+// import 'package:curved_navigation_bar/curved_navigation_bar.dart';
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
+
+import '../models/user.dart';
 
 final FirebaseAuth _auth = FirebaseAuth.instance;
 
@@ -12,6 +16,8 @@ class HomeScreen extends StatefulWidget {
 
 class HomeScreenState extends State<HomeScreen> {
   FirebaseUser user;
+  User test = User();
+  int _navIndex = 0;
 
   @override
   void initState() {
@@ -33,17 +39,45 @@ class HomeScreenState extends State<HomeScreen> {
           padding: EdgeInsets.zero,
           children: <Widget>[
             DrawerHeader(
-              child: Text("Drawer Header"),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                mainAxisSize: MainAxisSize.max,
+                mainAxisAlignment: MainAxisAlignment.end,
+                children: <Widget>[
+                  Container(
+                    padding: EdgeInsets.symmetric(vertical: 10),
+                    child: Text("${this.test.firstname} ${this.test.lastname}",
+                      style: TextStyle(
+                        color: Colors.white,
+                        fontSize: 16,
+                        // fontWeight: FontWeight.w500
+                      ),
+                      overflow: TextOverflow.fade,
+                      softWrap: false,
+                    ),
+                  )
+                ],
+                // child: Text("Drawer Header")
+              ),
               decoration: BoxDecoration(
                 color: Colors.blue,
               )
             ),
             ListTile(
+              leading: Icon(Icons.account_circle),
+              title: Text("Add Profile Picture"),
+              onTap: () {
+                Navigator.pushNamed(context, '/addProfilePic');
+              },
+            ),
+            ListTile(
+              leading: Icon(Icons.new_releases),
               title: Text("Features"),
               onTap: () {
                 Navigator.pushNamed(context, '/features');
               },
             ),
+            Divider(),
             ListTile(
               leading: Icon(Icons.exit_to_app, 
                 color: Colors.red
@@ -62,22 +96,32 @@ class HomeScreenState extends State<HomeScreen> {
         )
       ),
       bottomNavigationBar: BottomNavigationBar(
-        currentIndex: 0,
+        currentIndex: _navIndex,
         items: <BottomNavigationBarItem>[
           BottomNavigationBarItem(
             icon: Icon(Icons.home),
-            title: Text("Home")
+            title: Text("Home"),
+            backgroundColor: Colors.red
           ),
           BottomNavigationBarItem(
             icon: Icon(Icons.map),
             title: Text("Place")
           ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.alarm),
-            title: Text("Pomodoro")
-          )
-        ]
+        ],
+        onTap: (index) {
+          setState(() {
+            this._navIndex = index;
+          });
+        },
       ),
+      floatingActionButton: FloatingActionButton(
+        tooltip: "Pomodoro Clock",
+        child: Icon(Icons.alarm),
+        onPressed: () {
+
+        },
+      ),
+      floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
     );
   }
 
@@ -85,8 +129,14 @@ class HomeScreenState extends State<HomeScreen> {
     FirebaseUser user = await _auth.currentUser();
     if(user == null){
       Navigator.pushNamed(context, '/welcome');
+    }else{
+      DocumentSnapshot ds = await Firestore.instance.collection('users').document(user.uid).get();
+
+      setState(() {
+        this.user = user;
+        this.test = User(firstname: ds.data['firstname'], lastname: ds.data['surname']);
+      });
     }
-    print(user);
   }
 
   Future logout(BuildContext context) async {
