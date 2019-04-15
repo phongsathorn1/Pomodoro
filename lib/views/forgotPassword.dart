@@ -1,0 +1,89 @@
+import 'package:flutter/material.dart';
+import 'package:firebase_auth/firebase_auth.dart';
+
+final _auth = FirebaseAuth.instance;
+
+class ForgotScreen extends StatefulWidget {
+  @override
+  State<StatefulWidget> createState() {
+    return ForgotScreenState();
+  }
+}
+
+class ForgotScreenState extends State<ForgotScreen> {
+  final _formKey = GlobalKey<FormState>();
+  final _scaffoldKey = GlobalKey<ScaffoldState>();
+
+  TextEditingController _email = TextEditingController();
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      key: _scaffoldKey,
+      appBar: AppBar(
+        title: Text("Forgot password"),
+      ),
+      body: Form(
+        key: _formKey,
+        child: Container(
+          padding: EdgeInsets.symmetric(vertical: 20, horizontal: 30),
+          child: Column(children: <Widget>[
+            TextFormField(
+              controller: _email,
+              decoration: InputDecoration(labelText: "Email Address"),
+              validator: (value) {
+                if (value.isEmpty) {
+                  return "Please enter email address";
+                }
+              },
+            ),
+            RaisedButton(
+              child: Text("Continue"),
+              onPressed: () {
+                this.resetPassword(context);
+              },
+            )
+          ]),
+        ),
+      ),
+    );
+  }
+
+  Future<void> resetPassword(BuildContext context) async {
+    try{
+      await _auth.sendPasswordResetEmail(email: this._email.text.trim());
+      showDialog(
+        context: context,
+        builder: (BuildContext context){
+          return AlertDialog(
+            title: Text("Reset Password"),
+            content: Text("We send the email for reset your password. Please check your email's inbox."),
+            actions: <Widget>[
+              FlatButton(
+                child: Text("Done"),
+                onPressed: () {
+                  Navigator.of(context).pop();
+                  Navigator.of(context).pop();
+                },
+              )
+            ],
+          );
+        }
+      );
+    }
+    catch(error){
+      if(error.code == 'ERROR_USER_NOT_FOUND'){
+        _scaffoldKey.currentState.showSnackBar(
+          SnackBar(
+            content: Text("We not found your email in our record.",
+              style: TextStyle(
+                color: Colors.white
+              )
+            ),
+            backgroundColor: Colors.red,
+          )
+        );
+      }
+    }
+  }
+}
