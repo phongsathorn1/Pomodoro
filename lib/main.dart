@@ -6,6 +6,7 @@ import 'views/register.dart';
 import 'views/welcome.dart';
 import 'views/forgotPassword.dart';
 import 'views/features.dart';
+import 'views/addProfilePic.dart';
 
 void main() => runApp(MyApp());
 
@@ -25,7 +26,8 @@ class MyApp extends StatelessWidget {
         '/login': (context) => LoginScreen(),
         '/register': (context) => RegisterScreen(),
         '/forgot': (context) => ForgotScreen(),
-        '/features': (context) => FeaturesScreen()
+        '/features': (context) => FeaturesScreen(),
+        '/addProfilePic': (context) => AddProfilePicScreen()
       },
     );
   }
