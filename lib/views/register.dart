@@ -145,7 +145,7 @@ class RegisterScreenState extends State<RegisterScreen> {
       await user.updateProfile(info);
 
       Firestore.instance.collection('users').document(user.uid).setData({
-        'name': this._name.text.trim(),
+        'firstname': this._name.text.trim(),
         'surname': this._surname.text.trim(),
         'uid': user.uid,
         'email': user.email,
