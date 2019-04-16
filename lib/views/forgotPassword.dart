@@ -40,7 +40,9 @@ class ForgotScreenState extends State<ForgotScreen> {
             RaisedButton(
               child: Text("Continue"),
               onPressed: () {
-                this.resetPassword(context);
+                if (_formKey.currentState.validate()){
+                  this.resetPassword(context);
+                }
               },
             )
           ]),
@@ -72,18 +74,26 @@ class ForgotScreenState extends State<ForgotScreen> {
       );
     }
     catch(error){
+      String errorMsg = 'Error!';
+
       if(error.code == 'ERROR_USER_NOT_FOUND'){
-        _scaffoldKey.currentState.showSnackBar(
-          SnackBar(
-            content: Text("We not found your email in our record.",
-              style: TextStyle(
-                color: Colors.white
-              )
-            ),
-            backgroundColor: Colors.red,
-          )
-        );
+        errorMsg = 'We not found your email in our record.';
       }
+      else if(error.code == 'ERROR_INVALID_EMAIL'){
+        errorMsg = 'Invalid email address.';
+      }
+
+      _scaffoldKey.currentState.showSnackBar(
+        SnackBar(
+          content: Text(errorMsg,
+            style: TextStyle(
+              color: Colors.white
+            )
+          ),
+          backgroundColor: Colors.red,
+        )
+      );
+
     }
   }
 }
