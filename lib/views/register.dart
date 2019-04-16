@@ -117,8 +117,9 @@ class RegisterScreenState extends State<RegisterScreen> {
                                         FlatButton(
                                           child: Text("Done"),
                                           onPressed: () {
-                                            Navigator.of(context).pop();
-                                            Navigator.of(context).pop();
+                                            Navigator.of(context).popAndPushNamed('/welcome');
+                                            // Navigator.of(context).pop();
+                                            // Navigator.of(context).pop();
                                           },
                                         )
                                       ],

@@ -128,7 +128,8 @@ class HomeScreenState extends State<HomeScreen> {
   Future checkAuth() async {
     FirebaseUser user = await _auth.currentUser();
     if(user == null){
-      Navigator.pushNamed(context, '/welcome');
+      Navigator.of(context).popAndPushNamed('/welcome');
+      // Navigator.pushNamed(context, '/welcome');
     }else{
       DocumentSnapshot ds = await Firestore.instance.collection('users').document(user.uid).get();
 
