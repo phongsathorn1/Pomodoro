@@ -15,5 +15,19 @@ Future<Book> fetchBook() async{
 }
 
 class Book{
+  final String isbn;
+  final String title;
+  final String content;
+  final String author;
 
+  Book({this.isbn, this.title, this.content, this.author});
+
+  factory Book.fromJson(Map<String, dynamic> json) {
+    return Book(
+      isbn: json['isbn'],
+      title: json['title'],
+      content: json['content'],
+      author: json['author'],
+    );
+  }
 }

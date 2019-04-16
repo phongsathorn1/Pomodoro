@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
 
-void main() => runApp(BookRecommended());
-
 class BookRecommended extends StatelessWidget {
 //  String searchText = "";
 //  Icon _searchIcon = new Icon(Icons.search);
@@ -17,7 +15,25 @@ class BookRecommended extends StatelessWidget {
                 primaryColor: Colors.blue[200]
             ),
             home: Scaffold(
-                body: _SearchBar(),
+              body: Container(
+                child: Column(
+                  children: <Widget>[
+                    SearchBar(),
+                    new Card(
+                      child: new Container(
+                        padding: new EdgeInsets.all(32.0),
+                        child: new Column(
+                          children: <Widget>[
+                            new Text('Hello World'),
+                            new Text('How are you?')
+                          ],
+                        ),
+                      ),
+                    ),
+
+                  ],
+                ),
+              ),
                 bottomNavigationBar: new Theme(
                   data: Theme.of(context).copyWith(
                     // sets the background color of the `BottomNavigationBar`
@@ -54,16 +70,15 @@ class BookRecommended extends StatelessWidget {
     );
   }
 }
-
-class _SearchBar extends StatefulWidget{
+class SearchBar extends StatefulWidget{
   @override
   State<StatefulWidget> createState() {
     // TODO: implement createState
-    return _SearchState();
+    return SearchState();
   }
 
 }
-class _SearchState extends State<_SearchBar>{
+class SearchState extends State<SearchBar>{
   final TextEditingController _filter = new TextEditingController();
   Icon searchIcon = new Icon(Icons.search);
   Widget appBarTitle = new Text( 'Recommended Book' );
@@ -94,6 +109,7 @@ class _SearchState extends State<_SearchBar>{
       ),
     );
   }
+
 
 }
 
