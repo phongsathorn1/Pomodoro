@@ -15,25 +15,8 @@ class BookRecommended extends StatelessWidget {
                 primaryColor: Colors.blue[200]
             ),
             home: Scaffold(
-              body: Container(
-                child: Column(
-                  children: <Widget>[
-                    SearchBar(),
-                    new Card(
-                      child: new Container(
-                        padding: new EdgeInsets.all(32.0),
-                        child: new Column(
-                          children: <Widget>[
-                            new Text('Hello World'),
-                            new Text('How are you?')
-                          ],
-                        ),
-                      ),
-                    ),
-
-                  ],
-                ),
-              ),
+                resizeToAvoidBottomPadding: false,
+              body: SearchBar(),
                 bottomNavigationBar: new Theme(
                   data: Theme.of(context).copyWith(
                     // sets the background color of the `BottomNavigationBar`
