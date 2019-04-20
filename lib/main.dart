@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'recommendBook.dart';
+import 'Book.dart';
 
 void main() {
-  runApp(BookRecommended());
+  runApp(BookPage());
 }
