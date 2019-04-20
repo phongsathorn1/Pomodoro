@@ -1,7 +1,7 @@
-import 'package:flutter/material.dart';
-import 'package:camera/camera.dart';
+import 'dart:io';
 
-List<CameraDescription> cameras;
+import 'package:flutter/material.dart';
+import 'package:image_picker/image_picker.dart';
 
 class AddProfilePicScreen extends StatefulWidget {
   @override
@@ -11,39 +11,32 @@ class AddProfilePicScreen extends StatefulWidget {
 }
 
 class AddProfilePicScreenState extends State<AddProfilePicScreen> {
-  CameraController cameraController;
+  File _image;
 
-  @override
-  void initState() {
-    super.initState();
-    this.initCamera();
-  }
+  Future getImage() async {
+    var image = await ImagePicker.pickImage(source: ImageSource.camera);
 
-  @override
-  void dispose() {
-    cameraController?.dispose();
-    super.dispose();
+    setState(() {
+      _image = image;
+    });
   }
 
   @override
   Widget build(BuildContext context) {
-    if (!cameraController.value.isInitialized || cameraController == null) {
-      return Container();
-    }
-
-    return AspectRatio(
-      aspectRatio: cameraController.value.aspectRatio,
-      child: CameraPreview(cameraController));
-  }
-
-  Future<void> initCamera() async {
-    cameras = await availableCameras();
-    cameraController = CameraController(cameras[0], ResolutionPreset.medium);
-    cameraController.initialize().then((_) {
-      if (!mounted) {
-        return;
-      }
-      setState(() {});
-    });
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('Image Picker Example'),
+      ),
+      body: Center(
+        child: _image == null
+            ? Text('No image selected.')
+            : Image.file(_image),
+      ),
+      floatingActionButton: FloatingActionButton(
+        onPressed: getImage,
+        tooltip: 'Pick Image',
+        child: Icon(Icons.add_a_photo),
+      ),
+    );
   }
 }
