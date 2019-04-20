@@ -36,77 +36,83 @@ class HomeScreenState extends State<HomeScreen> {
       ),
       drawer: Drawer(
         child: ListView(
-          padding: EdgeInsets.zero,
-          children: <Widget>[
-            DrawerHeader(
+        padding: EdgeInsets.zero,
+        children: <Widget>[
+          DrawerHeader(
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 mainAxisSize: MainAxisSize.max,
                 mainAxisAlignment: MainAxisAlignment.end,
                 children: <Widget>[
                   Container(
-                    padding: EdgeInsets.symmetric(vertical: 10),
-                    child: Text("${this.test.firstname} ${this.test.lastname}",
-                      style: TextStyle(
-                        color: Colors.white,
-                        fontSize: 16,
-                        // fontWeight: FontWeight.w500
-                      ),
-                      overflow: TextOverflow.fade,
-                      softWrap: false,
-                    ),
-                  )
+                      padding: EdgeInsets.symmetric(vertical: 10),
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        mainAxisAlignment: MainAxisAlignment.end,
+                        children: <Widget>[
+                          Padding(
+                            padding: EdgeInsets.symmetric(vertical: 10),
+                            child: Container(
+                              height: 50,
+                              width: 50,
+                              decoration: BoxDecoration(
+                                shape: BoxShape.circle,
+                                image: DecorationImage(
+                                  image: AssetImage('assets/avatar.png'),
+                                  fit: BoxFit.fill
+                                ),
+                              ),
+                            ),
+                          ),
+                          Text(
+                            "${this.test.firstname} ${this.test.lastname}",
+                            style: TextStyle(
+                              color: Colors.white,
+                              fontSize: 16,
+                            ),
+                            overflow: TextOverflow.fade,
+                            softWrap: false,
+                          ),
+                        ],
+                      ))
                 ],
                 // child: Text("Drawer Header")
               ),
               decoration: BoxDecoration(
                 color: Colors.blue,
-              )
-            ),
-            ListTile(
-              leading: Icon(Icons.account_circle),
-              title: Text("Add Profile Picture"),
-              onTap: () {
-                Navigator.pushNamed(context, '/addProfilePic');
-              },
-            ),
-            ListTile(
-              leading: Icon(Icons.new_releases),
-              title: Text("Features"),
-              onTap: () {
-                Navigator.pushNamed(context, '/features');
-              },
-            ),
-            Divider(),
-            ListTile(
-              leading: Icon(Icons.exit_to_app, 
-                color: Colors.red
-              ),
-              title: Text(
-                "Logout", 
-                style: TextStyle(
-                  color: Colors.red
-                )
-              ),
-              onTap: () {
-                this.logout(context);
-              },
-            )
-          ],
-        )
-      ),
+              )),
+          ListTile(
+            leading: Icon(Icons.account_circle),
+            title: Text("Add Profile Picture"),
+            onTap: () {
+              Navigator.pushNamed(context, '/addProfilePic');
+            },
+          ),
+          ListTile(
+            leading: Icon(Icons.new_releases),
+            title: Text("Features"),
+            onTap: () {
+              Navigator.pushNamed(context, '/features');
+            },
+          ),
+          Divider(),
+          ListTile(
+            leading: Icon(Icons.exit_to_app, color: Colors.red),
+            title: Text("Logout", style: TextStyle(color: Colors.red)),
+            onTap: () {
+              this.logout(context);
+            },
+          )
+        ],
+      )),
       bottomNavigationBar: BottomNavigationBar(
         currentIndex: _navIndex,
         items: <BottomNavigationBarItem>[
           BottomNavigationBarItem(
-            icon: Icon(Icons.home),
-            title: Text("Home"),
-            backgroundColor: Colors.red
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.map),
-            title: Text("Place")
-          ),
+              icon: Icon(Icons.home),
+              title: Text("Home"),
+              backgroundColor: Colors.red),
+          BottomNavigationBarItem(icon: Icon(Icons.map), title: Text("Place")),
         ],
         onTap: (index) {
           setState(() {
@@ -117,9 +123,7 @@ class HomeScreenState extends State<HomeScreen> {
       floatingActionButton: FloatingActionButton(
         tooltip: "Pomodoro Clock",
         child: Icon(Icons.alarm),
-        onPressed: () {
-
-        },
+        onPressed: () {},
       ),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
     );
@@ -127,21 +131,23 @@ class HomeScreenState extends State<HomeScreen> {
 
   Future checkAuth() async {
     FirebaseUser user = await _auth.currentUser();
-    if(user == null){
-      Navigator.of(context).popAndPushNamed('/welcome');
+    if (user == null) {
+      Navigator.of(context).pushNamedAndRemoveUntil('/welcome', (Route<dynamic> route) => false);
       // Navigator.pushNamed(context, '/welcome');
-    }else{
-      DocumentSnapshot ds = await Firestore.instance.collection('users').document(user.uid).get();
+    } else {
+      DocumentSnapshot ds =
+          await Firestore.instance.collection('users').document(user.uid).get();
 
       setState(() {
         this.user = user;
-        this.test = User(firstname: ds.data['firstname'], lastname: ds.data['surname']);
+        this.test =
+            User(firstname: ds.data['firstname'], lastname: ds.data['surname']);
       });
     }
   }
 
   Future logout(BuildContext context) async {
     await _auth.signOut();
-    Navigator.pushNamed(context, '/welcome');
+    Navigator.of(context).pushNamedAndRemoveUntil('/welcome', (Route<dynamic> route) => false);
   }
 }

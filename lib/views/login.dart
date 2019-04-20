@@ -59,7 +59,7 @@ class LoginScreenState extends State<LoginScreen>{
                       password: _password.text.trim()
                     );
                     
-                    Navigator.pushNamed(context, '/');
+                    Navigator.of(context).pushNamedAndRemoveUntil('/', (Route<dynamic> route) => false);
                   }
                   catch (e) {
                     showDialog(
