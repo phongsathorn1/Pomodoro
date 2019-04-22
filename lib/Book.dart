@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'fetching.dart';
+import 'Model/bookcategory.dart';
+import 'Service/book_service.dart';
 
 class BookPage extends StatefulWidget {
   @override
@@ -55,11 +58,17 @@ class BookState extends State<BookPage> {
                 body: Container(
                   child: Column(
                     children: <Widget>[
-                      TabBar(tabs: [
-                        Tab(text: "Novel"),
-                        Tab(text: "Home"),
-                        Tab(text: "Comic")
-                      ]),
+                      FutureBuilder<List<Welcome>>(
+                        future: getAllPosts(),
+                        builder: (BuildContext context, AsyncSnapshot<List<Welcome>> snapshot){
+
+                          }
+                      ),
+//                      TabBar(tabs: [
+//                        Tab(text: "Novel"),
+//                        Tab(text: "Home"),
+//                        Tab(text: "Comic")
+//                      ]),
                       Row(
                         children: <Widget>[
                           new Card(
