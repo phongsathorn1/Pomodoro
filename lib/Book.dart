@@ -40,6 +40,17 @@ class BookState extends State<BookPage> {
         backgroundColor: Colors.blue[200]);
   }
 
+  List list_name(){
+    Welcome items;
+    List<Tab> name ;
+    for (var i=0;i<items.results.length;i++){
+      name.add(Tab(text: items.results[i].listName));
+    }
+    return name;
+}
+
+
+
   @override
   Widget build(BuildContext context) {
     // TODO: implement build
@@ -59,9 +70,14 @@ class BookState extends State<BookPage> {
                   child: Column(
                     children: <Widget>[
                       FutureBuilder<List<Welcome>>(
-                        future: getAllPosts(),
-                        builder: (BuildContext context, AsyncSnapshot<List<Welcome>> snapshot){
-
+                          future: getAllPosts(),
+                          builder: (BuildContext context, AsyncSnapshot<List<Welcome>> snapshot){
+                            if(!snapshot.hasData){
+                              return TabBar(tabs: list_name());
+                            }
+                            else{
+                              return Center(child: Text("WTF of api"),);
+                            }
                           }
                       ),
 //                      TabBar(tabs: [
