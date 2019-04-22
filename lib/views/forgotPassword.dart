@@ -11,10 +11,21 @@ class ForgotScreen extends StatefulWidget {
 }
 
 class ForgotScreenState extends State<ForgotScreen> {
+
+  bool _isLoading = false;
+
   final _formKey = GlobalKey<FormState>();
   final _scaffoldKey = GlobalKey<ScaffoldState>();
 
   TextEditingController _email = TextEditingController();
+
+  Widget _loadingIndicator(){
+    if(this._isLoading){
+      return CircularProgressIndicator();
+    }else{
+      return Container();
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -44,7 +55,8 @@ class ForgotScreenState extends State<ForgotScreen> {
                   this.resetPassword(context);
                 }
               },
-            )
+            ),
+            this._loadingIndicator()
           ]),
         ),
       ),
@@ -52,8 +64,16 @@ class ForgotScreenState extends State<ForgotScreen> {
   }
 
   Future<void> resetPassword(BuildContext context) async {
+    setState(() {
+      this._isLoading = true;
+    });
     try{
       await _auth.sendPasswordResetEmail(email: this._email.text.trim());
+
+      setState(() {
+        this._isLoading = false;
+      });
+
       showDialog(
         context: context,
         builder: (BuildContext context){
@@ -74,6 +94,10 @@ class ForgotScreenState extends State<ForgotScreen> {
       );
     }
     catch(error){
+      setState(() {
+        this._isLoading = false;
+      });
+
       String errorMsg = 'Error!';
 
       if(error.code == 'ERROR_USER_NOT_FOUND'){

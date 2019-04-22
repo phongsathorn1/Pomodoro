@@ -13,8 +13,18 @@ class LoginScreen extends StatefulWidget{
 class LoginScreenState extends State<LoginScreen>{
   final _formKey = GlobalKey<FormState>();
 
+  FirebaseUser user;
   TextEditingController _email = TextEditingController();
   TextEditingController _password = TextEditingController();
+  bool _isLoading = false;
+
+  Widget _loadingIndicator(){
+    if(this._isLoading){
+      return CircularProgressIndicator();
+    }else{
+      return Container();
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -49,19 +59,32 @@ class LoginScreenState extends State<LoginScreen>{
                 }
               },
             ),
+            this._loadingIndicator(),
             RaisedButton(
               child: Text("Login"),
               onPressed: () async {
                 if(_formKey.currentState.validate()){
+                  setState(() {
+                    this._isLoading = true;
+                  });
+                  
                   try {
-                    FirebaseUser user = await _auth.signInWithEmailAndPassword(
+                    this.user = await _auth.signInWithEmailAndPassword(
                       email: _email.text.trim(),
                       password: _password.text.trim()
                     );
+
+                    setState(() {
+                      this._isLoading = false;
+                    });
                     
                     Navigator.of(context).pushNamedAndRemoveUntil('/', (Route<dynamic> route) => false);
                   }
                   catch (e) {
+                    setState(() {
+                      this._isLoading = false;
+                    });
+
                     showDialog(
                       context: context,
                       builder: (BuildContext context){

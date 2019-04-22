@@ -14,11 +14,22 @@ class RegisterScreen extends StatefulWidget {
 class RegisterScreenState extends State<RegisterScreen> {
   final _formKey = GlobalKey<FormState>();
 
+  bool _isLoading = false;
+  FirebaseUser user;
+
   TextEditingController _name = TextEditingController();
   TextEditingController _surname = TextEditingController();
   TextEditingController _email = TextEditingController();
   TextEditingController _password = TextEditingController();
   TextEditingController _passwordConfirm = TextEditingController();
+
+  Widget _loadingIndicator(){
+    if(this._isLoading){
+      return CircularProgressIndicator();
+    }else{
+      return Container();
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -125,10 +136,28 @@ class RegisterScreenState extends State<RegisterScreen> {
                                       ],
                                     );
                                   });
+                            }else{
+                              showDialog(
+                                context: context,
+                                builder: (BuildContext context) {
+                                  return AlertDialog(
+                                    title: Text("Register"),
+                                    content: Text("Register Failed"),
+                                    actions: <Widget>[
+                                      FlatButton(
+                                        child: Text("Done"),
+                                        onPressed: () {
+                                          Navigator.of(context).pop();
+                                        },
+                                      )
+                                    ],
+                                  );
+                                });
                             }
                           }
                         },
-                      )
+                      ),
+                      this._loadingIndicator()
                     ],
                   ),
                 ),
@@ -137,13 +166,29 @@ class RegisterScreenState extends State<RegisterScreen> {
   }
 
   Future<bool> _register() async {
-    final FirebaseUser user = await _auth.createUserWithEmailAndPassword(
-        email: _email.text, password: _password.text);
+    setState(() {
+      this._isLoading = true;
+    });
 
-    if (user != null) {
+    try{
+      this.user = await _auth.createUserWithEmailAndPassword(
+        email: _email.text, password: _password.text);
+    }
+    catch(e){
+      setState(() {
+        this._isLoading = false;
+      });
+      return false;
+    }
+
+    setState(() {
+      this._isLoading = false;
+    });
+
+    if (this.user != null) {
       UserUpdateInfo info = UserUpdateInfo();
       info.displayName = "${this._surname.text} ${this._name.text}";
-      await user.updateProfile(info);
+      await this.user.updateProfile(info);
 
       Firestore.instance.collection('users').document(user.uid).setData({
         'firstname': this._name.text.trim(),
@@ -154,7 +199,7 @@ class RegisterScreenState extends State<RegisterScreen> {
         'photoUrl': user.photoUrl,
       });
 
-      await user.sendEmailVerification();
+      await this.user.sendEmailVerification();
 
       return true;
     } else {
