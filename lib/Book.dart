@@ -72,7 +72,7 @@ class BookState extends State<BookPage> {
                       FutureBuilder<List<Welcome>>(
                           future: getAllPosts(),
                           builder: (BuildContext context, AsyncSnapshot<List<Welcome>> snapshot){
-                            if(!snapshot.hasData){
+                            if(snapshot.hasData){
                               return TabBar(tabs: list_name());
                             }
                             else{
