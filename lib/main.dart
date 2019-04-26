@@ -1,10 +1,11 @@
+
 import 'package:flutter/material.dart';
-import 'package:flutter/painting.dart';
-import 'package:dio/dio.dart';
 import 'package:pomodoro/widgets/detailsPage.dart';
 import 'package:pomodoro/widgets/locationPage.dart';
 
-void main() => runApp(new MyApp());
+void main() {
+  runApp(new MyApp());
+}
 
 class MyApp extends StatelessWidget {
   // This widget is the root of your application.

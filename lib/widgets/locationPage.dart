@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/painting.dart';
-import 'package:dio/dio.dart';
 import 'package:pomodoro/widgets/detailsPage.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 
 class LocationPage extends StatefulWidget{
 
@@ -9,19 +10,20 @@ class LocationPage extends StatefulWidget{
   _LocationPageState createState() => _LocationPageState();
 }
 
-
+Firestore _store = Firestore.instance;
 
 class _LocationPageState extends State<LocationPage>{
 
   final TextEditingController _filter = new TextEditingController();
-  //final dio = new Dio();
   String _searchText = "";
   List names = new List();
   List filteredName = new List();
-  final dio = new Dio();
   Icon _searchIcon = new Icon(Icons.search);
   Widget _appBarTitle = new Text("Search Locations");
-  
+  Stream<QuerySnapshot> location_list;
+  List<Icon> floatIcon;
+  List<Text> floatText;
+  int floatState;
 
   _LocationPageState(){
     _filter.addListener((){
@@ -41,24 +43,15 @@ class _LocationPageState extends State<LocationPage>{
 
   @override
   void initState(){
-    this._getName();
     super.initState();
-  }
-
-  void _getName() async{
-    List tempList = new List();
-    final response = await dio.get('https://swapi.co/api/people');
-    //final response = json.decode(await new File('/resource/data.json').readAsString());
-    print(response.data['result']);
-    for (int i = 0; i < response.data['results'].length; i++) {
-      tempList.add(response.data['results'][i]);
-    }
-
     setState(() {
-      names = tempList;
-      filteredName = names;
+      location_list = _store.collection("location_detail").orderBy('name').snapshots();
+      floatIcon = [Icon(Icons.filter_list), Icon(Icons.star)];
+      floatText = [Text('เรียงตามชื่อ'), Text('เรียงตามคะแนน')];
+      floatState = 0;
     });
   }
+
 
   void _searchPressed(){
     setState(() {
@@ -68,14 +61,15 @@ class _LocationPageState extends State<LocationPage>{
          controller: _filter,
          decoration: new InputDecoration(
            prefixIcon: new Icon(Icons.search),
-           hintText: 'Search...'
+           hintText: 'ค้นหาชื่อ...'
          ),
        );
      }
      else{
        this._searchIcon = new Icon(Icons.search);
-       this._appBarTitle = new Text("Search Locations");
+       this._appBarTitle = new Text("ค้นหาสถานที่");
        filteredName = names;
+       _searchText = "";
        _filter.clear();
      }
     });
@@ -85,8 +79,9 @@ class _LocationPageState extends State<LocationPage>{
     return Scaffold(
       appBar: _buildBar(context),
       body: Container(
-        child: _bulidList(),
+        child: _buildList(),
       ),
+      floatingActionButton: _buildFloatingButton(),
       resizeToAvoidBottomPadding: false,
     );
   }
@@ -103,97 +98,128 @@ class _LocationPageState extends State<LocationPage>{
     );
   }
 
-  Widget _bulidList(){
-    if (! (_searchText.isEmpty)){
-      List tempList = new List();
-      for (int i = 0; i<filteredName.length;i++){
-        if (filteredName[i]['name'].toLowerCase().contains(_searchText.toLowerCase())){
-          tempList.add(filteredName[i]);
-        }
-      }
-      filteredName = tempList;
-    }
+  Widget _buildFloatingButton(){
+    return FloatingActionButton.extended(
+      icon: floatIcon[floatState],
+      label: floatText[floatState],
+      onPressed: (){
+        setState(() {
+         floatState = 1 - floatState;
+         if (floatState == 0){
+          location_list = _store.collection("location_detail").orderBy('name').snapshots();
+         }
+         else{
+           location_list = _store.collection("location_detail").orderBy('rate', descending: true).snapshots();
+         }
+        });
+      },
+    );
+  }
 
-    var imgTemp = new Container(
-      transform: Matrix4.translationValues(0.0, -25.0, 0.0),
-      decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(15.0),
-      ),
-      child: new ClipRRect(
-        borderRadius: BorderRadius.circular(8.0),
-        child: Image.asset(
-            'resource/temp.png',
-            height: 150,
-          ),
-      ), 
-    ); 
+  Widget _buildList(){
 
     return Container(
       color: Colors.grey[350],
-      child: ListView.builder(
-        itemCount: names == null? 0 : filteredName.length,
-        itemBuilder: (BuildContext context, int index){
-          return new Card(
-            color: Colors.red[800],
-            margin: EdgeInsets.only(top: 35, left: 15, right: 15),
-            child: Column(
-              mainAxisSize: MainAxisSize.min,
-              children: <Widget>[
-                imgTemp,
-                Container(
-                  color: Colors.black12,
-                  margin: EdgeInsets.only(left: 15, top: 10, right: 15),
-                  transform: Matrix4.translationValues(0.0, -25.0, 0.0),
-                  child: Column(
-                    children: <Widget>[
-                      Row(
-                        children: <Widget>[
-                          Icon(Icons.album),
-                          Text(filteredName[index]['name']),
-                        ],
-                      ),
-                      Row(
-                        children: <Widget>[
-                          Column(
+      child: StreamBuilder(
+        stream: location_list,
+        builder: (context, AsyncSnapshot<QuerySnapshot> snapshot){
+          if(snapshot.hasData){
+            return ListView.builder(
+              //itemCount: names == null? 0 : filteredName.length,
+              itemCount: snapshot.data.documents.length,
+              itemBuilder: (BuildContext context, int index){
+                if (_searchText.isNotEmpty && !snapshot.data.documents.elementAt(index).data['name'].toLowerCase().contains(_searchText.toLowerCase()))
+                  return new Container();
+                else{
+                  return new Card(
+                    color: Colors.red[800],
+                    margin: EdgeInsets.only(top: 35, left: 15, right: 15),
+                    child: Column(
+                      mainAxisSize: MainAxisSize.min,
+                      children: <Widget>[
+                        Container(
+                          transform: Matrix4.translationValues(0.0, -25.0, 0.0),
+                          decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(15.0),
+                          ),
+                          child: new ClipRRect(
+                            borderRadius: BorderRadius.circular(8.0),
+                            child: Image.network(
+                                snapshot.data.documents.elementAt(index).data['img_head'],
+                                height: 150,
+                              ),
+                          ), 
+                        ),
+                        Container(
+                          margin: EdgeInsets.only(left: 15, top: 10, right: 15, bottom: 0),
+                          transform: Matrix4.translationValues(0.0, -25.0, 0.0),
+                          child: Column(
                             children: <Widget>[
                               Row(
                                 children: <Widget>[
-                                  Icon(Icons.alarm),
-                                  Text("09.30 - 12.30"),
+                                  Icon(Icons.location_on),
+                                  Expanded(
+                                    child: Text(
+                                      ' ' + snapshot.data.documents.elementAt(index).data['name'],
+                                      overflow: TextOverflow.ellipsis,
+                                    ),
+                                  ),
                                 ],
-                              )
-                            ],
-                          ),
-                          Column(
-                            children: <Widget>[
+                              ),
+                              Container(height: 5,),
                               Row(
                                 children: <Widget>[
-                                  Icon(Icons.alarm),
-                                  Text("09.30 - 12.30"),
+                                  Icon(Icons.access_time),
+                                  Text(
+                                    ' ' + snapshot.data.documents.elementAt(index).data['open_day']
+                                    +" "+
+                                    snapshot.data.documents.elementAt(index).data['time']
+                                  ),
                                 ],
-                              )
+                              ),
+                              Container(height: 5,),
+                              Row(
+                                children: <Widget>[
+                                  Text('คะแนน: '),
+                                  FlutterRatingBarIndicator(
+                                    rating: snapshot.data.documents.elementAt(index).data['rate'],
+                                    itemCount: 5,
+                                    itemSize: 15,
+                                    fillColor: Colors.amber,
+                                    emptyColor: Colors.amber.withAlpha(70),
+                                  ),
+                                ],
+                              ), 
                             ],
                           ),
-                        ],
-                      ), 
-                    ],
-                  ),
-                ),
-                RaisedButton(
-                  child: Text('more details'),
-                  color: Colors.redAccent,
-                  textColor: Colors.white,
-                  onPressed: (){
-                    var route = new MaterialPageRoute(
-                      builder: (BuildContext context)
-                        => new DetailsPage(value : filteredName[index]),
-                    );
-                    Navigator.of(context).push(route);
-                  },
-                ),
-              ],
-            ),
-          );
+                        ),
+                        Container(
+                          transform: Matrix4.translationValues(0, -10, 0),
+                          child: RaisedButton(
+                            child: Text('รายละเอียด'),
+                            color: Colors.redAccent,
+                            textColor: Colors.white,
+                            onPressed: (){
+                              var route = new MaterialPageRoute(
+                                builder: (BuildContext context)
+                                  => new DetailsPage(value : snapshot.data.documents.elementAt(index)),
+                              );
+                              Navigator.of(context).push(route);
+                            },
+                          ),
+                        ),
+                        
+                      ],
+                    ),
+                  );
+                }
+                
+              },
+            );
+          }
+          else{
+            return Center(child: Text('No data found'),) ;
+          }
         },
       ),
     );
