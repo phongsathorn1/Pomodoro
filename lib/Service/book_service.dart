@@ -8,11 +8,13 @@ String url = 'https://api.nytimes.com/svc/books/v3/lists/names.json?api-key=AT9J
 Future<List<Welcome>> getAllPosts() async {
   final response = await http.get(url);
   print(response.body);
-  return allPostsFromJson(response.body);
+  List<Welcome> x = allPostsFromJson(response.body);
+  print(x);
+  return x;
 }
 
 Future<Welcome> getPost() async{
-  final response = await http.get('$url/1');
+  final response = await http.get(url);
   return welcomeFromJson(response.body);
 }
 

@@ -40,13 +40,13 @@ class BookState extends State<BookPage> {
         backgroundColor: Colors.blue[200]);
   }
 
-  List list_name(){
-    Welcome items;
-    List<Tab> name ;
-    for (var i=0;i<items.results.length;i++){
-      name.add(Tab(text: items.results[i].listName));
+  List list_name(Welcome welcome){
+    List<Tab> category = new List<Tab>();
+    print(welcome.results.length);
+    for (var i=0;i<welcome.results.length;i++){
+      category.add(Tab(text: welcome.results[i].listName));
     }
-    return name;
+    return category;
 }
 
 
@@ -69,11 +69,17 @@ class BookState extends State<BookPage> {
                 body: Container(
                   child: Column(
                     children: <Widget>[
-                      FutureBuilder<List<Welcome>>(
-                          future: getAllPosts(),
-                          builder: (BuildContext context, AsyncSnapshot<List<Welcome>> snapshot){
+                      FutureBuilder<Welcome>(
+                          future: getPost(),
+                          builder: (BuildContext context, AsyncSnapshot<Welcome> snapshot){
+                            print(snapshot.hasData);
                             if(snapshot.hasData){
-                              return TabBar(tabs: list_name());
+                              if (snapshot.data != null) {
+                                return TabBar(tabs: list_name(snapshot.data));
+                              }
+                              else {
+                                return Center(child: Text("Null"),);
+                              }
                             }
                             else{
                               return Center(child: Text("WTF of api"),);
