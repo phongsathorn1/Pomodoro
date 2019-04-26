@@ -13,7 +13,6 @@ class DetailsPage extends StatefulWidget{
 
 
 class _DetailsPageState extends State<DetailsPage>{
-  int _current = 0;
   GoogleMapController myController;
   Set<Marker> markers = new Set<Marker>();
   List<String> listImg = new List<String>();
@@ -52,6 +51,10 @@ class _DetailsPageState extends State<DetailsPage>{
                   widget.value['img_head'],
                   fit: BoxFit.cover,
                 ),
+              title: Text(
+                widget.value['name'],
+                overflow: TextOverflow.ellipsis,
+                style: TextStyle(fontSize:16),),
               ),
             ),
           ];
@@ -168,7 +171,7 @@ class _DetailsPageState extends State<DetailsPage>{
                           child: Padding(
                             padding: EdgeInsets.all(10),
                             child: Center(
-                              child: Text('   คะแนน   '),
+                              child: Text('   คะแนน : ${widget.value['rate']}  '),
                             ) ,
                           ) ,
                           color: Colors.blue.withAlpha(50),
@@ -216,6 +219,7 @@ class _DetailsPageState extends State<DetailsPage>{
               Stack(
                 children: <Widget>[
                   CarouselSlider(
+                    height: 400,
                     enableInfiniteScroll: false,
                     items: listImg.map((i) {
                       return Builder(
@@ -226,7 +230,7 @@ class _DetailsPageState extends State<DetailsPage>{
                             decoration: BoxDecoration(
                               color: Colors.black.withAlpha(70)
                             ),
-                            child: Image.network(i)
+                            child: Image.network(i, height: 400,),
                           );
                         },
                       );

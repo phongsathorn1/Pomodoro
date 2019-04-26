@@ -19,7 +19,7 @@ class _LocationPageState extends State<LocationPage>{
   List names = new List();
   List filteredName = new List();
   Icon _searchIcon = new Icon(Icons.search);
-  Widget _appBarTitle = new Text("Search Locations");
+  Widget _appBarTitle = new Text("ค้นหาสถานที่");
   Stream<QuerySnapshot> location_list;
   List<Icon> floatIcon;
   List<Text> floatText;
