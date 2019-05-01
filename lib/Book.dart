@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'fetching.dart';
 import 'Model/bookcategory.dart';
 import 'Service/book_service.dart';
 
@@ -40,15 +39,6 @@ class BookState extends State<BookPage> {
         backgroundColor: Colors.blue[200]);
   }
 
-  List list_name(Welcome welcome){
-    List<Tab> category = new List<Tab>();
-    print(welcome.results.length);
-    for (var i=0;i<welcome.results.length;i++){
-      category.add(Tab(text: welcome.results[i].listName));
-    }
-    return category;
-}
-
 
 
   @override
@@ -56,7 +46,7 @@ class BookState extends State<BookPage> {
     // TODO: implement build
     return MaterialApp(
       home: DefaultTabController(
-          length: 4,
+          length: categories.length,
           child: MaterialApp(
             theme: ThemeData(
                 primaryColor: Colors.blue[200],
@@ -69,28 +59,36 @@ class BookState extends State<BookPage> {
                 body: Container(
                   child: Column(
                     children: <Widget>[
-                      FutureBuilder<Welcome>(
+                  TabBar(
+                  isScrollable: true,
+                    tabs: categories.map((Categories choice) {
+                      return Tab(
+                        text: choice.title,
+                      );
+                    }).toList(),
+                  ),
+                      FutureBuilder<Book>(
                           future: getPost(),
-                          builder: (BuildContext context, AsyncSnapshot<Welcome> snapshot){
+                          builder: (BuildContext context,
+                              AsyncSnapshot<Book> snapshot) {
                             print(snapshot.hasData);
-                            if(snapshot.hasData){
+                            if (snapshot.hasData) {
                               if (snapshot.data != null) {
-                                return TabBar(tabs: list_name(snapshot.data));
+                                return TabBarView(
+                                    children: categories.map((Categories choice) {
+                                      return null;
+                                    }).toList(),);
+                              } else {
+                                return Center(
+                                  child: Text("Null"),
+                                );
                               }
-                              else {
-                                return Center(child: Text("Null"),);
-                              }
+                            } else {
+                              return Center(
+                                child: Text("Error fetching data from api"),
+                              );
                             }
-                            else{
-                              return Center(child: Text("WTF of api"),);
-                            }
-                          }
-                      ),
-//                      TabBar(tabs: [
-//                        Tab(text: "Novel"),
-//                        Tab(text: "Home"),
-//                        Tab(text: "Comic")
-//                      ]),
+                          }),
                       Row(
                         children: <Widget>[
                           new Card(
@@ -150,6 +148,40 @@ class BookState extends State<BookPage> {
 //              ),
                 ),
           )),
+    );
+  }
+}
+
+class Categories {
+  const Categories(this.title);
+  final String title;
+}
+
+const List<Categories> categories = const <Categories> [
+  const Categories('Series Books'),
+  const Categories('Manga'),
+  const Categories('Animals'),
+  const Categories('Health'),
+  const Categories('Science'),
+  const Categories('Sports'),
+  const Categories('Travel'),
+];
+
+class BookCard extends StatelessWidget {
+  const BookCard({Key key, this.book}) : super(key: key);
+
+  final Categories book;
+
+  @override
+  Widget build(BuildContext context) {
+    final TextStyle textStyle = Theme.of(context).textTheme.display1;
+    return Card(
+      color: Colors.white,
+      child: Row(
+          children: <Widget>[
+            Text(book.title, style: textStyle),
+          ],
+        ),
     );
   }
 }
