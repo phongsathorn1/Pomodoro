@@ -1,34 +1,29 @@
+
 import 'package:flutter/material.dart';
+import 'package:pomodoro/insert/homepage.dart';
+import 'package:pomodoro/widgets/detailsPage.dart';
+import 'package:pomodoro/widgets/locationPage.dart';
 
-import 'views/home.dart';
-import 'views/login.dart';
-import 'views/register.dart';
-import 'views/welcome.dart';
-import 'views/forgotPassword.dart';
-import 'views/features.dart';
-import 'views/addProfilePic.dart';
-
-void main() => runApp(MyApp());
+void main() {
+  runApp(new MyApp());
+}
 
 class MyApp extends StatelessWidget {
+  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Flutter Demo',
+      /*
       theme: ThemeData(
-        primarySwatch: Colors.blue,
-      ),
-      debugShowCheckedModeBanner: false,
+        primarySwatch: Colors.grey[350],
+      ),*/
       initialRoute: '/',
       routes: {
-        '/': (context) => HomeScreen(),
-        '/welcome': (context) => WelcomeScreen(),
-        '/login': (context) => LoginScreen(),
-        '/register': (context) => RegisterScreen(),
-        '/forgot': (context) => ForgotScreen(),
-        '/features': (context) => FeaturesScreen(),
-        '/addProfilePic': (context) => AddProfilePicScreen()
+        '/': (BuildContext context) => new SliverWithTabBar(),
+        '/moreDetail': (BuildContext context) => new DetailsPage(),
       },
     );
   }
 }
+
