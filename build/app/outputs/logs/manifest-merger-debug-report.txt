@@ -1,13 +1,13 @@
 -- Merging decision tree log ---
 manifest
-ADDED from C:\Users\Cystle0\Desktop\fung\Pomodoro\android\app\src\main\AndroidManifest.xml:1:1-45:12
-INJECTED from C:\Users\Cystle0\Desktop\fung\Pomodoro\android\app\src\main\AndroidManifest.xml:1:1-45:12
-INJECTED from C:\Users\Cystle0\Desktop\fung\Pomodoro\android\app\src\main\AndroidManifest.xml:1:1-45:12
-INJECTED from C:\Users\Cystle0\Desktop\fung\Pomodoro\android\app\src\main\AndroidManifest.xml:1:1-45:12
+ADDED from C:\Users\Cystle0\Desktop\runproject\Pomodoro\android\app\src\main\AndroidManifest.xml:1:1-45:12
+INJECTED from C:\Users\Cystle0\Desktop\runproject\Pomodoro\android\app\src\main\AndroidManifest.xml:1:1-45:12
+INJECTED from C:\Users\Cystle0\Desktop\runproject\Pomodoro\android\app\src\main\AndroidManifest.xml:1:1-45:12
+INJECTED from C:\Users\Cystle0\Desktop\runproject\Pomodoro\android\app\src\main\AndroidManifest.xml:1:1-45:12
 MERGED from [androidx.multidex:multidex:2.0.0] C:\Users\Cystle0\.gradle\caches\transforms-1\files-1.1\multidex-2.0.0.aar\a02c6f45b2120cafe67c6f9c0e3953ea\AndroidManifest.xml:17:1-22:12
-MERGED from [:google_maps_flutter] C:\Users\Cystle0\Desktop\fung\Pomodoro\build\google_maps_flutter\intermediates\library_manifest\debug\AndroidManifest.xml:2:1-7:12
-MERGED from [:cloud_firestore] C:\Users\Cystle0\Desktop\fung\Pomodoro\build\cloud_firestore\intermediates\library_manifest\debug\AndroidManifest.xml:2:1-7:12
-MERGED from [:firebase_core] C:\Users\Cystle0\Desktop\fung\Pomodoro\build\firebase_core\intermediates\library_manifest\debug\AndroidManifest.xml:2:1-7:12
+MERGED from [:google_maps_flutter] C:\Users\Cystle0\Desktop\runproject\Pomodoro\build\google_maps_flutter\intermediates\library_manifest\debug\AndroidManifest.xml:2:1-7:12
+MERGED from [:cloud_firestore] C:\Users\Cystle0\Desktop\runproject\Pomodoro\build\cloud_firestore\intermediates\library_manifest\debug\AndroidManifest.xml:2:1-7:12
+MERGED from [:firebase_core] C:\Users\Cystle0\Desktop\runproject\Pomodoro\build\firebase_core\intermediates\library_manifest\debug\AndroidManifest.xml:2:1-7:12
 MERGED from [com.google.android.gms:play-services-maps:16.1.0] C:\Users\Cystle0\.gradle\caches\transforms-1\files-1.1\jetified-play-services-maps-16.1.0.aar\0728f5ce79aec60d0a6e38a52dee7aca\AndroidManifest.xml:17:1-38:12
 MERGED from [com.google.firebase:firebase-firestore:18.2.0] C:\Users\Cystle0\.gradle\caches\transforms-1\files-1.1\jetified-firebase-firestore-18.2.0.aar\57a0020a26824ce360eae7cf1a0e2872\AndroidManifest.xml:2:1-24:12
 MERGED from [com.google.firebase:firebase-auth-interop:16.0.1] C:\Users\Cystle0\.gradle\caches\transforms-1\files-1.1\jetified-firebase-auth-interop-16.0.1.aar\d90afb93383e64b5814009375675f5cd\AndroidManifest.xml:2:1-10:12
@@ -54,25 +54,25 @@ MERGED from [com.google.firebase:firebase-database-collection:16.0.1] C:\Users\C
 MERGED from [com.google.firebase:protolite-well-known-types:16.0.1] C:\Users\Cystle0\.gradle\caches\transforms-1\files-1.1\protolite-well-known-types-16.0.1.aar\a0b27b1df56f823f394a69741930a6ce\AndroidManifest.xml:2:1-11:12
 MERGED from [io.grpc:grpc-android:1.16.1] C:\Users\Cystle0\.gradle\caches\transforms-1\files-1.1\grpc-android-1.16.1.aar\43ada90ee77ed91c3bbb2fb8e1957881\AndroidManifest.xml:2:1-13:12
 MERGED from [com.google.android.gms:play-services-measurement-base:16.0.3] C:\Users\Cystle0\.gradle\caches\transforms-1\files-1.1\play-services-measurement-base-16.0.3.aar\89c8286acbf7db4551f276d08a1df7b7\AndroidManifest.xml:2:1-9:12
-INJECTED from C:\Users\Cystle0\Desktop\fung\Pomodoro\android\app\src\main\AndroidManifest.xml:1:1-45:12
-INJECTED from C:\Users\Cystle0\Desktop\fung\Pomodoro\android\app\src\main\AndroidManifest.xml:1:1-45:12
-INJECTED from C:\Users\Cystle0\Desktop\fung\Pomodoro\android\app\src\main\AndroidManifest.xml:1:1-45:12
+INJECTED from C:\Users\Cystle0\Desktop\runproject\Pomodoro\android\app\src\main\AndroidManifest.xml:1:1-45:12
+INJECTED from C:\Users\Cystle0\Desktop\runproject\Pomodoro\android\app\src\main\AndroidManifest.xml:1:1-45:12
+INJECTED from C:\Users\Cystle0\Desktop\runproject\Pomodoro\android\app\src\main\AndroidManifest.xml:1:1-45:12
 	package
-		ADDED from C:\Users\Cystle0\Desktop\fung\Pomodoro\android\app\src\main\AndroidManifest.xml:2:5-35
-		INJECTED from C:\Users\Cystle0\Desktop\fung\Pomodoro\android\app\src\main\AndroidManifest.xml
-		INJECTED from C:\Users\Cystle0\Desktop\fung\Pomodoro\android\app\src\main\AndroidManifest.xml
+		ADDED from C:\Users\Cystle0\Desktop\runproject\Pomodoro\android\app\src\main\AndroidManifest.xml:2:5-35
+		INJECTED from C:\Users\Cystle0\Desktop\runproject\Pomodoro\android\app\src\main\AndroidManifest.xml
+		INJECTED from C:\Users\Cystle0\Desktop\runproject\Pomodoro\android\app\src\main\AndroidManifest.xml
 	android:versionName
-		INJECTED from C:\Users\Cystle0\Desktop\fung\Pomodoro\android\app\src\main\AndroidManifest.xml
-		ADDED from C:\Users\Cystle0\Desktop\fung\Pomodoro\android\app\src\main\AndroidManifest.xml:1:1-45:12
-		INJECTED from C:\Users\Cystle0\Desktop\fung\Pomodoro\android\app\src\main\AndroidManifest.xml
+		INJECTED from C:\Users\Cystle0\Desktop\runproject\Pomodoro\android\app\src\main\AndroidManifest.xml
+		ADDED from C:\Users\Cystle0\Desktop\runproject\Pomodoro\android\app\src\main\AndroidManifest.xml:1:1-45:12
+		INJECTED from C:\Users\Cystle0\Desktop\runproject\Pomodoro\android\app\src\main\AndroidManifest.xml
 	android:versionCode
-		INJECTED from C:\Users\Cystle0\Desktop\fung\Pomodoro\android\app\src\main\AndroidManifest.xml
-		ADDED from C:\Users\Cystle0\Desktop\fung\Pomodoro\android\app\src\main\AndroidManifest.xml:1:1-45:12
-		INJECTED from C:\Users\Cystle0\Desktop\fung\Pomodoro\android\app\src\main\AndroidManifest.xml
+		INJECTED from C:\Users\Cystle0\Desktop\runproject\Pomodoro\android\app\src\main\AndroidManifest.xml
+		ADDED from C:\Users\Cystle0\Desktop\runproject\Pomodoro\android\app\src\main\AndroidManifest.xml:1:1-45:12
+		INJECTED from C:\Users\Cystle0\Desktop\runproject\Pomodoro\android\app\src\main\AndroidManifest.xml
 	xmlns:android
-		ADDED from C:\Users\Cystle0\Desktop\fung\Pomodoro\android\app\src\main\AndroidManifest.xml:1:11-69
+		ADDED from C:\Users\Cystle0\Desktop\runproject\Pomodoro\android\app\src\main\AndroidManifest.xml:1:11-69
 uses-permission#android.permission.INTERNET
-ADDED from C:\Users\Cystle0\Desktop\fung\Pomodoro\android\app\src\main\AndroidManifest.xml:8:5-66
+ADDED from C:\Users\Cystle0\Desktop\runproject\Pomodoro\android\app\src\main\AndroidManifest.xml:8:5-66
 MERGED from [com.google.android.gms:play-services-maps:16.1.0] C:\Users\Cystle0\.gradle\caches\transforms-1\files-1.1\jetified-play-services-maps-16.1.0.aar\0728f5ce79aec60d0a6e38a52dee7aca\AndroidManifest.xml:24:5-67
 MERGED from [com.google.android.gms:play-services-maps:16.1.0] C:\Users\Cystle0\.gradle\caches\transforms-1\files-1.1\jetified-play-services-maps-16.1.0.aar\0728f5ce79aec60d0a6e38a52dee7aca\AndroidManifest.xml:24:5-67
 MERGED from [com.google.firebase:firebase-firestore:18.2.0] C:\Users\Cystle0\.gradle\caches\transforms-1\files-1.1\jetified-firebase-firestore-18.2.0.aar\57a0020a26824ce360eae7cf1a0e2872\AndroidManifest.xml:14:5-67
@@ -86,17 +86,17 @@ MERGED from [com.google.firebase:firebase-analytics-impl:16.2.2] C:\Users\Cystle
 MERGED from [com.google.firebase:firebase-iid:17.0.3] C:\Users\Cystle0\.gradle\caches\transforms-1\files-1.1\jetified-firebase-iid-17.0.3.aar\e9b8211abd6a24a3031bf384b5a56398\AndroidManifest.xml:23:5-67
 MERGED from [com.google.firebase:firebase-iid:17.0.3] C:\Users\Cystle0\.gradle\caches\transforms-1\files-1.1\jetified-firebase-iid-17.0.3.aar\e9b8211abd6a24a3031bf384b5a56398\AndroidManifest.xml:23:5-67
 	android:name
-		ADDED from C:\Users\Cystle0\Desktop\fung\Pomodoro\android\app\src\main\AndroidManifest.xml:8:22-64
+		ADDED from C:\Users\Cystle0\Desktop\runproject\Pomodoro\android\app\src\main\AndroidManifest.xml:8:22-64
 uses-permission#android.permission.ACCESS_FINE_LOCATION
-ADDED from C:\Users\Cystle0\Desktop\fung\Pomodoro\android\app\src\main\AndroidManifest.xml:9:5-78
+ADDED from C:\Users\Cystle0\Desktop\runproject\Pomodoro\android\app\src\main\AndroidManifest.xml:9:5-78
 	android:name
-		ADDED from C:\Users\Cystle0\Desktop\fung\Pomodoro\android\app\src\main\AndroidManifest.xml:9:22-76
+		ADDED from C:\Users\Cystle0\Desktop\runproject\Pomodoro\android\app\src\main\AndroidManifest.xml:9:22-76
 uses-permission#android.permission.ACCESS_COARSE_LOCATION
-ADDED from C:\Users\Cystle0\Desktop\fung\Pomodoro\android\app\src\main\AndroidManifest.xml:10:5-80
+ADDED from C:\Users\Cystle0\Desktop\runproject\Pomodoro\android\app\src\main\AndroidManifest.xml:10:5-80
 	android:name
-		ADDED from C:\Users\Cystle0\Desktop\fung\Pomodoro\android\app\src\main\AndroidManifest.xml:10:22-78
+		ADDED from C:\Users\Cystle0\Desktop\runproject\Pomodoro\android\app\src\main\AndroidManifest.xml:10:22-78
 application
-ADDED from C:\Users\Cystle0\Desktop\fung\Pomodoro\android\app\src\main\AndroidManifest.xml:17:5-43:19
+ADDED from C:\Users\Cystle0\Desktop\runproject\Pomodoro\android\app\src\main\AndroidManifest.xml:17:5-43:19
 MERGED from [com.google.android.gms:play-services-maps:16.1.0] C:\Users\Cystle0\.gradle\caches\transforms-1\files-1.1\jetified-play-services-maps-16.1.0.aar\0728f5ce79aec60d0a6e38a52dee7aca\AndroidManifest.xml:30:5-36:19
 MERGED from [com.google.android.gms:play-services-maps:16.1.0] C:\Users\Cystle0\.gradle\caches\transforms-1\files-1.1\jetified-play-services-maps-16.1.0.aar\0728f5ce79aec60d0a6e38a52dee7aca\AndroidManifest.xml:30:5-36:19
 MERGED from [com.google.firebase:firebase-firestore:18.2.0] C:\Users\Cystle0\.gradle\caches\transforms-1\files-1.1\jetified-firebase-firestore-18.2.0.aar\57a0020a26824ce360eae7cf1a0e2872\AndroidManifest.xml:16:5-22:19
@@ -140,59 +140,59 @@ MERGED from [com.google.android.gms:play-services-measurement-base:16.0.3] C:\Us
 	android:appComponentFactory
 		ADDED from [androidx.core:core:1.0.0] C:\Users\Cystle0\.gradle\caches\transforms-1\files-1.1\core-1.0.0.aar\f39364ca47605eb30648ef59a907c14b\AndroidManifest.xml:22:18-86
 	android:label
-		ADDED from C:\Users\Cystle0\Desktop\fung\Pomodoro\android\app\src\main\AndroidManifest.xml:19:9-33
+		ADDED from C:\Users\Cystle0\Desktop\runproject\Pomodoro\android\app\src\main\AndroidManifest.xml:19:9-33
 	android:icon
-		ADDED from C:\Users\Cystle0\Desktop\fung\Pomodoro\android\app\src\main\AndroidManifest.xml:20:9-43
+		ADDED from C:\Users\Cystle0\Desktop\runproject\Pomodoro\android\app\src\main\AndroidManifest.xml:20:9-43
 	android:name
-		ADDED from C:\Users\Cystle0\Desktop\fung\Pomodoro\android\app\src\main\AndroidManifest.xml:18:9-57
+		ADDED from C:\Users\Cystle0\Desktop\runproject\Pomodoro\android\app\src\main\AndroidManifest.xml:18:9-57
 meta-data#com.google.android.geo.API_KEY
-ADDED from C:\Users\Cystle0\Desktop\fung\Pomodoro\android\app\src\main\AndroidManifest.xml:21:9-22:73
+ADDED from C:\Users\Cystle0\Desktop\runproject\Pomodoro\android\app\src\main\AndroidManifest.xml:21:9-22:73
 	android:value
-		ADDED from C:\Users\Cystle0\Desktop\fung\Pomodoro\android\app\src\main\AndroidManifest.xml:22:16-71
+		ADDED from C:\Users\Cystle0\Desktop\runproject\Pomodoro\android\app\src\main\AndroidManifest.xml:22:16-71
 	android:name
-		ADDED from C:\Users\Cystle0\Desktop\fung\Pomodoro\android\app\src\main\AndroidManifest.xml:21:20-65
+		ADDED from C:\Users\Cystle0\Desktop\runproject\Pomodoro\android\app\src\main\AndroidManifest.xml:21:20-65
 activity#com.example.pomodoro.MainActivity
-ADDED from C:\Users\Cystle0\Desktop\fung\Pomodoro\android\app\src\main\AndroidManifest.xml:23:9-41:20
+ADDED from C:\Users\Cystle0\Desktop\runproject\Pomodoro\android\app\src\main\AndroidManifest.xml:23:9-41:20
 	android:launchMode
-		ADDED from C:\Users\Cystle0\Desktop\fung\Pomodoro\android\app\src\main\AndroidManifest.xml:25:13-43
+		ADDED from C:\Users\Cystle0\Desktop\runproject\Pomodoro\android\app\src\main\AndroidManifest.xml:25:13-43
 	android:hardwareAccelerated
-		ADDED from C:\Users\Cystle0\Desktop\fung\Pomodoro\android\app\src\main\AndroidManifest.xml:28:13-47
+		ADDED from C:\Users\Cystle0\Desktop\runproject\Pomodoro\android\app\src\main\AndroidManifest.xml:28:13-47
 	android:windowSoftInputMode
-		ADDED from C:\Users\Cystle0\Desktop\fung\Pomodoro\android\app\src\main\AndroidManifest.xml:29:13-55
+		ADDED from C:\Users\Cystle0\Desktop\runproject\Pomodoro\android\app\src\main\AndroidManifest.xml:29:13-55
 	android:configChanges
-		ADDED from C:\Users\Cystle0\Desktop\fung\Pomodoro\android\app\src\main\AndroidManifest.xml:27:13-137
+		ADDED from C:\Users\Cystle0\Desktop\runproject\Pomodoro\android\app\src\main\AndroidManifest.xml:27:13-137
 	android:theme
-		ADDED from C:\Users\Cystle0\Desktop\fung\Pomodoro\android\app\src\main\AndroidManifest.xml:26:13-47
+		ADDED from C:\Users\Cystle0\Desktop\runproject\Pomodoro\android\app\src\main\AndroidManifest.xml:26:13-47
 	android:name
-		ADDED from C:\Users\Cystle0\Desktop\fung\Pomodoro\android\app\src\main\AndroidManifest.xml:24:13-41
+		ADDED from C:\Users\Cystle0\Desktop\runproject\Pomodoro\android\app\src\main\AndroidManifest.xml:24:13-41
 meta-data#io.flutter.app.android.SplashScreenUntilFirstFrame
-ADDED from C:\Users\Cystle0\Desktop\fung\Pomodoro\android\app\src\main\AndroidManifest.xml:34:13-36:40
+ADDED from C:\Users\Cystle0\Desktop\runproject\Pomodoro\android\app\src\main\AndroidManifest.xml:34:13-36:40
 	android:value
-		ADDED from C:\Users\Cystle0\Desktop\fung\Pomodoro\android\app\src\main\AndroidManifest.xml:36:17-37
+		ADDED from C:\Users\Cystle0\Desktop\runproject\Pomodoro\android\app\src\main\AndroidManifest.xml:36:17-37
 	android:name
-		ADDED from C:\Users\Cystle0\Desktop\fung\Pomodoro\android\app\src\main\AndroidManifest.xml:35:17-82
+		ADDED from C:\Users\Cystle0\Desktop\runproject\Pomodoro\android\app\src\main\AndroidManifest.xml:35:17-82
 intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
-ADDED from C:\Users\Cystle0\Desktop\fung\Pomodoro\android\app\src\main\AndroidManifest.xml:37:13-40:29
+ADDED from C:\Users\Cystle0\Desktop\runproject\Pomodoro\android\app\src\main\AndroidManifest.xml:37:13-40:29
 action#android.intent.action.MAIN
-ADDED from C:\Users\Cystle0\Desktop\fung\Pomodoro\android\app\src\main\AndroidManifest.xml:38:17-68
+ADDED from C:\Users\Cystle0\Desktop\runproject\Pomodoro\android\app\src\main\AndroidManifest.xml:38:17-68
 	android:name
-		ADDED from C:\Users\Cystle0\Desktop\fung\Pomodoro\android\app\src\main\AndroidManifest.xml:38:25-66
+		ADDED from C:\Users\Cystle0\Desktop\runproject\Pomodoro\android\app\src\main\AndroidManifest.xml:38:25-66
 category#android.intent.category.LAUNCHER
-ADDED from C:\Users\Cystle0\Desktop\fung\Pomodoro\android\app\src\main\AndroidManifest.xml:39:17-76
+ADDED from C:\Users\Cystle0\Desktop\runproject\Pomodoro\android\app\src\main\AndroidManifest.xml:39:17-76
 	android:name
-		ADDED from C:\Users\Cystle0\Desktop\fung\Pomodoro\android\app\src\main\AndroidManifest.xml:39:27-74
+		ADDED from C:\Users\Cystle0\Desktop\runproject\Pomodoro\android\app\src\main\AndroidManifest.xml:39:27-74
 uses-sdk
-INJECTED from C:\Users\Cystle0\Desktop\fung\Pomodoro\android\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
-INJECTED from C:\Users\Cystle0\Desktop\fung\Pomodoro\android\app\src\main\AndroidManifest.xml
-INJECTED from C:\Users\Cystle0\Desktop\fung\Pomodoro\android\app\src\main\AndroidManifest.xml
+INJECTED from C:\Users\Cystle0\Desktop\runproject\Pomodoro\android\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
+INJECTED from C:\Users\Cystle0\Desktop\runproject\Pomodoro\android\app\src\main\AndroidManifest.xml
+INJECTED from C:\Users\Cystle0\Desktop\runproject\Pomodoro\android\app\src\main\AndroidManifest.xml
 MERGED from [androidx.multidex:multidex:2.0.0] C:\Users\Cystle0\.gradle\caches\transforms-1\files-1.1\multidex-2.0.0.aar\a02c6f45b2120cafe67c6f9c0e3953ea\AndroidManifest.xml:20:5-43
 MERGED from [androidx.multidex:multidex:2.0.0] C:\Users\Cystle0\.gradle\caches\transforms-1\files-1.1\multidex-2.0.0.aar\a02c6f45b2120cafe67c6f9c0e3953ea\AndroidManifest.xml:20:5-43
-MERGED from [:google_maps_flutter] C:\Users\Cystle0\Desktop\fung\Pomodoro\build\google_maps_flutter\intermediates\library_manifest\debug\AndroidManifest.xml:5:5-44
-MERGED from [:google_maps_flutter] C:\Users\Cystle0\Desktop\fung\Pomodoro\build\google_maps_flutter\intermediates\library_manifest\debug\AndroidManifest.xml:5:5-44
-MERGED from [:cloud_firestore] C:\Users\Cystle0\Desktop\fung\Pomodoro\build\cloud_firestore\intermediates\library_manifest\debug\AndroidManifest.xml:5:5-44
-MERGED from [:cloud_firestore] C:\Users\Cystle0\Desktop\fung\Pomodoro\build\cloud_firestore\intermediates\library_manifest\debug\AndroidManifest.xml:5:5-44
-MERGED from [:firebase_core] C:\Users\Cystle0\Desktop\fung\Pomodoro\build\firebase_core\intermediates\library_manifest\debug\AndroidManifest.xml:5:5-44
-MERGED from [:firebase_core] C:\Users\Cystle0\Desktop\fung\Pomodoro\build\firebase_core\intermediates\library_manifest\debug\AndroidManifest.xml:5:5-44
+MERGED from [:google_maps_flutter] C:\Users\Cystle0\Desktop\runproject\Pomodoro\build\google_maps_flutter\intermediates\library_manifest\debug\AndroidManifest.xml:5:5-44
+MERGED from [:google_maps_flutter] C:\Users\Cystle0\Desktop\runproject\Pomodoro\build\google_maps_flutter\intermediates\library_manifest\debug\AndroidManifest.xml:5:5-44
+MERGED from [:cloud_firestore] C:\Users\Cystle0\Desktop\runproject\Pomodoro\build\cloud_firestore\intermediates\library_manifest\debug\AndroidManifest.xml:5:5-44
+MERGED from [:cloud_firestore] C:\Users\Cystle0\Desktop\runproject\Pomodoro\build\cloud_firestore\intermediates\library_manifest\debug\AndroidManifest.xml:5:5-44
+MERGED from [:firebase_core] C:\Users\Cystle0\Desktop\runproject\Pomodoro\build\firebase_core\intermediates\library_manifest\debug\AndroidManifest.xml:5:5-44
+MERGED from [:firebase_core] C:\Users\Cystle0\Desktop\runproject\Pomodoro\build\firebase_core\intermediates\library_manifest\debug\AndroidManifest.xml:5:5-44
 MERGED from [com.google.android.gms:play-services-maps:16.1.0] C:\Users\Cystle0\.gradle\caches\transforms-1\files-1.1\jetified-play-services-maps-16.1.0.aar\0728f5ce79aec60d0a6e38a52dee7aca\AndroidManifest.xml:20:5-44
 MERGED from [com.google.android.gms:play-services-maps:16.1.0] C:\Users\Cystle0\.gradle\caches\transforms-1\files-1.1\jetified-play-services-maps-16.1.0.aar\0728f5ce79aec60d0a6e38a52dee7aca\AndroidManifest.xml:20:5-44
 MERGED from [com.google.firebase:firebase-firestore:18.2.0] C:\Users\Cystle0\.gradle\caches\transforms-1\files-1.1\jetified-firebase-firestore-18.2.0.aar\57a0020a26824ce360eae7cf1a0e2872\AndroidManifest.xml:7:5-9:41
@@ -285,16 +285,16 @@ MERGED from [io.grpc:grpc-android:1.16.1] C:\Users\Cystle0\.gradle\caches\transf
 MERGED from [io.grpc:grpc-android:1.16.1] C:\Users\Cystle0\.gradle\caches\transforms-1\files-1.1\grpc-android-1.16.1.aar\43ada90ee77ed91c3bbb2fb8e1957881\AndroidManifest.xml:7:5-9:41
 MERGED from [com.google.android.gms:play-services-measurement-base:16.0.3] C:\Users\Cystle0\.gradle\caches\transforms-1\files-1.1\play-services-measurement-base-16.0.3.aar\89c8286acbf7db4551f276d08a1df7b7\AndroidManifest.xml:5:5-44
 MERGED from [com.google.android.gms:play-services-measurement-base:16.0.3] C:\Users\Cystle0\.gradle\caches\transforms-1\files-1.1\play-services-measurement-base-16.0.3.aar\89c8286acbf7db4551f276d08a1df7b7\AndroidManifest.xml:5:5-44
-INJECTED from C:\Users\Cystle0\Desktop\fung\Pomodoro\android\app\src\main\AndroidManifest.xml
-INJECTED from C:\Users\Cystle0\Desktop\fung\Pomodoro\android\app\src\main\AndroidManifest.xml
+INJECTED from C:\Users\Cystle0\Desktop\runproject\Pomodoro\android\app\src\main\AndroidManifest.xml
+INJECTED from C:\Users\Cystle0\Desktop\runproject\Pomodoro\android\app\src\main\AndroidManifest.xml
 	android:targetSdkVersion
-		INJECTED from C:\Users\Cystle0\Desktop\fung\Pomodoro\android\app\src\main\AndroidManifest.xml
-		ADDED from C:\Users\Cystle0\Desktop\fung\Pomodoro\android\app\src\main\AndroidManifest.xml
-		INJECTED from C:\Users\Cystle0\Desktop\fung\Pomodoro\android\app\src\main\AndroidManifest.xml
+		INJECTED from C:\Users\Cystle0\Desktop\runproject\Pomodoro\android\app\src\main\AndroidManifest.xml
+		ADDED from C:\Users\Cystle0\Desktop\runproject\Pomodoro\android\app\src\main\AndroidManifest.xml
+		INJECTED from C:\Users\Cystle0\Desktop\runproject\Pomodoro\android\app\src\main\AndroidManifest.xml
 	android:minSdkVersion
-		INJECTED from C:\Users\Cystle0\Desktop\fung\Pomodoro\android\app\src\main\AndroidManifest.xml
-		ADDED from C:\Users\Cystle0\Desktop\fung\Pomodoro\android\app\src\main\AndroidManifest.xml
-		INJECTED from C:\Users\Cystle0\Desktop\fung\Pomodoro\android\app\src\main\AndroidManifest.xml
+		INJECTED from C:\Users\Cystle0\Desktop\runproject\Pomodoro\android\app\src\main\AndroidManifest.xml
+		ADDED from C:\Users\Cystle0\Desktop\runproject\Pomodoro\android\app\src\main\AndroidManifest.xml
+		INJECTED from C:\Users\Cystle0\Desktop\runproject\Pomodoro\android\app\src\main\AndroidManifest.xml
 uses-permission#android.permission.ACCESS_NETWORK_STATE
 ADDED from [com.google.android.gms:play-services-maps:16.1.0] C:\Users\Cystle0\.gradle\caches\transforms-1\files-1.1\jetified-play-services-maps-16.1.0.aar\0728f5ce79aec60d0a6e38a52dee7aca\AndroidManifest.xml:23:5-79
 MERGED from [com.google.firebase:firebase-firestore:18.2.0] C:\Users\Cystle0\.gradle\caches\transforms-1\files-1.1\jetified-firebase-firestore-18.2.0.aar\57a0020a26824ce360eae7cf1a0e2872\AndroidManifest.xml:13:5-79
