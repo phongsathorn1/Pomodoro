@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:http/http.dart' as http;
 import 'Model/bookcategory.dart';
 import 'Service/book_service.dart';
 
@@ -39,7 +40,12 @@ class BookState extends State<BookPage> {
         backgroundColor: Colors.blue[200]);
   }
 
-
+   _bookList() async {
+    Book booklist = await http.get('https://api.nytimes.com/svc/books/v3/lists/current/e-book-fiction.json?api-key=AT9JzCxdnatIAYq28d7czaIxXdOMtgpk') as Book;
+    print(booklist.toJson());
+    var temp = <Widget>[Text('fffff'), Text('sadsff')];
+    return temp;
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -59,64 +65,17 @@ class BookState extends State<BookPage> {
                 body: Container(
                   child: Column(
                     children: <Widget>[
-                  TabBar(
-                  isScrollable: true,
-                    tabs: categories.map((Categories choice) {
-                      return Tab(
-                        text: choice.title,
-                      );
-                    }).toList(),
-                  ),
-                      FutureBuilder<Book>(
-                          future: getPost(),
-                          builder: (BuildContext context,
-                              AsyncSnapshot<Book> snapshot) {
-                            print(snapshot.hasData);
-                            if (snapshot.hasData) {
-                              if (snapshot.data != null) {
-                                return TabBarView(
-                                    children: categories.map((Categories choice) {
-                                      return null;
-                                    }).toList(),);
-                              } else {
-                                return Center(
-                                  child: Text("Null"),
-                                );
-                              }
-                            } else {
-                              return Center(
-                                child: Text("Error fetching data from api"),
-                              );
-                            }
-                          }),
-                      Row(
-                        children: <Widget>[
-                          new Card(
-                            child: new Container(
-                              padding: new EdgeInsets.all(10),
-                              child: new Column(
-                                children: <Widget>[
-                                  Image.asset('images/book.jpg',
-                                      width: 175, height: 170),
-                                  Text("Mindset"),
-                                ],
-                              ),
-                            ),
-                          ),
-                          new Card(
-                            child: new Container(
-                              padding: new EdgeInsets.all(10),
-                              child: new Column(
-                                children: <Widget>[
-                                  Image.asset('images/book2.jpg',
-                                      width: 175, height: 170),
-                                  Text("Principle"),
-                                ],
-                              ),
-                            ),
-                          ),
-                        ],
-                      )
+                      TabBar(
+                        isScrollable: true,
+                        tabs: categories.map((Categories choice) {
+                          return Tab(
+                            text: choice.title,
+                          );
+                        }).toList(),
+                      ),
+                      TabBarView(
+                        children: _bookList(),
+                      ),
                     ],
                   ),
                 ),
@@ -157,7 +116,7 @@ class Categories {
   final String title;
 }
 
-const List<Categories> categories = const <Categories> [
+const List<Categories> categories = const <Categories>[
   const Categories('Series Books'),
   const Categories('Manga'),
   const Categories('Animals'),
@@ -178,10 +137,10 @@ class BookCard extends StatelessWidget {
     return Card(
       color: Colors.white,
       child: Row(
-          children: <Widget>[
-            Text(book.title, style: textStyle),
-          ],
-        ),
+        children: <Widget>[
+          Text(book.title, style: textStyle),
+        ],
+      ),
     );
   }
 }
