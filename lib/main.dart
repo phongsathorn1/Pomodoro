@@ -1,4 +1,3 @@
-
 import 'package:flutter/material.dart';
 import 'package:pomodoro/insert/homepage.dart';
 import 'package:pomodoro/widgets/detailsPage.dart';
@@ -18,6 +17,9 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.grey[350],
       ),*/
+      theme: ThemeData(
+        fontFamily: 'Sukhumvit',
+      ),
       initialRoute: '/',
       routes: {
         '/': (BuildContext context) => new SliverWithTabBar(),
@@ -26,4 +28,3 @@ class MyApp extends StatelessWidget {
     );
   }
 }
-

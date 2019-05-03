@@ -4,12 +4,15 @@ import 'package:carousel_pro/carousel_pro.dart';
 import 'package:pomodoro/insert/mainpage.dart';
 import 'package:pomodoro/widgets/locationPage.dart';
 
+import 'package:pomodoro/views/timer_screen.dart';
+
 class SliverWithTabBar extends StatefulWidget {
   @override
   _SliverWithTabBarState createState() => _SliverWithTabBarState();
 }
 
-class _SliverWithTabBarState extends State<SliverWithTabBar> with SingleTickerProviderStateMixin {
+class _SliverWithTabBarState extends State<SliverWithTabBar>
+    with SingleTickerProviderStateMixin {
   TabController controller;
 
   @override
@@ -21,36 +24,36 @@ class _SliverWithTabBarState extends State<SliverWithTabBar> with SingleTickerPr
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-          appBar: AppBar(
-            backgroundColor: HexColor("#f3b7c3"),
-            title: new Text("Reading Guide"),
-            actions: <Widget>[
-              IconButton(
-                padding: const EdgeInsets.only(right: 10.0),
-                icon: Icon(Icons.account_box),
-                // onPressed: _airDress,
-              ),
-            ],
-            bottom: TabBar(
-                tabs: [
-                  Tab(icon: Icon(Icons.home)),
-                  Tab(icon: Icon(Icons.alarm)),
-                  Tab(icon: Icon(Icons.account_balance)),
-                  Tab(icon: Icon(Icons.book)),
-                ],
-                controller: controller,
-            ),
+      appBar: AppBar(
+        backgroundColor: HexColor("#f3b7c3"),
+        title: new Text("Reading Guide"),
+        actions: <Widget>[
+          IconButton(
+            padding: const EdgeInsets.only(right: 10.0),
+            icon: Icon(Icons.account_box),
+            // onPressed: _airDress,
           ),
-          body: TabBarView(
-            children: [
-              new MyHomePage(),
-              new MyHomePage(),
-              new LocationPage(),
-              new MyHomePage(),
-            ],
-            controller: controller,
-          ),
-        );
+        ],
+        bottom: TabBar(
+          tabs: [
+            Tab(icon: Icon(Icons.home)),
+            Tab(icon: Icon(Icons.alarm)),
+            Tab(icon: Icon(Icons.account_balance)),
+            Tab(icon: Icon(Icons.book)),
+          ],
+          controller: controller,
+        ),
+      ),
+      body: TabBarView(
+        children: [
+          new MyHomePage(),
+          new TimerScreen(),
+          new LocationPage(),
+          new MyHomePage(),
+        ],
+        controller: controller,
+      ),
+    );
 //     return Scaffold(
 //       body: NestedScrollView(
 //         headerSliverBuilder: (BuildContext context, bool innerBoxIsScrolled) {
@@ -66,12 +69,12 @@ class _SliverWithTabBarState extends State<SliverWithTabBar> with SingleTickerPr
 //                     Container(
 //                       height: 110.0,
 //                       width: double.infinity,
-                      // decoration: new BoxDecoration(
-                      //   image: DecorationImage(
-                      //     image: new AssetImage('img/book.jpg'),
-                      //     fit: BoxFit.fill,
-                      //   ),
-                      // ),
+    // decoration: new BoxDecoration(
+    //   image: DecorationImage(
+    //     image: new AssetImage('img/book.jpg'),
+    //     fit: BoxFit.fill,
+    //   ),
+    // ),
 //                     ),
 //                     Padding(
 //                       padding: const EdgeInsets.all(10.0),
@@ -126,7 +129,6 @@ class _SliverWithTabBarState extends State<SliverWithTabBar> with SingleTickerPr
   }
 }
 
-
 // class Homepage extends StatefulWidget {
 //   @override
 //   State<StatefulWidget> createState() {
@@ -176,22 +178,22 @@ class _SliverWithTabBarState extends State<SliverWithTabBar> with SingleTickerPr
 //                               ],
 //                           ),
 //         ),
-                      //     bottomNavigationBar: Container(
-                      //         color: HexColor("ffdae9"),
-                      //         child: TabBar(
-                      //           tabs: [
-                      //           Tab(icon: Icon(Icons.home)),
-                      //           Tab(icon: Icon(Icons.alarm)),
-                      //           Tab(icon: Icon(Icons.account_balance)),
-                      //           Tab(icon: Icon(Icons.book)),
-                      //           ],
-                      //         ),
-                      //       ),
-                      //     body: 
-                      //   ),
-                      // );
+//     bottomNavigationBar: Container(
+//         color: HexColor("ffdae9"),
+//         child: TabBar(
+//           tabs: [
+//           Tab(icon: Icon(Icons.home)),
+//           Tab(icon: Icon(Icons.alarm)),
+//           Tab(icon: Icon(Icons.account_balance)),
+//           Tab(icon: Icon(Icons.book)),
+//           ],
+//         ),
+//       ),
+//     body:
+//   ),
+// );
 //                     }
-                  
+
 //                     CachedNetworkImage({int width, int height, BoxFit fit, String imageUrl}) {}
 // }
 
@@ -206,4 +208,3 @@ class HexColor extends Color {
 
   HexColor(final String hexColor) : super(_getColorFromHex(hexColor));
 }
-
