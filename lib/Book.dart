@@ -81,13 +81,11 @@ class BookState extends State<BookPage> {
                       child: ListView.builder(
                         itemCount: snapshot.data.results.books.length,
                         itemBuilder: (BuildContext context, int index) {
+                          //get data from each book by snapshot.data.results.books.elementAt(index).'SOMeTHING'
                           return Card(
                             child: Column(
                               children: <Widget>[
-                                Text('Title : ' +
-                                    snapshot.data.results.books
-                                        .elementAt(index)
-                                        .title),
+                                Text('Title : ' +snapshot.data.results.books.elementAt(index).title),
                               ],
                             ),
                           );
