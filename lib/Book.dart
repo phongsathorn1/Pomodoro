@@ -1,3 +1,5 @@
+import 'dart:convert';
+
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 import 'Model/bookcategory.dart';
@@ -12,6 +14,7 @@ class BookPage extends StatefulWidget {
 }
 
 class BookState extends State<BookPage> {
+  Book booklist = new Book();
   final TextEditingController _filter = new TextEditingController();
   Icon searchIcon = new Icon(Icons.search);
   Widget appBarTitle = new Text('Recommended Book');
@@ -40,73 +43,69 @@ class BookState extends State<BookPage> {
         backgroundColor: Colors.blue[200]);
   }
 
-   _bookList() async {
-    Book booklist = await http.get('https://api.nytimes.com/svc/books/v3/lists/current/e-book-fiction.json?api-key=AT9JzCxdnatIAYq28d7czaIxXdOMtgpk') as Book;
-    print(booklist.toJson());
-    var temp = <Widget>[Text('fffff'), Text('sadsff')];
-    return temp;
+  Future<Book> fetchPost() async {
+    final response = await http.get(
+        'https://api.nytimes.com/svc/books/v3/lists/current/e-book-fiction.json?api-key=AT9JzCxdnatIAYq28d7czaIxXdOMtgpk');
+    if (response.statusCode == 200) {
+      return Book.fromJson(json.decode(response.body));
+    } else {
+      throw Exception('Failed to load post');
+    }
   }
 
   @override
   Widget build(BuildContext context) {
     // TODO: implement build
-    return MaterialApp(
-      home: DefaultTabController(
-          length: categories.length,
-          child: MaterialApp(
-            theme: ThemeData(
-                primaryColor: Colors.blue[200],
-                tabBarTheme: TabBarTheme(
-                  labelColor: Colors.black,
-                )),
-            home: Scaffold(
-                resizeToAvoidBottomPadding: false,
-                appBar: buildBar(context),
-                body: Container(
-                  child: Column(
-                    children: <Widget>[
-                      TabBar(
-                        isScrollable: true,
-                        tabs: categories.map((Categories choice) {
-                          return Tab(
-                            text: choice.title,
+    return Scaffold(
+      resizeToAvoidBottomPadding: false,
+      appBar: buildBar(context),
+      body: DefaultTabController(
+        length: categories.length,
+        child: Scaffold(
+          appBar: TabBar(
+            isScrollable: true,
+            tabs: categories.map((Categories choice) {
+              return Tab(
+                text: choice.title,
+              );
+            }).toList(),
+          ),
+          body: TabBarView(
+            children: categories.map((Categories choice) {
+              return FutureBuilder<Book>(
+                future: fetchPost(),
+                builder: (context, snapshot) {
+                  if (snapshot.hasData) {
+                    return Container(
+                      ///!!!!!!!!!!!!!!!!!!!!!!!! DATA FROM API !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+                      child: ListView.builder(
+                        itemCount: snapshot.data.results.books.length,
+                        itemBuilder: (BuildContext context, int index) {
+                          return Card(
+                            child: Column(
+                              children: <Widget>[
+                                Text('Title : ' +
+                                    snapshot.data.results.books
+                                        .elementAt(index)
+                                        .title),
+                              ],
+                            ),
                           );
-                        }).toList(),
+                        },
                       ),
-                      TabBarView(
-                        children: _bookList(),
-                      ),
-                    ],
-                  ),
-                ),
-                bottomNavigationBar: new Theme(
-                  data: Theme.of(context).copyWith(
-                    // sets the background color of the `BottomNavigationBar`
-                    canvasColor: Colors.blue[200],
-                  ),
-                  child: BottomNavigationBar(
-                    items: [
-                      BottomNavigationBarItem(
-                          icon: Icon(Icons.home), title: Text("Home")),
-                      BottomNavigationBarItem(
-                          icon: Icon(Icons.access_time),
-                          title: Text("Pomodoro")),
-                      BottomNavigationBarItem(
-                          icon: Icon(Icons.book), title: Text("Book")),
-                      BottomNavigationBarItem(
-                        icon: Icon(Icons.location_on),
-                        title: Text("Location"),
-                      ),
-                    ],
-                    fixedColor: Colors.black,
-                    currentIndex: 2,
-                  ),
-                )
-//                labelColor: Colors.blue[200],
-//                unselectedLabelColor: Colors.black,
-//              ),
-                ),
-          )),
+                      //!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+                    );
+                  } else {
+                    return Center(
+                      child: new CircularProgressIndicator(),
+                    );
+                  }
+                },
+              );
+            }).toList(),
+          ),
+        ),
+      ),
     );
   }
 }
