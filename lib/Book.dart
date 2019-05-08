@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 import 'Model/bookcategory.dart';
 import 'Service/book_service.dart';
+import 'package:pomodoro/bookDetails.dart';
 
 class BookPage extends StatefulWidget {
   @override
@@ -11,6 +12,8 @@ class BookPage extends StatefulWidget {
     return BookState();
   }
 }
+
+Map<String, Book> allCategory = new Map<String, Book>();
 
 class BookState extends State<BookPage> {
   Book booklist = new Book();
@@ -43,12 +46,21 @@ class BookState extends State<BookPage> {
   }
 
   Future<Book> fetchPost(Categories name) async {
-    final response = await http.get(
-        'https://api.nytimes.com/svc/books/v3/lists/current/'+ name.encode +'.json?api-key=AT9JzCxdnatIAYq28d7czaIxXdOMtgpk');
-    if (response.statusCode == 200) {
-      return Book.fromJson(json.decode(response.body));
+    if (allCategory[name.encode] != null) {
+      return allCategory[name.encode];
     } else {
-      throw Exception('Failed to load post');
+      final response = await http.get(
+          'https://api.nytimes.com/svc/books/v3/lists/current/' +
+              name.encode +
+              '.json?api-key=AT9JzCxdnatIAYq28d7czaIxXdOMtgpk');
+      if (response.statusCode == 200) {
+        setState(() {
+          allCategory[name.encode] = Book.fromJson(json.decode(response.body));
+        });
+        return allCategory[name.encode];
+      } else {
+        throw Exception('Failed to load post');
+      }
     }
   }
 
@@ -84,24 +96,32 @@ class BookState extends State<BookPage> {
                         itemBuilder: (BuildContext context, int index) {
                           //get data from each book by snapshot.data.results.books.elementAt(index).'SOMeTHING'
                           return Card(
-                                child: Column(
-                                  children: <Widget>[
-                                    Image.network(snapshot.data.results.books.elementAt(index).bookImage, width: 250, height: 300),
-                                    Text(snapshot.data.results.books.elementAt(index).title, style: TextStyle(fontSize: 15)),
-                                    ButtonTheme.bar(
-                                      child: ButtonBar(
-                                        children: <Widget>[
-                                          FlatButton(
-                                            child: Text('Read More'),
-                                            onPressed: (){
-                                              Navigator.pushNamed(context, "/detail");
-                                            },
-                                          )
-                                        ],
-                                      ),
-                                    )
-                                  ],
-                                ),
+                            child: InkWell(
+                              onTap: () {
+                                var route = new MaterialPageRoute(
+                                  builder: (BuildContext context) =>
+                                      new BookDetails(
+                                          value: snapshot.data.results.books
+                                              .elementAt(index)),
+                                );
+                                Navigator.of(context).push(route);
+                              },
+                              child: Column(
+                                children: <Widget>[
+                                  Image.network(
+                                      snapshot.data.results.books
+                                          .elementAt(index)
+                                          .bookImage,
+                                      width: 250,
+                                      height: 300),
+                                  Text(
+                                      snapshot.data.results.books
+                                          .elementAt(index)
+                                          .title,
+                                      style: TextStyle(fontSize: 15)),
+                                ],
+                              ),
+                            ),
                           );
                         },
                       ),
@@ -137,4 +157,3 @@ const List<Categories> categories = const <Categories>[
   const Categories('Sports', 'sports'),
   const Categories('Travel', 'travel'),
 ];
-

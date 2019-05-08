@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'Book.dart';
+import 'package:pomodoro/Book.dart';
+import 'package:pomodoro/bookDetails.dart';
 
 void main() {
   runApp(MainPage());
@@ -11,6 +12,7 @@ class MainPage extends StatelessWidget {
       initialRoute: '/',
       routes: {
         '/': (BuildContext context) => BookPage(),
+        '/bookDetails': (BuildContext context) => BookDetails(),
       },
     );
   }
