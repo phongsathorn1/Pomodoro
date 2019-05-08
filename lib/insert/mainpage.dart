@@ -1,9 +1,13 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/foundation.dart';
-import 'package:carousel_pro/carousel_pro.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
+import 'package:pomodoro/views/timer_screen.dart';
 import 'package:pomodoro/widgets/detailsPage.dart';
+import 'package:carousel_slider/carousel_slider.dart';
+import 'package:pomodoro/widgets/locationPage.dart';
+import 'package:url_launcher/url_launcher.dart';
+import 'package:pomodoro/insert/homepage.dart';
 
 class MyHomePage extends StatefulWidget {
   @override
@@ -44,7 +48,13 @@ class _MyHomePageState extends State<MyHomePage> {
     });
   }
 
+  List<String> imgList = [
+    "resource/read1.jpg",
+    "resource/load1.png",
+    "resource/place1.jpg"
+  ];
   @override
+  int indexCarousel = 0;
   Widget build(BuildContext context) {
     return new Scaffold(
       body: SingleChildScrollView(
@@ -53,14 +63,52 @@ class _MyHomePageState extends State<MyHomePage> {
             new SizedBox(
                 height: 210.0,
                 width: double.infinity,
-                child: new Carousel(
-                  images: [
-                    new ExactAssetImage("resource/read1.jpg", scale: 1),
-                    new ExactAssetImage("resource/read3.jpg", scale: 1),
-                    new ExactAssetImage("resource/load1.png", scale: 1),
-                    new ExactAssetImage("resource/place1.jpg", scale: 1)
-                  ],
-                )),
+                child: CarouselSlider(
+                  onPageChanged: (int index) {
+                    setState(() {
+                      indexCarousel = index;
+                    });
+                  },
+                  initialPage: 0,
+                  autoPlay: true,
+                  height: 205,
+                  items: imgList.map((i) {
+                    return Builder(
+                      builder: (BuildContext context) {
+                        return Card(
+                          child: InkWell(
+                            onTap: () {
+                              setState(() {
+                                controller.animateTo(
+                                    (controller.index = indexCarousel));
+                              });
+                            },
+                            child: Container(
+                              width: MediaQuery.of(context).size.width,
+                              margin: EdgeInsets.symmetric(horizontal: 0.0),
+                              decoration: BoxDecoration(
+                                  color: Colors.black.withAlpha(70)),
+                              child: Image.asset(
+                                i,
+                                height: 205,
+                                fit: BoxFit.fill,
+                              ),
+                            ),
+                          ),
+                        );
+                      },
+                    );
+                  }).toList(),
+                )
+                // new Carousel(
+                //   images: [
+                //     new ExactAssetImage("resource/read1.jpg", scale: 1),
+                //     new ExactAssetImage("resource/read3.jpg", scale: 1),
+                //     new ExactAssetImage("resource/load1.png", scale: 1),
+                //     new ExactAssetImage("resource/place1.jpg", scale: 1),
+                //   ],
+                // )
+                ),
             new SizedBox(
               height: 15.0,
               width: double.infinity,

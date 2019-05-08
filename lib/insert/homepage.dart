@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 
-import 'package:carousel_pro/carousel_pro.dart';
 import 'package:pomodoro/insert/mainpage.dart';
 import 'package:pomodoro/widgets/locationPage.dart';
 
@@ -11,10 +10,11 @@ class SliverWithTabBar extends StatefulWidget {
   _SliverWithTabBarState createState() => _SliverWithTabBarState();
 }
 
+int tabIndex = 0;
+TabController controller;
+
 class _SliverWithTabBarState extends State<SliverWithTabBar>
     with SingleTickerProviderStateMixin {
-  TabController controller;
-
   @override
   void initState() {
     super.initState();
@@ -23,37 +23,50 @@ class _SliverWithTabBarState extends State<SliverWithTabBar>
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        backgroundColor: HexColor("#f3b7c3"),
-        title: new Text("Reading Guide"),
-        actions: <Widget>[
-          IconButton(
-            padding: const EdgeInsets.only(right: 10.0),
-            icon: Icon(Icons.account_box),
-            // onPressed: _airDress,
+    return DefaultTabController(
+      length: 4,
+      initialIndex: tabIndex,
+      child: Scaffold(
+        appBar: AppBar(
+          backgroundColor: HexColor("#f3b7c3"),
+          title: new Text("Reading Guide"),
+          actions: <Widget>[
+            IconButton(
+              padding: const EdgeInsets.only(right: 10.0),
+              icon: Icon(Icons.account_box),
+              // onPressed: _airDress,
+            ),
+          ],
+        ),
+        bottomNavigationBar: Container(
+          color: HexColor("#f3b7c3"),
+          child: TabBar(
+            onTap: (index) {
+              setState(() {
+                tabIndex = index;
+              });
+            },
+            tabs: [
+              Tab(icon: Icon(Icons.home)),
+              Tab(icon: Icon(Icons.alarm)),
+              Tab(icon: Icon(Icons.account_balance)),
+              Tab(icon: Icon(Icons.book)),
+            ],
+            controller: controller,
           ),
-        ],
-        bottom: TabBar(
-          tabs: [
-            Tab(icon: Icon(Icons.home)),
-            Tab(icon: Icon(Icons.alarm)),
-            Tab(icon: Icon(Icons.account_balance)),
-            Tab(icon: Icon(Icons.book)),
+        ),
+        body: TabBarView(
+          children: [
+            new MyHomePage(),
+            new TimerScreen(),
+            new LocationPage(),
+            new MyHomePage(),
           ],
           controller: controller,
         ),
       ),
-      body: TabBarView(
-        children: [
-          new MyHomePage(),
-          new TimerScreen(),
-          new LocationPage(),
-          new MyHomePage(),
-        ],
-        controller: controller,
-      ),
     );
+    ;
 //     return Scaffold(
 //       body: NestedScrollView(
 //         headerSliverBuilder: (BuildContext context, bool innerBoxIsScrolled) {

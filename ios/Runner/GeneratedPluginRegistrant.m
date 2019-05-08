@@ -6,6 +6,7 @@
 #import <cloud_firestore/CloudFirestorePlugin.h>
 #import <firebase_core/FirebaseCorePlugin.h>
 #import <google_maps_flutter/GoogleMapsPlugin.h>
+#import <url_launcher/UrlLauncherPlugin.h>
 
 @implementation GeneratedPluginRegistrant
 
@@ -13,6 +14,7 @@
   [FLTCloudFirestorePlugin registerWithRegistrar:[registry registrarForPlugin:@"FLTCloudFirestorePlugin"]];
   [FLTFirebaseCorePlugin registerWithRegistrar:[registry registrarForPlugin:@"FLTFirebaseCorePlugin"]];
   [FLTGoogleMapsPlugin registerWithRegistrar:[registry registrarForPlugin:@"FLTGoogleMapsPlugin"]];
+  [FLTUrlLauncherPlugin registerWithRegistrar:[registry registrarForPlugin:@"FLTUrlLauncherPlugin"]];
 }
 
 @end

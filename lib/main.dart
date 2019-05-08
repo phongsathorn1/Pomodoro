@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:pomodoro/insert/homepage.dart';
+import 'package:pomodoro/views/timer_screen.dart';
 import 'package:pomodoro/widgets/detailsPage.dart';
 import 'package:pomodoro/widgets/locationPage.dart';
 
@@ -12,19 +13,21 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
-      /*
+        title: 'Flutter Demo',
+        /*
       theme: ThemeData(
         primarySwatch: Colors.grey[350],
       ),*/
-      theme: ThemeData(
-        fontFamily: 'Sukhumvit',
-      ),
-      initialRoute: '/',
-      routes: {
-        '/': (BuildContext context) => new SliverWithTabBar(),
-        '/moreDetail': (BuildContext context) => new DetailsPage(),
-      },
-    );
+        theme: ThemeData(
+          fontFamily: 'Sukhumvit',
+        ),
+        initialRoute: '/',
+        routes: {
+          '/': (BuildContext context) => new SliverWithTabBar(),
+          '/moreDetail': (BuildContext context) => new DetailsPage(),
+          '/locationPage': (BuildContext context) => new LocationPage(),
+          '/timerScreen': (BuildContext context) => new TimerScreen(),
+          '/timerScreen': (BuildContext context) => new TimerScreen(),
+        });
   }
 }

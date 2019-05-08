@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "C:\\Users\\Cystle0\\Desktop\\runproject\\Pomodoro\\build\\app\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values\\values.xml",
+            "outputFile": "C:\\Users\\Cystle0\\Desktop\\mobileproject\\Pomodoro\\build\\app\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values\\values.xml",
             "map": [
                 {
                     "source": "C:\\Users\\Cystle0\\.gradle\\caches\\transforms-1\\files-1.1\\jetified-play-services-maps-16.1.0.aar\\0728f5ce79aec60d0a6e38a52dee7aca\\res\\values\\values.xml",
@@ -23,20 +23,22 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\Cystle0\\Desktop\\runproject\\Pomodoro\\build\\app\\generated\\res\\google-services\\debug\\values\\values.xml",
+                    "source": "C:\\Users\\Cystle0\\Desktop\\mobileproject\\Pomodoro\\android\\app\\src\\main\\res\\values\\styles.xml",
                     "from": {
-                        "startLines": "2,3,4,5,6,7,8,9",
-                        "startColumns": "4,4,4,4,4,4,4,4",
-                        "startOffsets": "55,199,320,402,506,609,729,839",
-                        "endColumns": "143,120,81,103,102,119,109,86",
-                        "endOffsets": "194,315,397,501,604,724,834,921"
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "57",
+                        "endLines": "6",
+                        "endColumns": "12",
+                        "endOffsets": "353"
                     },
                     "to": {
-                        "startLines": "75,76,77,78,79,80,81,82",
-                        "startColumns": "4,4,4,4,4,4,4,4",
-                        "startOffsets": "6033,6177,6298,6380,6484,6587,6707,6817",
-                        "endColumns": "143,120,81,103,102,119,109,86",
-                        "endOffsets": "6172,6293,6375,6479,6582,6702,6812,6899"
+                        "startLines": "84",
+                        "startColumns": "4",
+                        "startOffsets": "6975",
+                        "endLines": "88",
+                        "endColumns": "12",
+                        "endOffsets": "7267"
                     }
                 },
                 {
@@ -75,25 +77,6 @@
                         "endLines": "3,4,5,6,7,8,9,10,57,58,59,60,61,62,63,64,66,67,68,69,70,71,72,73,74,347,425",
                         "endColumns": "89,79,89,89,79,80,79,79,104,180,124,106,179,122,115,102,187,104,180,124,174,147,62,61,78,20,20",
                         "endOffsets": "251,331,421,511,591,672,752,832,3800,3981,4106,4213,4393,4516,4632,4735,5090,5195,5376,5501,5676,5824,5887,5949,6028,22231,24070"
-                    }
-                },
-                {
-                    "source": "C:\\Users\\Cystle0\\Desktop\\runproject\\Pomodoro\\android\\app\\src\\main\\res\\values\\styles.xml",
-                    "from": {
-                        "startLines": "2",
-                        "startColumns": "4",
-                        "startOffsets": "57",
-                        "endLines": "6",
-                        "endColumns": "12",
-                        "endOffsets": "353"
-                    },
-                    "to": {
-                        "startLines": "84",
-                        "startColumns": "4",
-                        "startOffsets": "6975",
-                        "endLines": "88",
-                        "endColumns": "12",
-                        "endOffsets": "7267"
                     }
                 },
                 {
@@ -147,6 +130,23 @@
                         "startOffsets": "969,1058,1187,2800,2853,2906,2959,3502,7590,7766,7888,8150,8345",
                         "endColumns": "88,70,72,52,52,52,52,59,65,121,60,65,66",
                         "endOffsets": "1053,1124,1255,2848,2901,2954,3007,3557,7651,7883,7944,8211,8407"
+                    }
+                },
+                {
+                    "source": "C:\\Users\\Cystle0\\Desktop\\mobileproject\\Pomodoro\\build\\app\\generated\\res\\google-services\\debug\\values\\values.xml",
+                    "from": {
+                        "startLines": "2,3,4,5,6,7,8,9",
+                        "startColumns": "4,4,4,4,4,4,4,4",
+                        "startOffsets": "55,199,320,402,506,609,729,839",
+                        "endColumns": "143,120,81,103,102,119,109,86",
+                        "endOffsets": "194,315,397,501,604,724,834,921"
+                    },
+                    "to": {
+                        "startLines": "75,76,77,78,79,80,81,82",
+                        "startColumns": "4,4,4,4,4,4,4,4",
+                        "startOffsets": "6033,6177,6298,6380,6484,6587,6707,6817",
+                        "endColumns": "143,120,81,103,102,119,109,86",
+                        "endOffsets": "6172,6293,6375,6479,6582,6702,6812,6899"
                     }
                 }
             ]
