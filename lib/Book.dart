@@ -1,5 +1,4 @@
 import 'dart:convert';
-
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 import 'Model/bookcategory.dart';
@@ -43,9 +42,9 @@ class BookState extends State<BookPage> {
         backgroundColor: Colors.blue[200]);
   }
 
-  Future<Book> fetchPost() async {
+  Future<Book> fetchPost(Categories name) async {
     final response = await http.get(
-        'https://api.nytimes.com/svc/books/v3/lists/current/e-book-fiction.json?api-key=AT9JzCxdnatIAYq28d7czaIxXdOMtgpk');
+        'https://api.nytimes.com/svc/books/v3/lists/current/'+ name.encode +'.json?api-key=AT9JzCxdnatIAYq28d7czaIxXdOMtgpk');
     if (response.statusCode == 200) {
       return Book.fromJson(json.decode(response.body));
     } else {
@@ -63,6 +62,8 @@ class BookState extends State<BookPage> {
         length: categories.length,
         child: Scaffold(
           appBar: TabBar(
+            unselectedLabelColor: Colors.black,
+            labelColor: Colors.blue[200],
             isScrollable: true,
             tabs: categories.map((Categories choice) {
               return Tab(
@@ -73,7 +74,7 @@ class BookState extends State<BookPage> {
           body: TabBarView(
             children: categories.map((Categories choice) {
               return FutureBuilder<Book>(
-                future: fetchPost(),
+                future: fetchPost(choice),
                 builder: (context, snapshot) {
                   if (snapshot.hasData) {
                     return Container(
@@ -83,11 +84,24 @@ class BookState extends State<BookPage> {
                         itemBuilder: (BuildContext context, int index) {
                           //get data from each book by snapshot.data.results.books.elementAt(index).'SOMeTHING'
                           return Card(
-                            child: Column(
-                              children: <Widget>[
-                                Text('Title : ' +snapshot.data.results.books.elementAt(index).title),
-                              ],
-                            ),
+                                child: Column(
+                                  children: <Widget>[
+                                    Image.network(snapshot.data.results.books.elementAt(index).bookImage, width: 250, height: 300),
+                                    Text(snapshot.data.results.books.elementAt(index).title, style: TextStyle(fontSize: 15)),
+                                    ButtonTheme.bar(
+                                      child: ButtonBar(
+                                        children: <Widget>[
+                                          FlatButton(
+                                            child: Text('Read More'),
+                                            onPressed: (){
+                                              Navigator.pushNamed(context, "/detail");
+                                            },
+                                          )
+                                        ],
+                                      ),
+                                    )
+                                  ],
+                                ),
                           );
                         },
                       ),
@@ -109,35 +123,18 @@ class BookState extends State<BookPage> {
 }
 
 class Categories {
-  const Categories(this.title);
+  const Categories(this.title, this.encode);
   final String title;
+  final String encode;
 }
 
 const List<Categories> categories = const <Categories>[
-  const Categories('Series Books'),
-  const Categories('Manga'),
-  const Categories('Animals'),
-  const Categories('Health'),
-  const Categories('Science'),
-  const Categories('Sports'),
-  const Categories('Travel'),
+  const Categories('Series Books', 'series-books'),
+  const Categories('Manga', 'manga'),
+  const Categories('Animals', 'animals'),
+  const Categories('Health', 'health'),
+  const Categories('Science', 'science'),
+  const Categories('Sports', 'sports'),
+  const Categories('Travel', 'travel'),
 ];
 
-class BookCard extends StatelessWidget {
-  const BookCard({Key key, this.book}) : super(key: key);
-
-  final Categories book;
-
-  @override
-  Widget build(BuildContext context) {
-    final TextStyle textStyle = Theme.of(context).textTheme.display1;
-    return Card(
-      color: Colors.white,
-      child: Row(
-        children: <Widget>[
-          Text(book.title, style: textStyle),
-        ],
-      ),
-    );
-  }
-}
