@@ -118,7 +118,7 @@ class BookState extends State<BookPage> {
                                       snapshot.data.results.books
                                           .elementAt(index)
                                           .title,
-                                      style: TextStyle(fontSize: 15)),
+                                      style: TextStyle(fontSize: 20)),
                                 ],
                               ),
                             ),
