@@ -48,12 +48,18 @@ class BookDetailsState extends State<BookDetails> {
         ),
       ),
       body: Container(
-        child: Column(
-          children: <Widget>[
-            Text(book.author),
-            Text(book.description),
-          ],
-        ),
+        child: Padding(padding: EdgeInsets.only(top: 20, bottom: 10, left: 10, right: 10),
+          child: Column(
+            children: <Widget>[
+              Image.network(book.bookImage, height: 300, width: 250),
+              Text('Author: ' + book.author),
+              Text('Publisher: ' + book.publisher),
+              Text('Contributor: ' + book.contributor),
+              Text('ISBN: ' + book.primaryIsbn10),
+              Text('Description: ' + book.description),
+            ],
+          ),
+        )
       ),
     );
   }
