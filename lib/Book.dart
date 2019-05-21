@@ -112,8 +112,8 @@ class BookState extends State<BookPage> {
                                       snapshot.data.results.books
                                           .elementAt(index)
                                           .bookImage,
-                                      width: 250,
-                                      height: 300),
+                                      width: 150,
+                                      height: 200),
                                   Text(
                                       snapshot.data.results.books
                                           .elementAt(index)

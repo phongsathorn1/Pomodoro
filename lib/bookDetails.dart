@@ -43,24 +43,63 @@ class BookDetailsState extends State<BookDetails> {
     return Scaffold(
       appBar: AppBar(
         title: Text(
-          book.title,
+          'รายละเอียดหนังสือ',
           overflow: TextOverflow.ellipsis,
         ),
       ),
       body: Container(
-          child: Padding(
-        padding: EdgeInsets.only(top: 20, bottom: 10, left: 10, right: 10),
-        child: Column(
-          children: <Widget>[
-            Image.network(book.bookImage, height: 300, width: 250),
-            Text('Author: ' + book.author),
-            Text('Publisher: ' + book.publisher),
-            Text('Contributor: ' + book.contributor),
-            Text('ISBN: ' + book.primaryIsbn10),
-            Text('Description: ' + book.description),
-          ],
+        color: Colors.grey[350],
+        child: SingleChildScrollView(
+          child: Card(
+            margin: EdgeInsets.only(top: 10, bottom: 10, left: 10, right: 10),
+            child: Padding(
+              padding:
+                  EdgeInsets.only(top: 20, bottom: 20, left: 10, right: 10),
+              child: Column(
+                children: <Widget>[
+                  Container(
+                    margin: EdgeInsets.only(bottom: 10),
+                    child: ListTile(
+                      title: Text(
+                        book.title,
+                        textAlign: TextAlign.center,
+                        style: TextStyle(
+                          fontSize: 25,
+                        ),
+                      ),
+                    ),
+                  ),
+                  Container(
+                    margin: EdgeInsets.only(bottom: 15),
+                    child:
+                        Image.network(book.bookImage, height: 300, width: 250),
+                  ),
+                  ListTile(
+                    leading: Text('Author: '),
+                    title: Text(book.author),
+                  ),
+                  ListTile(
+                    leading: Text('Publisher: '),
+                    title: Text(book.publisher),
+                  ),
+                  ListTile(
+                    leading: Text('Contributor: '),
+                    title: Text(book.contributor),
+                  ),
+                  ListTile(
+                    leading: Text('ISBN: '),
+                    title: Text(book.primaryIsbn10),
+                  ),
+                  ListTile(
+                    leading: Text('Description: '),
+                    title: Text(book.description),
+                  ),
+                ],
+              ),
+            ),
+          ),
         ),
-      )),
+      ),
     );
   }
 }
