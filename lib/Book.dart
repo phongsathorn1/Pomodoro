@@ -91,35 +91,50 @@ class BookState extends State<BookPage> {
                   if (snapshot.hasData) {
                     return Container(
                       ///!!!!!!!!!!!!!!!!!!!!!!!! DATA FROM API !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-                      child: ListView.builder(
+                      child: GridView.builder(
+                        gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                          crossAxisCount: 3,
+                          childAspectRatio: 0.575,
+                        ),
                         itemCount: snapshot.data.results.books.length,
                         itemBuilder: (BuildContext context, int index) {
                           //get data from each book by snapshot.data.results.books.elementAt(index).'SOMeTHING'
-                          return Card(
-                            child: InkWell(
-                              onTap: () {
-                                var route = new MaterialPageRoute(
-                                  builder: (BuildContext context) =>
-                                      new BookDetails(
-                                          value: snapshot.data.results.books
-                                              .elementAt(index)),
-                                );
-                                Navigator.of(context).push(route);
-                              },
-                              child: Column(
-                                children: <Widget>[
-                                  Image.network(
-                                      snapshot.data.results.books
-                                          .elementAt(index)
-                                          .bookImage,
-                                      width: 150,
-                                      height: 200),
-                                  Text(
-                                      snapshot.data.results.books
-                                          .elementAt(index)
-                                          .title,
-                                      style: TextStyle(fontSize: 20)),
-                                ],
+                          return Container(
+                            width: 200,
+                            child: Card(
+                              child: InkWell(
+                                onTap: () {
+                                  var route = new MaterialPageRoute(
+                                    builder: (BuildContext context) =>
+                                        new BookDetails(
+                                            value: snapshot.data.results.books
+                                                .elementAt(index)),
+                                  );
+                                  Navigator.of(context).push(route);
+                                },
+                                child: Column(
+                                  children: <Widget>[
+                                    Image.network(
+                                        snapshot.data.results.books
+                                            .elementAt(index)
+                                            .bookImage,
+                                        width: 150,
+                                        height: 200),
+                                    Container(
+                                      margin: EdgeInsets.only(left: 5),
+                                      child: Text(
+                                        snapshot.data.results.books
+                                            .elementAt(index)
+                                            .title,
+                                        overflow: TextOverflow.ellipsis,
+                                        style: TextStyle(
+                                          fontSize: 14,
+                                        ),
+                                        textDirection: TextDirection.ltr,
+                                      ),
+                                    ),
+                                  ],
+                                ),
                               ),
                             ),
                           );
