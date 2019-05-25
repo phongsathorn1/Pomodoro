@@ -1,13 +1,14 @@
+import 'dart:convert';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/foundation.dart';
-import 'package:flutter_rating_bar/flutter_rating_bar.dart';
-import 'package:pomodoro/views/timer_screen.dart';
+import 'package:pomodoro/bookpage/Book.dart';
+import 'package:pomodoro/bookpage/Model/bookcategory.dart';
+import 'package:pomodoro/bookpage/bookDetails.dart';
+import 'package:pomodoro/fonts/fonts.dart';
 import 'package:pomodoro/widgets/detailsPage.dart';
 import 'package:carousel_slider/carousel_slider.dart';
-import 'package:pomodoro/widgets/locationPage.dart';
-import 'package:url_launcher/url_launcher.dart';
 import 'package:pomodoro/insert/homepage.dart';
+import 'package:http/http.dart' as http;
 
 class MyHomePage extends StatefulWidget {
   @override
@@ -48,67 +49,90 @@ class _MyHomePageState extends State<MyHomePage> {
     });
   }
 
+  Future<Book> fetchPost(Categories name) async {
+    if (allCategory[name.encode] != null) {
+      return allCategory[name.encode];
+    } else {
+      final response = await http.get(
+          'https://api.nytimes.com/svc/books/v3/lists/current/' +
+              name.encode +
+              '.json?api-key=AT9JzCxdnatIAYq28d7czaIxXdOMtgpk');
+      if (response.statusCode == 200) {
+        setState(() {
+          allCategory[name.encode] = Book.fromJson(json.decode(response.body));
+        });
+        return allCategory[name.encode];
+      } else {
+        throw Exception('Failed to load post');
+      }
+    }
+  }
+
   List<String> imgList = [
-    "resource/read1.jpg",
-    "resource/load1.png",
-    "resource/place1.jpg"
+    "resource/Label_book.png",
+    "resource/Label_timer_2.png",
+    "resource/Label_Place.png"
   ];
   @override
   int indexCarousel = 0;
   Widget build(BuildContext context) {
+    for (var i in categories) fetchPost(i);
+
     return new Scaffold(
+      appBar: AppBar(
+        backgroundColor: HexColor("#f3b7c3"),
+        title: Center(
+            child: Text(
+          'Reading Guide',
+          style: TextStyle(
+            fontFamily: GetTextStyle(),
+          ),
+        )),
+      ),
       body: SingleChildScrollView(
         child: Column(
           children: <Widget>[
             new SizedBox(
-                height: 210.0,
-                width: double.infinity,
-                child: CarouselSlider(
-                  onPageChanged: (int index) {
-                    setState(() {
-                      indexCarousel = index;
-                    });
-                  },
-                  initialPage: 0,
-                  autoPlay: true,
-                  height: 205,
-                  items: imgList.map((i) {
-                    return Builder(
-                      builder: (BuildContext context) {
-                        return Card(
-                          child: InkWell(
-                            onTap: () {
-                              setState(() {
-                                controller.animateTo(
-                                    (controller.index = indexCarousel));
-                              });
-                            },
-                            child: Container(
-                              width: MediaQuery.of(context).size.width,
-                              margin: EdgeInsets.symmetric(horizontal: 0.0),
-                              decoration: BoxDecoration(
-                                  color: Colors.black.withAlpha(70)),
-                              child: Image.asset(
-                                i,
-                                height: 205,
-                                fit: BoxFit.fill,
-                              ),
+              height: 210.0,
+              width: double.infinity,
+              child: CarouselSlider(
+                onPageChanged: (int index) {
+                  setState(() {
+                    indexCarousel = index;
+                  });
+                },
+                initialPage: 0,
+                autoPlay: true,
+                height: 205,
+                items: imgList.map((i) {
+                  return Builder(
+                    builder: (BuildContext context) {
+                      return Card(
+                        child: InkWell(
+                          onTap: () {
+                            setState(() {
+                              controller.animateTo((controller.index =
+                                  indexCarousel == 0 ? 3 : indexCarousel));
+                            });
+                          },
+                          child: Container(
+                            width: MediaQuery.of(context).size.width,
+                            margin: EdgeInsets.symmetric(horizontal: 0.0),
+                            decoration: BoxDecoration(
+                                color: Colors.black.withAlpha(70)),
+                            child: Image.asset(
+                              i,
+                              height: 205,
+                              fit: BoxFit.fill,
                             ),
                           ),
-                        );
-                      },
-                    );
-                  }).toList(),
-                )
-                // new Carousel(
-                //   images: [
-                //     new ExactAssetImage("resource/read1.jpg", scale: 1),
-                //     new ExactAssetImage("resource/read3.jpg", scale: 1),
-                //     new ExactAssetImage("resource/load1.png", scale: 1),
-                //     new ExactAssetImage("resource/place1.jpg", scale: 1),
-                //   ],
-                // )
-                ),
+                        ),
+                      );
+                    },
+                  );
+                }).toList(),
+              ),
+            ),
             new SizedBox(
               height: 15.0,
               width: double.infinity,
@@ -126,21 +150,50 @@ class _MyHomePageState extends State<MyHomePage> {
                   if (snapshot.hasData) {
                     return Column(
                       children: <Widget>[
-                        CustomCard(
+                        InkWell(
+                          onTap: () {
+                            var route = new MaterialPageRoute(
+                                builder: (BuildContext context) =>
+                                    new DetailsPage(
+                                      value:
+                                          snapshot.data.documents.elementAt(0),
+                                    ));
+                            Navigator.of(context).push(route);
+                          },
+                          child: CustomCard(
                             snapshot.data.documents
                                 .elementAt(0)
                                 .data['img_head'],
-                            snapshot.data.documents.elementAt(0).data['name']),
-                        CustomCard(
+                            snapshot.data.documents.elementAt(0).data['name'],
+                          ),
+                        ),
+                        InkWell(
+                          onTap: () {
+                            var route = new MaterialPageRoute(
+                                builder: (BuildContext context) =>
+                                    new DetailsPage(
+                                      value:
+                                          snapshot.data.documents.elementAt(1),
+                                    ));
+                            Navigator.of(context).push(route);
+                          },
+                          child: CustomCard(
                             snapshot.data.documents
                                 .elementAt(1)
                                 .data['img_head'],
-                            snapshot.data.documents.elementAt(1).data['name']),
+                            snapshot.data.documents.elementAt(1).data['name'],
+                          ),
+                        ),
                       ],
                     );
                   } else {
                     return Center(
-                      child: Text('No data found'),
+                      child: Text(
+                        'No data found',
+                        style: TextStyle(
+                          fontFamily: GetTextStyle(),
+                        ),
+                      ),
                     );
                   }
                 },
@@ -152,119 +205,179 @@ class _MyHomePageState extends State<MyHomePage> {
               width: double.infinity,
             ),
             new Text(
-              "New & Notable",
-              style: TextStyle(fontStyle: FontStyle.italic, fontSize: 20.0),
+              categories[0].title,
+              style: TextStyle(fontFamily: GetTextStyle(), fontSize: 20.0),
             ),
             new SizedBox(
               height: 10.0,
               width: double.infinity,
             ),
-            new Row(children: <Widget>[
-              new CustomBookCard(
-                  'https://asset.mebmarket.com/meb/server1/47713/Thumbnail/large.gif?2'),
-              new CustomBookCard(
-                  'http://ddd.scimath.org/images/stories/flexicontent/item_6757_field_24/m_math-p3.jpg'),
-              new CustomBookCard(
-                  'http://ddd.scimath.org/images/stories/flexicontent/item_6760_field_24/m_math-p5.jpg'),
-              new CustomBookCard(
-                  'https://images-se-ed.com/ws/Storage/Originals/978974/186/9789741860920L.jpg?h=1b35a7cb0e2237960b9bffceb6b01061'),
-            ]),
+            Container(
+              height: 138,
+              child: ListView.builder(
+                scrollDirection: Axis.horizontal,
+                itemCount: 5,
+                itemBuilder: (BuildContext context, int ind) {
+                  try {
+                    return InkWell(
+                      onTap: () {
+                        var route = new MaterialPageRoute(
+                          builder: (BuildContext context) => new BookDetails(
+                                value: allCategory[categories[0].encode]
+                                    .results
+                                    .books[ind],
+                              ),
+                        );
+                        Navigator.of(context).push(route);
+                      },
+                      child: CustomBookCard(
+                        allCategory[categories[0].encode]
+                            .results
+                            .books[ind]
+                            .bookImage,
+                      ),
+                    );
+                  } catch (e) {
+                    return Center(
+                      child: CircularProgressIndicator(),
+                    );
+                  }
+                },
+              ),
+            ),
             new SizedBox(
               height: 10.0,
               width: double.infinity,
             ),
             new Text(
-              "be enjoyable to read",
-              style: TextStyle(fontStyle: FontStyle.italic, fontSize: 20.0),
+              categories[1].title,
+              style: TextStyle(fontFamily: GetTextStyle(), fontSize: 20.0),
             ),
             new SizedBox(
               height: 10.0,
               width: double.infinity,
             ),
-            new Row(children: <Widget>[
-              new CustomBookCard(
-                  'https://images-se-ed.com/ws/Storage/Originals/978974/960/9789749601136L.gif?h=95df419e9329bad70785e8270a84a8f2'),
-              new CustomBookCard(
-                  'https://static.getbookie.com/products/images/0000/00/full/923-113990-%E0%B8%9C%E0%B8%88%E0%B8%8D%E0%B8%A0%E0%B8%B1%E0%B8%A2%E0%B8%AD%E0%B8%B1%E0%B8%99%E0%B8%95%E0%B8%A3%E0%B8%B2%E0%B8%A2%E0%B9%83%E0%B8%81%E0%B8%A5%E0%B9%89%E0%B8%95%E0%B8%B1%E0%B8%A7.jpg'),
-              new CustomBookCard(
-                  'https://static.getbookie.com/products/images/0000/00/full/921-113988-%E0%B8%9C%E0%B8%88%E0%B8%8D%E0%B8%A0%E0%B8%B1%E0%B8%A2%E0%B9%83%E0%B8%99%E0%B8%96%E0%B9%89%E0%B8%B3%E0%B8%A1%E0%B8%B7%E0%B8%94.jpg'),
-              new CustomBookCard(
-                  'http://www.chulabook.com/images/book-400/9789741647224.jpg'),
-            ]),
+            Container(
+              height: 138,
+              child: ListView.builder(
+                scrollDirection: Axis.horizontal,
+                itemCount: 5,
+                itemBuilder: (BuildContext context, int ind) {
+                  try {
+                    InkWell(
+                      onTap: () {
+                        var route = new MaterialPageRoute(
+                          builder: (BuildContext context) => new BookDetails(
+                                value: allCategory[categories[1].encode]
+                                    .results
+                                    .books[ind],
+                              ),
+                        );
+                        Navigator.of(context).push(route);
+                      },
+                      child: CustomBookCard(
+                        allCategory[categories[1].encode]
+                            .results
+                            .books[ind]
+                            .bookImage,
+                      ),
+                    );
+                  } catch (e) {
+                    return Center(
+                      child: CircularProgressIndicator(),
+                    );
+                  }
+                },
+              ),
+            ),
             new SizedBox(
               height: 10.0,
               width: double.infinity,
             ),
             new Text(
-              "be fun to read",
-              style: TextStyle(fontStyle: FontStyle.italic, fontSize: 20.0),
+              categories[2].title,
+              style: TextStyle(fontFamily: GetTextStyle(), fontSize: 20.0),
             ),
             new SizedBox(
               height: 10.0,
               width: double.infinity,
             ),
-            new Row(children: <Widget>[
-              new CustomBookCard(
-                  'https://images-se-ed.com/ws/Storage/Originals/978616/780/9786167808017L.jpg?h=26f9c330803c62e7fb7e65d21bdb1835'),
-              new CustomBookCard(
-                  'http://www.stabundamrong.go.th/library/images/book_pic/2553/Jun53.5.jpg'),
-              new CustomBookCard(
-                  'https://images-se-ed.com/ws/Storage/Originals/978616/275/9786162756757L.jpg?h=d93d9d7a990f7d6e67d39979f3641367'),
-              new CustomBookCard(
-                  'http://www.oknation.net/blog/home/blog_data/149/1149/images/hajhakreng1.jpg'),
-            ])
+            Container(
+              height: 138,
+              child: ListView.builder(
+                scrollDirection: Axis.horizontal,
+                itemCount: 5,
+                itemBuilder: (BuildContext context, int ind) {
+                  try {
+                    return InkWell(
+                      onTap: () {
+                        var route = new MaterialPageRoute(
+                          builder: (BuildContext context) => new BookDetails(
+                                value: allCategory[categories[2].encode]
+                                    .results
+                                    .books[ind],
+                              ),
+                        );
+                        Navigator.of(context).push(route);
+                      },
+                      child: CustomBookCard(
+                        allCategory[categories[2].encode]
+                            .results
+                            .books[ind]
+                            .bookImage,
+                      ),
+                    );
+                  } catch (e) {
+                    return Center(
+                      child: CircularProgressIndicator(),
+                    );
+                  }
+                },
+              ),
+            ),
+            new Text(
+              categories[3].title,
+              style: TextStyle(fontFamily: GetTextStyle(), fontSize: 20.0),
+            ),
+            new SizedBox(
+              height: 10.0,
+              width: double.infinity,
+            ),
+            Container(
+              height: 138,
+              child: ListView.builder(
+                scrollDirection: Axis.horizontal,
+                itemCount: 5,
+                itemBuilder: (BuildContext context, int ind) {
+                  try {
+                    return InkWell(
+                      onTap: () {
+                        var route = new MaterialPageRoute(
+                          builder: (BuildContext context) => new BookDetails(
+                                value: allCategory[categories[2].encode]
+                                    .results
+                                    .books[ind],
+                              ),
+                        );
+                        Navigator.of(context).push(route);
+                      },
+                      child: CustomBookCard(
+                        allCategory[categories[3].encode]
+                            .results
+                            .books[ind]
+                            .bookImage,
+                      ),
+                    );
+                  } catch (e) {
+                    return Center(
+                      child: CircularProgressIndicator(),
+                    );
+                  }
+                },
+              ),
+            ),
           ],
         ),
-
-        // mainAxisAlignment: MainAxisAlignment.start,
-        // children: <Widget>[
-        //   Center(
-        //     child: Stack(
-        //       children: <Widget>[
-        //         Container(
-        //           decoration: BoxDecoration(
-        //               image: DecorationImage(
-        //                   image: AssetImage(photos[photoIndex]),
-        //                   fit: BoxFit.fitWidth)),
-        //           height: 200.0,
-        //         ),
-        //         Positioned(
-        //           top: 375.0,
-        //           left: 25.0,
-        //           right: 25.0,
-        //           child: SelectedPhoto(numberOfDots: photos.length, photoIndex: photoIndex),
-        //         )
-        //       ],
-        //     ),
-        //   ),
-        //   Row(
-        //     mainAxisAlignment: MainAxisAlignment.center,
-        //     children: <Widget>[
-        //       RaisedButton(
-        //         child: Text('Next'),
-        //         onPressed: _nextImage,
-        //         elevation: 5.0,
-        //         color: Colors.green,
-        //       ),
-        //       SizedBox(width: 10.0),
-        //       RaisedButton(
-        //         child: Text('Prev'),
-        //         onPressed: _previousImage,
-        //         elevation: 5.0,
-        //         color: Colors.blue,
-        //       )
-        //     ],
-        //   ),
-        //   new ListView(
-        //       shrinkWrap: true,
-        //       padding: const EdgeInsets.all(20.0),
-        //       children: List.generate(choices.length, (index) {
-        //           return Center(
-        //             child: ChoiceCard(choice: choices[index], item: choices[index]),
-        //           );
-        //       }
-        //     ),
-        //   ),
       ),
     );
   }
@@ -301,7 +414,7 @@ class CustomCard extends StatelessWidget {
                         padding: new EdgeInsets.all(7.0),
                         child: new Text(
                           description,
-                          style: new TextStyle(fontSize: 18.0),
+                          style: TextStyle(fontFamily: GetTextStyle()),
                           overflow: TextOverflow.ellipsis,
                         ),
                       ),
@@ -324,7 +437,7 @@ class CustomBookCard extends StatelessWidget {
     return new Card(
       child: new Column(
         children: <Widget>[
-          new Image.network(title, fit: BoxFit.cover, height: 120, width: 94),
+          new Image.network(title, fit: BoxFit.cover, height: 130, width: 94),
         ],
       ),
     );
@@ -352,8 +465,7 @@ class CustomCardTopic extends StatelessWidget {
                     padding: new EdgeInsets.all(7.0),
                     child: new Text(
                       description,
-                      style: TextStyle(
-                          fontStyle: FontStyle.italic, fontSize: 20.0),
+                      style: TextStyle(fontFamily: GetTextStyle()),
                     ),
                   ),
                 ],
@@ -364,146 +476,15 @@ class CustomCardTopic extends StatelessWidget {
   }
 }
 
-// class SelectedPhoto extends StatelessWidget {
+class Categories {
+  const Categories(this.title, this.encode);
+  final String title;
+  final String encode;
+}
 
-//   final int numberOfDots;
-//   final int photoIndex;
-
-//   SelectedPhoto({this.numberOfDots, this.photoIndex});
-
-//   Widget _inactivePhoto() {
-//     return new Container(
-//       child: new Padding(
-//         padding: const EdgeInsets.only(left: 3.0, right: 3.0),
-//         child: Container(
-//           height: 8.0,
-//           width: 8.0,
-//           decoration: BoxDecoration(
-//             color: Colors.grey,
-//             borderRadius: BorderRadius.circular(4.0)
-//           ),
-//         ),
-//       )
-//     );
-//   }
-
-//   Widget _activePhoto() {
-//     return Container(
-//       child: Padding(
-//         padding: EdgeInsets.only(left: 3.0, right: 3.0),
-//         child: Container(
-//           height: 10.0,
-//           width: 10.0,
-//           decoration: BoxDecoration(
-//             color: Colors.white,
-//             borderRadius: BorderRadius.circular(5.0),
-//             boxShadow: [
-//               BoxShadow(
-//                 color: Colors.grey,
-//                 spreadRadius: 0.0,
-//                 blurRadius: 2.0
-//               )
-//             ]
-//           ),
-//         ),
-//       ),
-//     );
-//   }
-
-//   List<Widget> _buildDots() {
-//     List<Widget> dots = [];
-
-//     for(int i = 0; i< numberOfDots; ++i) {
-//       dots.add(
-//         i == photoIndex ? _activePhoto(): _inactivePhoto()
-//       );
-//     }
-
-//     return dots;
-//   }
-
-//   @override
-//   Widget build(BuildContext context) {
-//     return new Center(
-//       child: Row(
-//         mainAxisAlignment: MainAxisAlignment.center,
-//         children: _buildDots(),
-//       ),
-//     );
-//   }
-// }
-
-// class Choice {
-//   const Choice({this.title, this.icon});
-
-//   final String title;
-//   final IconData icon;
-// }
-
-// const List<Choice> choices = const <Choice>[
-//   const Choice(title: 'This is a Car, because its a car. So, it\'s a car. This is a Car, because its a car. So, it\'s a car. This is a Car, because its a car. So, it\'s a car. This is a Car, because its a car. So, it\'s a car. This is a Car, because its a car. So, it\'s a car. This is a Car, because its a car. So, it\'s a car. This is a Car, because its a car. So, it\'s a car. This is a Car, because its a car. So, it\'s a car. This is a Car, because its a car. So, it\'s a car. This is a Car, because its a car. So, it\'s a car.', icon: Icons.directions_car),
-//   const Choice(title: 'This is a Bicycle, because its a Bicycle. So, it\'s a Bicycle. This is a Bicycle, because its a Bicycle. So, it\'s a Bicycle. This is a Bicycle, because its a Bicycle. So, it\'s a Bicycle.', icon: Icons.directions_bike),
-//   const Choice(title: 'This is a Boat, because its a Boat. So, it\'s a Boat', icon: Icons.directions_boat),
-//   const Choice(title: 'This is a Bus, because its a Bus. So, it\'s a Bus', icon: Icons.directions_bus),
-//   const Choice(title: 'This is a Train, because its a Train. So, it\'s a Train', icon: Icons.directions_railway),
-//   const Choice(title: 'This is a Walk, because its a Walk. So, it\'s a Walk', icon: Icons.directions_walk),
-//   const Choice(title: 'This is a Car, because its a car. So, it\'s a car. This is a Car, because its a car. So, it\'s a car. This is a Car, because its a car. So, it\'s a car. This is a Car, because its a car. So, it\'s a car. This is a Car, because its a car. So, it\'s a car. This is a Car, because its a car. So, it\'s a car. This is a Car, because its a car. So, it\'s a car. This is a Car, because its a car. So, it\'s a car. This is a Car, because its a car. So, it\'s a car. This is a Car, because its a car. So, it\'s a car.', icon: Icons.directions_car),
-//   const Choice(title: 'This is a Car, because its a car. So, it\'s a car', icon: Icons.directions_car),
-//   const Choice(title: 'This is a Bicycle, because its a Bicycle. So, it\'s a Bicycle', icon: Icons.directions_bike),
-//   const Choice(title: 'This is a Boat, because its a Boat. So, it\'s a Boat', icon: Icons.directions_boat),
-//   const Choice(title: 'This is a Bus, because its a Bus. So, it\'s a Bus', icon: Icons.directions_bus),
-//   const Choice(title: 'This is a Train, because its a Train. So, it\'s a Train', icon: Icons.directions_railway),
-//   const Choice(title: 'This is a Walk, because its a Walk. So, it\'s a Walk', icon: Icons.directions_walk),
-//   const Choice(title: 'This is a Car, because its a car. So, it\'s a car. This is a Car, because its a car. So, it\'s a car. This is a Car, because its a car. So, it\'s a car. This is a Car, because its a car. So, it\'s a car. This is a Car, because its a car. So, it\'s a car. This is a Car, because its a car. So, it\'s a car. This is a Car, because its a car. So, it\'s a car. This is a Car, because its a car. So, it\'s a car. This is a Car, because its a car. So, it\'s a car. This is a Car, because its a car. So, it\'s a car.', icon: Icons.directions_car),
-//   const Choice(title: 'This is a Car, because its a car. So, it\'s a car', icon: Icons.directions_car),
-//   const Choice(title: 'This is a Bicycle, because its a Bicycle. So, it\'s a Bicycle', icon: Icons.directions_bike),
-//   const Choice(title: 'This is a Boat, because its a Boat. So, it\'s a Boat', icon: Icons.directions_boat),
-//   const Choice(title: 'This is a Bus, because its a Bus. So, it\'s a Bus', icon: Icons.directions_bus),
-//   const Choice(title: 'This is a Car, because its a car. So, it\'s a car. This is a Car, because its a car. So, it\'s a car. This is a Car, because its a car. So, it\'s a car. This is a Car, because its a car. So, it\'s a car. This is a Car, because its a car. So, it\'s a car. This is a Car, because its a car. So, it\'s a car. This is a Car, because its a car. So, it\'s a car. This is a Car, because its a car. So, it\'s a car. This is a Car, because its a car. So, it\'s a car. This is a Car, because its a car. So, it\'s a car.', icon: Icons.directions_car),
-//   const Choice(title: 'This is a Train, because its a Train. So, it\'s a Train', icon: Icons.directions_railway),
-//   const Choice(title: 'This is a Walk, because its a Walk. So, it\'s a Walk', icon: Icons.directions_walk),
-//   const Choice(title: 'This is a Car, because its a car. So, it\'s a car', icon: Icons.directions_car),
-//   const Choice(title: 'This is a Bicycle, because its a Bicycle. So, it\'s a Bicycle', icon: Icons.directions_bike),
-//   const Choice(title: 'This is a Boat, because its a Boat. So, it\'s a Boat', icon: Icons.directions_boat),
-//   const Choice(title: 'This is a Bus, because its a Bus. So, it\'s a Bus', icon: Icons.directions_bus),
-//   const Choice(title: 'This is a Train, because its a Train. So, it\'s a Train', icon: Icons.directions_railway),
-//   const Choice(title: 'This is a Walk, because its a Walk. So, it\'s a Walk', icon: Icons.directions_walk),
-// ];
-
-// class ChoiceCard extends StatelessWidget {
-//   const ChoiceCard(
-//       {Key key, this.choice, this.onTap, @required this.item, this.selected: false}
-//     ) : super(key: key);
-
-//   final Choice choice;
-//   final VoidCallback onTap;
-//   final Choice item;
-//   final bool selected;
-
-//   @override
-//   Widget build(BuildContext context) {
-//     TextStyle textStyle = Theme.of(context).textTheme.display1;
-//     if (selected)
-//       textStyle = textStyle.copyWith(color: Colors.lightGreenAccent[400]);
-//         return Card(
-//           color: Colors.white,
-//           child: Row(
-//               children: <Widget>[
-//                 new Container(
-//                   padding: const EdgeInsets.all(8.0),
-//                   alignment: Alignment.topLeft,
-//                   child: Icon(choice.icon, size:80.0, color: textStyle.color,)),
-//                 new Expanded(
-//                   child: new Container(
-//                   padding: const EdgeInsets.all(10.0),
-//                   alignment: Alignment.topLeft,
-//                   child:
-//                     Text(choice.title, style: null, textAlign: TextAlign.left, maxLines: 5,),
-//                   )
-//                 ),
-//             ],
-//            crossAxisAlignment: CrossAxisAlignment.start,
-//           )
-//     );
-//   }
-// }
+const List<Categories> categories = const <Categories>[
+  const Categories('Series Books', 'series-books'),
+  const Categories('Health', 'health'),
+  const Categories('Sports', 'sports'),
+  const Categories('Travel', 'travel'),
+];

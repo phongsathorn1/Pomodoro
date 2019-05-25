@@ -1,0 +1,790 @@
+{
+    "status": "OK",
+    "copyright": "Copyright (c) 2019 The New York Times Company.  All Rights Reserved.",
+    "num_results": 15,
+    "last_modified": "2017-03-21T13:38:01-04:00",
+    "results": {
+        "list_name": "E-Book Fiction",
+        "list_name_encoded": "e-book-fiction",
+        "bestsellers_date": "2017-01-14",
+        "published_date": "2017-01-29",
+        "published_date_description": "latest",
+        "next_published_date": "",
+        "previous_published_date": "2017-01-22",
+        "display_name": "E-Book Fiction",
+        "normal_list_ends_at": 10,
+        "updated": "WEEKLY",
+        "books": [
+            {
+                "rank": 1,
+                "rank_last_week": 0,
+                "weeks_on_list": 1,
+                "asterisk": 0,
+                "dagger": 0,
+                "primary_isbn10": "None",
+                "primary_isbn13": "A00B01MT5HMRV",
+                "publisher": "Lauren Blakely",
+                "description": "A man shares a cramped apartment with his friend's fetching sister.",
+                "price": 0,
+                "title": "FULL PACKAGE",
+                "author": "Lauren Blakely",
+                "contributor": "by Lauren Blakely",
+                "contributor_note": "",
+                "book_image": "https:\/\/s1.nyt.com\/du\/books\/images\/A00B01MT5HMRV.jpg",
+                "book_image_width": 310,
+                "book_image_height": 495,
+                "amazon_product_url": "https:\/\/www.amazon.com\/Full-Package-Lauren-Blakely-ebook\/dp\/B01MT5HMRV?tag=NYTBS-20",
+                "age_group": "",
+                "book_review_link": "",
+                "first_chapter_link": "",
+                "sunday_review_link": "",
+                "article_chapter_link": "",
+                "isbns": [],
+                "buy_links": [
+                    {
+                        "name": "Local Booksellers",
+                        "url": "http:\/\/www.indiebound.org\/search\/book?searchfor=FULL+PACKAGE+Lauren+Blakely&aff=NYT"
+                    },
+                    {
+                        "name": "Barnes and Noble",
+                        "url": "http:\/\/www.anrdoezrs.net\/click-7990613-11819508?url=http%3A%2F%2Fwww.barnesandnoble.com%2Fs%2FFULL+PACKAGE+Lauren+Blakely"
+                    },
+                    {
+                        "name": "Amazon",
+                        "url": "https:\/\/www.amazon.com\/Full-Package-Lauren-Blakely-ebook\/dp\/B01MT5HMRV?tag=NYTBS-20"
+                    }
+                ]
+            },
+            {
+                "rank": 2,
+                "rank_last_week": 0,
+                "weeks_on_list": 2,
+                "asterisk": 0,
+                "dagger": 0,
+                "primary_isbn10": "0440337976",
+                "primary_isbn13": "9780440337973",
+                "publisher": "Dial",
+                "description": "After World War II, a journalist travels to the island of Guernsey to meet residents who resisted the Nazi occupation. Originally published in 2008.",
+                "price": 0,
+                "title": "THE GUERNSEY LITERARY AND POTATO PEEL PIE SOCIETY",
+                "author": "Mary Ann Shaffer and Annie Barrows",
+                "contributor": "by Mary Ann Shaffer and Annie Barrows",
+                "contributor_note": "",
+                "book_image": "https:\/\/s1.nyt.com\/du\/books\/images\/9780385341004.jpg",
+                "book_image_width": 314,
+                "book_image_height": 495,
+                "amazon_product_url": "http:\/\/www.amazon.com\/Guernsey-Literary-Potato-Peel-Society\/dp\/0385340990?tag=NYTBS-20",
+                "age_group": "",
+                "book_review_link": "",
+                "first_chapter_link": "",
+                "sunday_review_link": "",
+                "article_chapter_link": "",
+                "isbns": [
+                    {
+                        "isbn10": "0385341008",
+                        "isbn13": "9780385341004"
+                    },
+                    {
+                        "isbn10": "0440337976",
+                        "isbn13": "9780440337973"
+                    },
+                    {
+                        "isbn10": "1984801813",
+                        "isbn13": "9781984801814"
+                    }
+                ],
+                "buy_links": [
+                    {
+                        "name": "Local Booksellers",
+                        "url": "http:\/\/www.indiebound.org\/book\/9780440337973?aff=NYT"
+                    },
+                    {
+                        "name": "Barnes and Noble",
+                        "url": "http:\/\/www.anrdoezrs.net\/click-7990613-11819508?url=http%3A%2F%2Fwww.barnesandnoble.com%2Fw%2F%3Fean%3D9780440337973"
+                    },
+                    {
+                        "name": "Amazon",
+                        "url": "http:\/\/www.amazon.com\/Guernsey-Literary-Potato-Peel-Society\/dp\/0385340990?tag=NYTBS-20"
+                    }
+                ]
+            },
+            {
+                "rank": 3,
+                "rank_last_week": 4,
+                "weeks_on_list": 12,
+                "asterisk": 0,
+                "dagger": 0,
+                "primary_isbn10": "0385541201",
+                "primary_isbn13": "9780385541206",
+                "publisher": "Doubleday",
+                "description": "A whistleblower alerts a Florida investigator to judicial corruption involving the Mob and Indian casinos.",
+                "price": 0,
+                "title": "THE WHISTLER",
+                "author": "John Grisham",
+                "contributor": "by John Grisham",
+                "contributor_note": "",
+                "book_image": "https:\/\/s1.nyt.com\/du\/books\/images\/9780385541206.jpg",
+                "book_image_width": 326,
+                "book_image_height": 495,
+                "amazon_product_url": "https:\/\/www.amazon.com\/Whistler-John-Grisham-ebook\/dp\/B01C1LUFFK?tag=NYTBS-20",
+                "age_group": "",
+                "book_review_link": "https:\/\/www.nytimes.com\/2016\/11\/06\/books\/review\/john-grisham-whistler.html",
+                "first_chapter_link": "",
+                "sunday_review_link": "",
+                "article_chapter_link": "",
+                "isbns": [
+                    {
+                        "isbn10": "0385541198",
+                        "isbn13": "9780385541190"
+                    },
+                    {
+                        "isbn10": "0385541201",
+                        "isbn13": "9780385541206"
+                    },
+                    {
+                        "isbn10": "0385541570",
+                        "isbn13": "9780385541572"
+                    },
+                    {
+                        "isbn10": "1101967676",
+                        "isbn13": "9781101967676"
+                    },
+                    {
+                        "isbn10": "1101967684",
+                        "isbn13": "9781101967683"
+                    }
+                ],
+                "buy_links": [
+                    {
+                        "name": "Local Booksellers",
+                        "url": "http:\/\/www.indiebound.org\/book\/9780385541206?aff=NYT"
+                    },
+                    {
+                        "name": "Barnes and Noble",
+                        "url": "http:\/\/www.anrdoezrs.net\/click-7990613-11819508?url=http%3A%2F%2Fwww.barnesandnoble.com%2Fw%2F%3Fean%3D9780385541206"
+                    },
+                    {
+                        "name": "Amazon",
+                        "url": "https:\/\/www.amazon.com\/Whistler-John-Grisham-ebook\/dp\/B01C1LUFFK?tag=NYTBS-20"
+                    }
+                ]
+            },
+            {
+                "rank": 4,
+                "rank_last_week": 0,
+                "weeks_on_list": 1,
+                "asterisk": 0,
+                "dagger": 0,
+                "primary_isbn10": "None",
+                "primary_isbn13": "9781101984772",
+                "publisher": "Dutton",
+                "description": "Pike Logan, a member of a secret counterterrorist unit called the Taskforce, investigates a Saudi-backed Moroccan terrorist cell.",
+                "price": 0,
+                "title": "RING OF FIRE",
+                "author": "Brad Taylor",
+                "contributor": "by Brad Taylor",
+                "contributor_note": "",
+                "book_image": "https:\/\/s1.nyt.com\/du\/books\/images\/9781101984765.jpg",
+                "book_image_width": 328,
+                "book_image_height": 495,
+                "amazon_product_url": "https:\/\/www.amazon.com\/Ring-Fire-Pike-Logan-Thriller\/dp\/1101984767?tag=NYTBS-20",
+                "age_group": "",
+                "book_review_link": "",
+                "first_chapter_link": "",
+                "sunday_review_link": "",
+                "article_chapter_link": "",
+                "isbns": [
+                    {
+                        "isbn10": "1101984767",
+                        "isbn13": "9781101984765"
+                    }
+                ],
+                "buy_links": [
+                    {
+                        "name": "Local Booksellers",
+                        "url": "http:\/\/www.indiebound.org\/book\/9781101984772?aff=NYT"
+                    },
+                    {
+                        "name": "Barnes and Noble",
+                        "url": "http:\/\/www.anrdoezrs.net\/click-7990613-11819508?url=http%3A%2F%2Fwww.barnesandnoble.com%2Fw%2F%3Fean%3D9781101984772"
+                    },
+                    {
+                        "name": "Amazon",
+                        "url": "https:\/\/www.amazon.com\/Ring-Fire-Pike-Logan-Thriller\/dp\/1101984767?tag=NYTBS-20"
+                    }
+                ]
+            },
+            {
+                "rank": 5,
+                "rank_last_week": 7,
+                "weeks_on_list": 9,
+                "asterisk": 0,
+                "dagger": 0,
+                "primary_isbn10": "034554496X",
+                "primary_isbn13": "9780345544964",
+                "publisher": "Ballantine",
+                "description": "A medical crisis entangles a black nurse, a white supremacist father and a white lawyer.",
+                "price": 0,
+                "title": "SMALL GREAT THINGS",
+                "author": "Jodi Picoult",
+                "contributor": "by Jodi Picoult",
+                "contributor_note": "",
+                "book_image": "https:\/\/s1.nyt.com\/du\/books\/images\/9780345544964.jpg",
+                "book_image_width": 330,
+                "book_image_height": 491,
+                "amazon_product_url": "http:\/\/www.amazon.com\/Small-Great-Things-Jodi-Picoult-ebook\/dp\/B01AQNYZ3I?tag=NYTBS-20",
+                "age_group": "",
+                "book_review_link": "https:\/\/www.nytimes.com\/2016\/10\/16\/books\/review\/jodi-picoult-small-great-things-roxane-gay.html",
+                "first_chapter_link": "",
+                "sunday_review_link": "",
+                "article_chapter_link": "",
+                "isbns": [
+                    {
+                        "isbn10": "0345544951",
+                        "isbn13": "9780345544957"
+                    },
+                    {
+                        "isbn10": "034554496X",
+                        "isbn13": "9780345544964"
+                    },
+                    {
+                        "isbn10": "1410463745",
+                        "isbn13": "9781410463746"
+                    },
+                    {
+                        "isbn10": "0425286010",
+                        "isbn13": "9780425286012"
+                    },
+                    {
+                        "isbn10": "0345544978",
+                        "isbn13": "9780345544971"
+                    }
+                ],
+                "buy_links": [
+                    {
+                        "name": "Local Booksellers",
+                        "url": "http:\/\/www.indiebound.org\/book\/9780345544964?aff=NYT"
+                    },
+                    {
+                        "name": "Barnes and Noble",
+                        "url": "http:\/\/www.anrdoezrs.net\/click-7990613-11819508?url=http%3A%2F%2Fwww.barnesandnoble.com%2Fw%2F%3Fean%3D9780345544964"
+                    },
+                    {
+                        "name": "Amazon",
+                        "url": "http:\/\/www.amazon.com\/Small-Great-Things-Jodi-Picoult-ebook\/dp\/B01AQNYZ3I?tag=NYTBS-20"
+                    }
+                ]
+            },
+            {
+                "rank": 6,
+                "rank_last_week": 0,
+                "weeks_on_list": 1,
+                "asterisk": 0,
+                "dagger": 0,
+                "primary_isbn10": "None",
+                "primary_isbn13": "A00B01MF62CN8",
+                "publisher": "Stoker Aces Production",
+                "description": "A fireman must keep his overprotective nature in check while pursuing an epileptic prey to her suspiciously obsessive boss.",
+                "price": 0,
+                "title": "SHELTER FOR ADELINE",
+                "author": "Susan Stoker",
+                "contributor": "by Susan Stoker",
+                "contributor_note": "",
+                "book_image": "https:\/\/s1.nyt.com\/du\/books\/images\/A00B01MF62CN8.jpg",
+                "book_image_width": 310,
+                "book_image_height": 495,
+                "amazon_product_url": "https:\/\/www.amazon.com\/Shelter-Adeline-Badge-Honor-Heroes-ebook\/dp\/B01MF62CN8?tag=NYTBS-20",
+                "age_group": "",
+                "book_review_link": "",
+                "first_chapter_link": "",
+                "sunday_review_link": "",
+                "article_chapter_link": "",
+                "isbns": [],
+                "buy_links": [
+                    {
+                        "name": "Local Booksellers",
+                        "url": "http:\/\/www.indiebound.org\/search\/book?searchfor=SHELTER+FOR+ADELINE+Susan+Stoker&aff=NYT"
+                    },
+                    {
+                        "name": "Barnes and Noble",
+                        "url": "http:\/\/www.anrdoezrs.net\/click-7990613-11819508?url=http%3A%2F%2Fwww.barnesandnoble.com%2Fs%2FSHELTER+FOR+ADELINE+Susan+Stoker"
+                    },
+                    {
+                        "name": "Amazon",
+                        "url": "https:\/\/www.amazon.com\/Shelter-Adeline-Badge-Honor-Heroes-ebook\/dp\/B01MF62CN8?tag=NYTBS-20"
+                    }
+                ]
+            },
+            {
+                "rank": 7,
+                "rank_last_week": 9,
+                "weeks_on_list": 3,
+                "asterisk": 0,
+                "dagger": 0,
+                "primary_isbn10": "None",
+                "primary_isbn13": "9781476738031",
+                "publisher": "Atria",
+                "description": "An angry old curmudgeon gets new neighbors, and things are about to change for all of them.",
+                "price": 0,
+                "title": "A MAN CALLED OVE",
+                "author": "Fredrik Backman",
+                "contributor": "by Fredrik Backman",
+                "contributor_note": "",
+                "book_image": "https:\/\/s1.nyt.com\/du\/books\/images\/9781476738024.jpg",
+                "book_image_width": 318,
+                "book_image_height": 495,
+                "amazon_product_url": "http:\/\/www.amazon.com\/Man-Called-Ove-Novel\/dp\/1476738025?tag=NYTBS-20",
+                "age_group": "",
+                "book_review_link": "",
+                "first_chapter_link": "",
+                "sunday_review_link": "",
+                "article_chapter_link": "",
+                "isbns": [
+                    {
+                        "isbn10": "1476738025",
+                        "isbn13": "9781476738024"
+                    },
+                    {
+                        "isbn10": "1476738017",
+                        "isbn13": "9781476738017"
+                    },
+                    {
+                        "isbn10": "1594139830",
+                        "isbn13": "9781594139833"
+                    },
+                    {
+                        "isbn10": "1410472922",
+                        "isbn13": "9781410472922"
+                    }
+                ],
+                "buy_links": [
+                    {
+                        "name": "Local Booksellers",
+                        "url": "http:\/\/www.indiebound.org\/book\/9781476738031?aff=NYT"
+                    },
+                    {
+                        "name": "Barnes and Noble",
+                        "url": "http:\/\/www.anrdoezrs.net\/click-7990613-11819508?url=http%3A%2F%2Fwww.barnesandnoble.com%2Fw%2F%3Fean%3D9781476738031"
+                    },
+                    {
+                        "name": "Amazon",
+                        "url": "http:\/\/www.amazon.com\/Man-Called-Ove-Novel\/dp\/1476738025?tag=NYTBS-20"
+                    }
+                ]
+            },
+            {
+                "rank": 8,
+                "rank_last_week": 2,
+                "weeks_on_list": 2,
+                "asterisk": 0,
+                "dagger": 0,
+                "primary_isbn10": "0425285359",
+                "primary_isbn13": "9780425285350",
+                "publisher": "Delacorte",
+                "description": "The beautiful mistress of a Russian oligarch falls in love with an artist and yearns for freedom.",
+                "price": 0,
+                "title": "THE MISTRESS",
+                "author": "Danielle Steel",
+                "contributor": "by Danielle Steel",
+                "contributor_note": "",
+                "book_image": "https:\/\/s1.nyt.com\/du\/books\/images\/9780425285350.jpg",
+                "book_image_width": 326,
+                "book_image_height": 495,
+                "amazon_product_url": "https:\/\/www.amazon.com\/Mistress-Novel-Danielle-Steel-ebook\/dp\/B01E2GZ5FC?tag=NYTBS-20",
+                "age_group": "",
+                "book_review_link": "",
+                "first_chapter_link": "",
+                "sunday_review_link": "",
+                "article_chapter_link": "",
+                "isbns": [
+                    {
+                        "isbn10": "0345531116",
+                        "isbn13": "9780345531117"
+                    },
+                    {
+                        "isbn10": "0425285359",
+                        "isbn13": "9780425285350"
+                    },
+                    {
+                        "isbn10": "0735210039",
+                        "isbn13": "9780735210035"
+                    }
+                ],
+                "buy_links": [
+                    {
+                        "name": "Local Booksellers",
+                        "url": "http:\/\/www.indiebound.org\/book\/9780425285350?aff=NYT"
+                    },
+                    {
+                        "name": "Barnes and Noble",
+                        "url": "http:\/\/www.anrdoezrs.net\/click-7990613-11819508?url=http%3A%2F%2Fwww.barnesandnoble.com%2Fw%2F%3Fean%3D9780425285350"
+                    },
+                    {
+                        "name": "Amazon",
+                        "url": "https:\/\/www.amazon.com\/Mistress-Novel-Danielle-Steel-ebook\/dp\/B01E2GZ5FC?tag=NYTBS-20"
+                    }
+                ]
+            },
+            {
+                "rank": 9,
+                "rank_last_week": 0,
+                "weeks_on_list": 1,
+                "asterisk": 0,
+                "dagger": 0,
+                "primary_isbn10": "",
+                "primary_isbn13": "9780698193000",
+                "publisher": "Berkley",
+                "description": "Spirits invade the life of a Charleston realtor.",
+                "price": 0,
+                "title": "THE GUESTS ON SOUTH BATTERY",
+                "author": "Karen White",
+                "contributor": "by Karen White",
+                "contributor_note": "",
+                "book_image": "https:\/\/s1.nyt.com\/du\/books\/images\/9780451475237.jpg",
+                "book_image_width": 328,
+                "book_image_height": 495,
+                "amazon_product_url": "https:\/\/www.amazon.com\/Guests-South-Battery-Tradd-Street\/dp\/0451475232?tag=NYTBS-20",
+                "age_group": "",
+                "book_review_link": "",
+                "first_chapter_link": "",
+                "sunday_review_link": "",
+                "article_chapter_link": "",
+                "isbns": [
+                    {
+                        "isbn10": "0451475232",
+                        "isbn13": "9780451475237"
+                    }
+                ],
+                "buy_links": [
+                    {
+                        "name": "Local Booksellers",
+                        "url": "http:\/\/www.indiebound.org\/book\/9780698193000?aff=NYT"
+                    },
+                    {
+                        "name": "Barnes and Noble",
+                        "url": "http:\/\/www.anrdoezrs.net\/click-7990613-11819508?url=http%3A%2F%2Fwww.barnesandnoble.com%2Fw%2F%3Fean%3D9780698193000"
+                    },
+                    {
+                        "name": "Amazon",
+                        "url": "https:\/\/www.amazon.com\/Guests-South-Battery-Tradd-Street\/dp\/0451475232?tag=NYTBS-20"
+                    }
+                ]
+            },
+            {
+                "rank": 10,
+                "rank_last_week": 0,
+                "weeks_on_list": 8,
+                "asterisk": 0,
+                "dagger": 0,
+                "primary_isbn10": "1455586498",
+                "primary_isbn13": "9781455586493",
+                "publisher": "Grand Central",
+                "description": "John Puller, a special agent with the Army, searches for the truth about his mother, who disappeared 30 years ago.",
+                "price": 0,
+                "title": "NO MAN'S LAND",
+                "author": "David Baldacci",
+                "contributor": "by David Baldacci",
+                "contributor_note": "",
+                "book_image": "https:\/\/s1.nyt.com\/du\/books\/images\/9781455586516.jpg",
+                "book_image_width": 327,
+                "book_image_height": 495,
+                "amazon_product_url": "https:\/\/www.amazon.com\/No-Mans-Land-John-Puller\/dp\/145558651X?tag=NYTBS-20",
+                "age_group": "",
+                "book_review_link": "",
+                "first_chapter_link": "",
+                "sunday_review_link": "",
+                "article_chapter_link": "",
+                "isbns": [
+                    {
+                        "isbn10": "145558651X",
+                        "isbn13": "9781455586516"
+                    },
+                    {
+                        "isbn10": "1455541664",
+                        "isbn13": "9781455541669"
+                    },
+                    {
+                        "isbn10": "1455586498",
+                        "isbn13": "9781455586493"
+                    },
+                    {
+                        "isbn10": "1455586501",
+                        "isbn13": "9781455586509"
+                    }
+                ],
+                "buy_links": [
+                    {
+                        "name": "Local Booksellers",
+                        "url": "http:\/\/www.indiebound.org\/book\/9781455586493?aff=NYT"
+                    },
+                    {
+                        "name": "Barnes and Noble",
+                        "url": "http:\/\/www.anrdoezrs.net\/click-7990613-11819508?url=http%3A%2F%2Fwww.barnesandnoble.com%2Fw%2F%3Fean%3D9781455586493"
+                    },
+                    {
+                        "name": "Amazon",
+                        "url": "https:\/\/www.amazon.com\/No-Mans-Land-John-Puller\/dp\/145558651X?tag=NYTBS-20"
+                    }
+                ]
+            },
+            {
+                "rank": 11,
+                "rank_last_week": 0,
+                "weeks_on_list": 0,
+                "asterisk": 0,
+                "dagger": 0,
+                "primary_isbn10": "None",
+                "primary_isbn13": "9780399574184",
+                "publisher": "Putnam",
+                "description": "The New York lawyer Stone Barrington faces danger when he finds himself in possession of a retired C.I.A. agent\u2019s explosive memoir.",
+                "price": 0,
+                "title": "BELOW THE BELT",
+                "author": "Stuart Woods",
+                "contributor": "by Stuart Woods",
+                "contributor_note": "",
+                "book_image": "https:\/\/s1.nyt.com\/du\/books\/images\/9780399573972.jpg",
+                "book_image_width": 328,
+                "book_image_height": 495,
+                "amazon_product_url": "https:\/\/www.amazon.com\/Below-Belt-Stone-Barrington-Novel\/dp\/0399573976?tag=NYTBS-20",
+                "age_group": "",
+                "book_review_link": "",
+                "first_chapter_link": "",
+                "sunday_review_link": "",
+                "article_chapter_link": "",
+                "isbns": [
+                    {
+                        "isbn10": "0399573976",
+                        "isbn13": "9780399573972"
+                    }
+                ],
+                "buy_links": [
+                    {
+                        "name": "Local Booksellers",
+                        "url": "http:\/\/www.indiebound.org\/book\/9780399574184?aff=NYT"
+                    },
+                    {
+                        "name": "Barnes and Noble",
+                        "url": "http:\/\/www.anrdoezrs.net\/click-7990613-11819508?url=http%3A%2F%2Fwww.barnesandnoble.com%2Fw%2F%3Fean%3D9780399574184"
+                    },
+                    {
+                        "name": "Amazon",
+                        "url": "https:\/\/www.amazon.com\/Below-Belt-Stone-Barrington-Novel\/dp\/0399573976?tag=NYTBS-20"
+                    }
+                ]
+            },
+            {
+                "rank": 12,
+                "rank_last_week": 0,
+                "weeks_on_list": 0,
+                "asterisk": 0,
+                "dagger": 0,
+                "primary_isbn10": "031640716X",
+                "primary_isbn13": "9780316407168",
+                "publisher": "Little, Brown",
+                "description": "Detective Alex Cross and his wife, Bree, team up to catch a killer causing chaos in Washington, D.C.",
+                "price": 0,
+                "title": "CROSS THE LINE",
+                "author": "James Patterson",
+                "contributor": "by James Patterson",
+                "contributor_note": "",
+                "book_image": "https:\/\/s1.nyt.com\/du\/books\/images\/9780316407168.jpg",
+                "book_image_width": 319,
+                "book_image_height": 495,
+                "amazon_product_url": "https:\/\/www.amazon.com\/Cross-Line-James-Patterson-ebook\/dp\/B01C37XEUU?tag=NYTBS-20",
+                "age_group": "",
+                "book_review_link": "",
+                "first_chapter_link": "",
+                "sunday_review_link": "",
+                "article_chapter_link": "",
+                "isbns": [
+                    {
+                        "isbn10": "0316407097",
+                        "isbn13": "9780316407090"
+                    },
+                    {
+                        "isbn10": "031640716X",
+                        "isbn13": "9780316407168"
+                    },
+                    {
+                        "isbn10": "0316407151",
+                        "isbn13": "9780316407151"
+                    }
+                ],
+                "buy_links": [
+                    {
+                        "name": "Local Booksellers",
+                        "url": "http:\/\/www.indiebound.org\/book\/9780316407168?aff=NYT"
+                    },
+                    {
+                        "name": "Barnes and Noble",
+                        "url": "http:\/\/www.anrdoezrs.net\/click-7990613-11819508?url=http%3A%2F%2Fwww.barnesandnoble.com%2Fw%2F%3Fean%3D9780316407168"
+                    },
+                    {
+                        "name": "Amazon",
+                        "url": "https:\/\/www.amazon.com\/Cross-Line-James-Patterson-ebook\/dp\/B01C37XEUU?tag=NYTBS-20"
+                    }
+                ]
+            },
+            {
+                "rank": 13,
+                "rank_last_week": 0,
+                "weeks_on_list": 0,
+                "asterisk": 0,
+                "dagger": 0,
+                "primary_isbn10": "1250105617",
+                "primary_isbn13": "9781250105615",
+                "publisher": "Flatiron",
+                "description": "",
+                "price": 0,
+                "title": "THE DRY",
+                "author": "Jane Harper",
+                "contributor": "by Jane Harper",
+                "contributor_note": "",
+                "book_image": "https:\/\/s1.nyt.com\/du\/books\/images\/9781250105615.jpg",
+                "book_image_width": 326,
+                "book_image_height": 495,
+                "amazon_product_url": "https:\/\/www.amazon.com\/Dry-Novel-Jane-Harper-ebook\/dp\/B01BSN15F6?tag=NYTBS-20",
+                "age_group": "",
+                "book_review_link": "",
+                "first_chapter_link": "",
+                "sunday_review_link": "",
+                "article_chapter_link": "",
+                "isbns": [
+                    {
+                        "isbn10": "1250105609",
+                        "isbn13": "9781250105608"
+                    },
+                    {
+                        "isbn10": "1250105617",
+                        "isbn13": "9781250105615"
+                    }
+                ],
+                "buy_links": [
+                    {
+                        "name": "Local Booksellers",
+                        "url": "http:\/\/www.indiebound.org\/book\/9781250105615?aff=NYT"
+                    },
+                    {
+                        "name": "Barnes and Noble",
+                        "url": "http:\/\/www.anrdoezrs.net\/click-7990613-11819508?url=http%3A%2F%2Fwww.barnesandnoble.com%2Fw%2F%3Fean%3D9781250105615"
+                    },
+                    {
+                        "name": "Amazon",
+                        "url": "https:\/\/www.amazon.com\/Dry-Novel-Jane-Harper-ebook\/dp\/B01BSN15F6?tag=NYTBS-20"
+                    }
+                ]
+            },
+            {
+                "rank": 14,
+                "rank_last_week": 0,
+                "weeks_on_list": 0,
+                "asterisk": 0,
+                "dagger": 0,
+                "primary_isbn10": "1429960272",
+                "primary_isbn13": "9781429960274",
+                "publisher": "Forge",
+                "description": "A canine narrator undergoes a series of reincarnations.",
+                "price": 0,
+                "title": "A DOG'S PURPOSE",
+                "author": "W Bruce Cameron",
+                "contributor": "by W. Bruce Cameron",
+                "contributor_note": "",
+                "book_image": "https:\/\/s1.nyt.com\/du\/books\/images\/9780765330345.jpg",
+                "book_image_width": 330,
+                "book_image_height": 494,
+                "amazon_product_url": "https:\/\/www.amazon.com\/Dogs-Purpose-Novel-Humans\/dp\/0765330342?tag=NYTBS-20",
+                "age_group": "",
+                "book_review_link": "",
+                "first_chapter_link": "",
+                "sunday_review_link": "",
+                "article_chapter_link": "",
+                "isbns": [
+                    {
+                        "isbn10": "0765326264",
+                        "isbn13": "9780765326263"
+                    },
+                    {
+                        "isbn10": "0765330342",
+                        "isbn13": "9780765330345"
+                    },
+                    {
+                        "isbn10": "0765388111",
+                        "isbn13": "9780765388117"
+                    },
+                    {
+                        "isbn10": "0765388103",
+                        "isbn13": "9780765388100"
+                    },
+                    {
+                        "isbn10": "1429960272",
+                        "isbn13": "9781429960274"
+                    }
+                ],
+                "buy_links": [
+                    {
+                        "name": "Local Booksellers",
+                        "url": "http:\/\/www.indiebound.org\/book\/9781429960274?aff=NYT"
+                    },
+                    {
+                        "name": "Barnes and Noble",
+                        "url": "http:\/\/www.anrdoezrs.net\/click-7990613-11819508?url=http%3A%2F%2Fwww.barnesandnoble.com%2Fw%2F%3Fean%3D9781429960274"
+                    },
+                    {
+                        "name": "Amazon",
+                        "url": "https:\/\/www.amazon.com\/Dogs-Purpose-Novel-Humans\/dp\/0765330342?tag=NYTBS-20"
+                    }
+                ]
+            },
+            {
+                "rank": 15,
+                "rank_last_week": 0,
+                "weeks_on_list": 0,
+                "asterisk": 0,
+                "dagger": 0,
+                "primary_isbn10": "0385538928",
+                "primary_isbn13": "9780385538923",
+                "publisher": "Doubleday",
+                "description": "The daughters of a Vermont woman who disappeared from her home in the middle of the night try to understand what happened.",
+                "price": 0,
+                "title": "THE SLEEPWALKER",
+                "author": "Chris Bohjalian",
+                "contributor": "by Chris Bohjalian",
+                "contributor_note": "",
+                "book_image": "https:\/\/s1.nyt.com\/du\/books\/images\/9780385538923.jpg",
+                "book_image_width": 326,
+                "book_image_height": 495,
+                "amazon_product_url": "https:\/\/www.amazon.com\/Sleepwalker-Novel-Chris-Bohjalian-ebook\/dp\/B01FPGY5TK?tag=NYTBS-20",
+                "age_group": "",
+                "book_review_link": "",
+                "first_chapter_link": "",
+                "sunday_review_link": "",
+                "article_chapter_link": "",
+                "isbns": [
+                    {
+                        "isbn10": "038553891X",
+                        "isbn13": "9780385538916"
+                    },
+                    {
+                        "isbn10": "0385538928",
+                        "isbn13": "9780385538923"
+                    }
+                ],
+                "buy_links": [
+                    {
+                        "name": "Local Booksellers",
+                        "url": "http:\/\/www.indiebound.org\/book\/9780385538923?aff=NYT"
+                    },
+                    {
+                        "name": "Barnes and Noble",
+                        "url": "http:\/\/www.anrdoezrs.net\/click-7990613-11819508?url=http%3A%2F%2Fwww.barnesandnoble.com%2Fw%2F%3Fean%3D9780385538923"
+                    },
+                    {
+                        "name": "Amazon",
+                        "url": "https:\/\/www.amazon.com\/Sleepwalker-Novel-Chris-Bohjalian-ebook\/dp\/B01FPGY5TK?tag=NYTBS-20"
+                    }
+                ]
+            }
+        ],
+        "corrections": []
+    }
+}

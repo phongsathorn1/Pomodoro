@@ -138,7 +138,7 @@ class _CarouselImageState extends State<CarouselImageWidget> {
                         'https://docs.flutter.io/flutter/services/UrlLauncher-class.html');
                     break;
                   default:
-                    print(_tabController.index.toString());
+                  //print(_tabController.index.toString());
                 }
               },
             ),

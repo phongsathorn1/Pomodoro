@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 import 'package:carousel_slider/carousel_slider.dart';
+import 'package:pomodoro/fonts/fonts.dart';
 
 class DetailsPage extends StatefulWidget {
   DetailsPage({Key key, this.value}) : super(key: key);
@@ -49,7 +50,10 @@ class _DetailsPageState extends State<DetailsPage> {
                 title: Text(
                   widget.value['name'],
                   overflow: TextOverflow.ellipsis,
-                  style: TextStyle(fontSize: 16),
+                  style: TextStyle(
+                    fontSize: 16,
+                    fontFamily: GetTextStyle(),
+                  ),
                 ),
               ),
             ),
@@ -74,7 +78,12 @@ class _DetailsPageState extends State<DetailsPage> {
                           child: Padding(
                             padding: EdgeInsets.all(10),
                             child: Center(
-                              child: Text('ชื่อสถานที่'),
+                              child: Text(
+                                'ชื่อสถานที่',
+                                style: TextStyle(
+                                  fontFamily: GetTextStyle(),
+                                ),
+                              ),
                             ),
                           ),
                           color: Colors.blue.withAlpha(50),
@@ -83,7 +92,12 @@ class _DetailsPageState extends State<DetailsPage> {
                           child: Padding(
                             padding: EdgeInsets.all(20),
                             child: Center(
-                              child: Text(widget.value['name']),
+                              child: Text(
+                                widget.value['name'],
+                                style: TextStyle(
+                                  fontFamily: GetTextStyle(),
+                                ),
+                              ),
                             ),
                           ),
                         )
@@ -104,7 +118,12 @@ class _DetailsPageState extends State<DetailsPage> {
                           child: Padding(
                             padding: EdgeInsets.all(10),
                             child: Center(
-                              child: Text('เวลาเปิด - ปิด'),
+                              child: Text(
+                                'เวลาเปิด - ปิด',
+                                style: TextStyle(
+                                  fontFamily: GetTextStyle(),
+                                ),
+                              ),
                             ),
                           ),
                           color: Colors.blue.withAlpha(50),
@@ -113,9 +132,14 @@ class _DetailsPageState extends State<DetailsPage> {
                           child: Padding(
                             padding: EdgeInsets.all(20),
                             child: Center(
-                              child: Text(widget.value['open_day'] +
-                                  '  ' +
-                                  widget.value['time']),
+                              child: Text(
+                                widget.value['open_day'] +
+                                    '  ' +
+                                    widget.value['time'],
+                                style: TextStyle(
+                                  fontFamily: GetTextStyle(),
+                                ),
+                              ),
                             ),
                           ),
                         )
@@ -136,7 +160,12 @@ class _DetailsPageState extends State<DetailsPage> {
                           child: Padding(
                             padding: EdgeInsets.all(10),
                             child: Center(
-                              child: Text('    ติดต่อ    '),
+                              child: Text(
+                                '    ติดต่อ    ',
+                                style: TextStyle(
+                                  fontFamily: GetTextStyle(),
+                                ),
+                              ),
                             ),
                           ),
                           color: Colors.blue.withAlpha(50),
@@ -145,7 +174,12 @@ class _DetailsPageState extends State<DetailsPage> {
                           child: Padding(
                             padding: EdgeInsets.all(20),
                             child: Center(
-                              child: Text(widget.value['tel']),
+                              child: Text(
+                                widget.value['tel'],
+                                style: TextStyle(
+                                  fontFamily: GetTextStyle(),
+                                ),
+                              ),
                             ),
                           ),
                         )
@@ -166,8 +200,12 @@ class _DetailsPageState extends State<DetailsPage> {
                           child: Padding(
                             padding: EdgeInsets.all(10),
                             child: Center(
-                              child:
-                                  Text('   คะแนน : ${widget.value['rate']}  '),
+                              child: Text(
+                                '   คะแนน : ${widget.value['rate']}  ',
+                                style: TextStyle(
+                                  fontFamily: GetTextStyle(),
+                                ),
+                              ),
                             ),
                           ),
                           color: Colors.blue.withAlpha(50),

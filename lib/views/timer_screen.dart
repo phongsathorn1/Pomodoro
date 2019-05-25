@@ -1,6 +1,7 @@
 import 'dart:math' as math;
 
 import 'package:flutter/material.dart';
+import 'package:pomodoro/fonts/fonts.dart';
 // import 'package:flutter_local_notifications/flutter_local_notifications.dart';
 
 class TimerScreen extends StatefulWidget {
@@ -269,6 +270,7 @@ class TimerState extends State<TimerScreen> with TickerProviderStateMixin {
                             child: Text(
                               controller.isAnimating ? "Skip" : "Start",
                               style: TextStyle(
+                                fontFamily: GetTextStyle(),
                                 fontSize: screenWidth * 0.035,
                                 fontWeight: FontWeight.w100,
                               ),

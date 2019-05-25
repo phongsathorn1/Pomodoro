@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/painting.dart';
+import 'package:pomodoro/fonts/fonts.dart';
 import 'package:pomodoro/widgets/detailsPage.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
@@ -17,7 +18,12 @@ class _LocationPageState extends State<LocationPage> {
   List names = new List();
   List filteredName = new List();
   Icon _searchIcon = new Icon(Icons.search);
-  Widget _appBarTitle = new Text("ค้นหาสถานที่");
+  Widget _appBarTitle = new Text(
+    "ค้นหาสถานที่",
+    style: TextStyle(
+      fontFamily: GetTextStyle(),
+    ),
+  );
   Stream<QuerySnapshot> location_list;
   List<Icon> floatIcon;
   List<Text> floatText;
@@ -61,7 +67,12 @@ class _LocationPageState extends State<LocationPage> {
         );
       } else {
         this._searchIcon = new Icon(Icons.search);
-        this._appBarTitle = new Text("ค้นหาสถานที่");
+        this._appBarTitle = new Text(
+          "ค้นหาสถานที่",
+          style: TextStyle(
+            fontFamily: GetTextStyle(),
+          ),
+        );
         filteredName = names;
         _searchText = "";
         _filter.clear();
@@ -171,6 +182,9 @@ class _LocationPageState extends State<LocationPage> {
                                               .elementAt(index)
                                               .data['name'],
                                       overflow: TextOverflow.ellipsis,
+                                      style: TextStyle(
+                                        fontFamily: GetTextStyle(),
+                                      ),
                                     ),
                                   ),
                                 ],
@@ -181,14 +195,19 @@ class _LocationPageState extends State<LocationPage> {
                               Row(
                                 children: <Widget>[
                                   Icon(Icons.access_time),
-                                  Text(' ' +
-                                      snapshot.data.documents
-                                          .elementAt(index)
-                                          .data['open_day'] +
-                                      " " +
-                                      snapshot.data.documents
-                                          .elementAt(index)
-                                          .data['time']),
+                                  Text(
+                                    ' ' +
+                                        snapshot.data.documents
+                                            .elementAt(index)
+                                            .data['open_day'] +
+                                        " " +
+                                        snapshot.data.documents
+                                            .elementAt(index)
+                                            .data['time'],
+                                    style: TextStyle(
+                                      fontFamily: GetTextStyle(),
+                                    ),
+                                  ),
                                 ],
                               ),
                               Container(
@@ -196,7 +215,12 @@ class _LocationPageState extends State<LocationPage> {
                               ),
                               Row(
                                 children: <Widget>[
-                                  Text('คะแนน: '),
+                                  Text(
+                                    'คะแนน: ',
+                                    style: TextStyle(
+                                      fontFamily: GetTextStyle(),
+                                    ),
+                                  ),
                                   FlutterRatingBarIndicator(
                                     rating: snapshot.data.documents
                                         .elementAt(index)
@@ -214,7 +238,12 @@ class _LocationPageState extends State<LocationPage> {
                         Container(
                           transform: Matrix4.translationValues(0, -10, 0),
                           child: RaisedButton(
-                            child: Text('รายละเอียด'),
+                            child: Text(
+                              'รายละเอียด',
+                              style: TextStyle(
+                                fontFamily: GetTextStyle(),
+                              ),
+                            ),
                             color: Colors.redAccent,
                             textColor: Colors.white,
                             onPressed: () {
@@ -236,7 +265,12 @@ class _LocationPageState extends State<LocationPage> {
             );
           } else {
             return Center(
-              child: Text('No data found'),
+              child: Text(
+                'No data found',
+                style: TextStyle(
+                  fontFamily: GetTextStyle(),
+                ),
+              ),
             );
           }
         },

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:pomodoro/bookpage/bookDetails.dart';
 import 'package:pomodoro/insert/homepage.dart';
 import 'package:pomodoro/views/timer_screen.dart';
 import 'package:pomodoro/widgets/detailsPage.dart';
@@ -27,7 +28,7 @@ class MyApp extends StatelessWidget {
           '/moreDetail': (BuildContext context) => new DetailsPage(),
           '/locationPage': (BuildContext context) => new LocationPage(),
           '/timerScreen': (BuildContext context) => new TimerScreen(),
-          '/timerScreen': (BuildContext context) => new TimerScreen(),
+          '/bookDetails': (BuildContext context) => BookDetails(),
         });
   }
 }
