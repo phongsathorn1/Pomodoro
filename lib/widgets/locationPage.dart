@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/painting.dart';
+import 'package:flutter/rendering.dart';
 import 'package:pomodoro/fonts/fonts.dart';
 import 'package:pomodoro/widgets/detailsPage.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
+import 'package:pomodoro/color/colorUI.dart';
 
 class LocationPage extends StatefulWidget {
   @override
@@ -17,11 +19,15 @@ class _LocationPageState extends State<LocationPage> {
   String _searchText = "";
   List names = new List();
   List filteredName = new List();
-  Icon _searchIcon = new Icon(Icons.search);
+  Icon _searchIcon = new Icon(
+    Icons.search,
+    color: Colors.white,
+  );
   Widget _appBarTitle = new Text(
-    "ค้นหาสถานที่",
+    "Search Locations",
     style: TextStyle(
       fontFamily: GetTextStyle(),
+      color: Colors.white,
     ),
   );
   Stream<QuerySnapshot> location_list;
@@ -51,7 +57,7 @@ class _LocationPageState extends State<LocationPage> {
       location_list =
           _store.collection("location_detail").orderBy('name').snapshots();
       floatIcon = [Icon(Icons.filter_list), Icon(Icons.star)];
-      floatText = [Text('เรียงตามชื่อ'), Text('เรียงตามคะแนน')];
+      floatText = [Text('sort by name'), Text('sort by rate')];
       floatState = 0;
     });
   }
@@ -59,18 +65,45 @@ class _LocationPageState extends State<LocationPage> {
   void _searchPressed() {
     setState(() {
       if (this._searchIcon.icon == Icons.search) {
-        this._searchIcon = new Icon(Icons.close);
+        this._searchIcon = new Icon(
+          Icons.close,
+          color: Colors.white,
+        );
         this._appBarTitle = new TextField(
           controller: _filter,
           decoration: new InputDecoration(
-              prefixIcon: new Icon(Icons.search), hintText: 'ค้นหาชื่อ...'),
-        );
-      } else {
-        this._searchIcon = new Icon(Icons.search);
-        this._appBarTitle = new Text(
-          "ค้นหาสถานที่",
+            labelStyle: TextStyle(
+              color: Colors.white,
+            ),
+            prefixIcon: new Icon(
+              Icons.search,
+              color: Colors.white,
+            ),
+            prefixStyle: TextStyle(
+              color: Colors.white,
+            ),
+            focusedBorder: UnderlineInputBorder(
+              borderSide: BorderSide(
+                color: Colors.white,
+              ),
+            ),
+            hintText: 'search locations...',
+          ),
           style: TextStyle(
             fontFamily: GetTextStyle(),
+            color: Colors.white,
+          ),
+        );
+      } else {
+        this._searchIcon = new Icon(
+          Icons.search,
+          color: Colors.white,
+        );
+        this._appBarTitle = new Text(
+          "Search locations",
+          style: TextStyle(
+            fontFamily: GetTextStyle(),
+            color: Colors.white,
           ),
         );
         filteredName = names;
@@ -93,7 +126,7 @@ class _LocationPageState extends State<LocationPage> {
 
   Widget _buildBar(BuildContext context) {
     return new AppBar(
-      backgroundColor: Colors.grey[350],
+      backgroundColor: HexColor(tabColor()),
       centerTitle: true,
       title: _appBarTitle,
       leading: new IconButton(
@@ -128,7 +161,7 @@ class _LocationPageState extends State<LocationPage> {
 
   Widget _buildList() {
     return Container(
-      color: Colors.grey[350],
+      color: HexColor(pageBackgroundColor()),
       child: StreamBuilder(
         stream: location_list,
         builder: (context, AsyncSnapshot<QuerySnapshot> snapshot) {
@@ -146,7 +179,7 @@ class _LocationPageState extends State<LocationPage> {
                   return new Container();
                 else {
                   return new Card(
-                    color: Colors.red[800],
+                    color: HexColor(cardLocationColor()),
                     margin: EdgeInsets.only(top: 35, left: 15, right: 15),
                     child: Column(
                       mainAxisSize: MainAxisSize.min,
@@ -174,7 +207,10 @@ class _LocationPageState extends State<LocationPage> {
                             children: <Widget>[
                               Row(
                                 children: <Widget>[
-                                  Icon(Icons.location_on),
+                                  Icon(
+                                    Icons.location_on,
+                                    color: Colors.white,
+                                  ),
                                   Expanded(
                                     child: Text(
                                       ' ' +
@@ -184,6 +220,7 @@ class _LocationPageState extends State<LocationPage> {
                                       overflow: TextOverflow.ellipsis,
                                       style: TextStyle(
                                         fontFamily: GetTextStyle(),
+                                        color: Colors.white,
                                       ),
                                     ),
                                   ),
@@ -194,7 +231,10 @@ class _LocationPageState extends State<LocationPage> {
                               ),
                               Row(
                                 children: <Widget>[
-                                  Icon(Icons.access_time),
+                                  Icon(
+                                    Icons.access_time,
+                                    color: Colors.white,
+                                  ),
                                   Text(
                                     ' ' +
                                         snapshot.data.documents
@@ -206,6 +246,7 @@ class _LocationPageState extends State<LocationPage> {
                                             .data['time'],
                                     style: TextStyle(
                                       fontFamily: GetTextStyle(),
+                                      color: Colors.white,
                                     ),
                                   ),
                                 ],
@@ -219,12 +260,12 @@ class _LocationPageState extends State<LocationPage> {
                                     'คะแนน: ',
                                     style: TextStyle(
                                       fontFamily: GetTextStyle(),
+                                      color: Colors.white,
                                     ),
                                   ),
                                   FlutterRatingBarIndicator(
-                                    rating: snapshot.data.documents
-                                        .elementAt(index)
-                                        .data['rate'],
+                                    rating: double.parse(
+                                        "${snapshot.data.documents.elementAt(index).data['rate']}"),
                                     itemCount: 5,
                                     itemSize: 15,
                                     fillColor: Colors.amber,
@@ -239,7 +280,7 @@ class _LocationPageState extends State<LocationPage> {
                           transform: Matrix4.translationValues(0, -10, 0),
                           child: RaisedButton(
                             child: Text(
-                              'รายละเอียด',
+                              'details',
                               style: TextStyle(
                                 fontFamily: GetTextStyle(),
                               ),
@@ -265,12 +306,7 @@ class _LocationPageState extends State<LocationPage> {
             );
           } else {
             return Center(
-              child: Text(
-                'No data found',
-                style: TextStyle(
-                  fontFamily: GetTextStyle(),
-                ),
-              ),
+              child: new CircularProgressIndicator(),
             );
           }
         },

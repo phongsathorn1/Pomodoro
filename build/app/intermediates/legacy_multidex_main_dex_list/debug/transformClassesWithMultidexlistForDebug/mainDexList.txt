@@ -137,6 +137,7 @@ com/google/android/gms/common/util/RetainForClient.class
 com/google/android/gms/common/util/VisibleForTesting.class
 com/google/android/gms/common/zzc.class
 com/google/android/gms/common/zzm.class
+com/google/android/gms/flags/FlagSource.class
 com/google/android/gms/stats/CodePackage.class
 com/google/auto/value/AutoAnnotation.class
 com/google/auto/value/AutoOneOf.class
@@ -175,6 +176,8 @@ com/google/errorprone/annotations/concurrent/LazyInit.class
 com/google/errorprone/annotations/concurrent/LockMethod.class
 com/google/errorprone/annotations/concurrent/UnlockMethod.class
 com/google/firebase/annotations/PublicApi.class
+com/google/firebase/auth/ActionCodeResult$ActionDataKey.class
+com/google/firebase/auth/ActionCodeResult$Operation.class
 com/google/firebase/firestore/Exclude.class
 com/google/firebase/firestore/IgnoreExtraProperties.class
 com/google/firebase/firestore/PropertyName.class

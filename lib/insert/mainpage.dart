@@ -1,10 +1,13 @@
 import 'dart:convert';
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:color/color.dart' as prefix1;
 import 'package:flutter/material.dart';
 import 'package:pomodoro/bookpage/Book.dart';
 import 'package:pomodoro/bookpage/Model/bookcategory.dart';
 import 'package:pomodoro/bookpage/bookDetails.dart';
+import 'package:pomodoro/color/colorUI.dart' as prefix0;
 import 'package:pomodoro/fonts/fonts.dart';
+import 'package:pomodoro/color/colorUI.dart';
 import 'package:pomodoro/widgets/detailsPage.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:pomodoro/insert/homepage.dart';
@@ -79,304 +82,327 @@ class _MyHomePageState extends State<MyHomePage> {
     for (var i in categories) fetchPost(i);
 
     return new Scaffold(
-      appBar: AppBar(
-        backgroundColor: HexColor("#f3b7c3"),
-        title: Center(
-            child: Text(
-          'Reading Guide',
-          style: TextStyle(
-            fontFamily: GetTextStyle(),
-          ),
-        )),
-      ),
-      body: SingleChildScrollView(
-        child: Column(
-          children: <Widget>[
-            new SizedBox(
-              height: 210.0,
-              width: double.infinity,
-              child: CarouselSlider(
-                onPageChanged: (int index) {
-                  setState(() {
-                    indexCarousel = index;
-                  });
-                },
-                initialPage: 0,
-                autoPlay: true,
-                height: 205,
-                items: imgList.map((i) {
-                  return Builder(
-                    builder: (BuildContext context) {
-                      return Card(
-                        child: InkWell(
-                          onTap: () {
-                            setState(() {
-                              controller.animateTo((controller.index =
-                                  indexCarousel == 0 ? 3 : indexCarousel));
-                            });
-                          },
-                          child: Container(
-                            width: MediaQuery.of(context).size.width,
-                            margin: EdgeInsets.symmetric(horizontal: 0.0),
-                            decoration: BoxDecoration(
-                                color: Colors.black.withAlpha(70)),
-                            child: Image.asset(
-                              i,
-                              height: 205,
-                              fit: BoxFit.fill,
+      body: Container(
+        color: HexColor(pageBackgroundColor()),
+        child: SingleChildScrollView(
+          child: Column(
+            children: <Widget>[
+              new SizedBox(
+                height: 210.0,
+                width: double.infinity,
+                child: CarouselSlider(
+                  onPageChanged: (int index) {
+                    setState(() {
+                      indexCarousel = index;
+                    });
+                  },
+                  initialPage: 0,
+                  autoPlay: true,
+                  height: 205,
+                  items: imgList.map((i) {
+                    return Builder(
+                      builder: (BuildContext context) {
+                        return Card(
+                          child: InkWell(
+                            onTap: () {
+                              setState(() {
+                                controller.animateTo((controller.index =
+                                    indexCarousel == 0 ? 3 : indexCarousel));
+                              });
+                            },
+                            child: Container(
+                              width: MediaQuery.of(context).size.width,
+                              margin: EdgeInsets.symmetric(horizontal: 0.0),
+                              decoration: BoxDecoration(
+                                  color: Colors.black.withAlpha(70)),
+                              child: Image.asset(
+                                i,
+                                height: 205,
+                                fit: BoxFit.fill,
+                              ),
                             ),
                           ),
-                        ),
-                      );
-                    },
-                  );
-                }).toList(),
+                        );
+                      },
+                    );
+                  }).toList(),
+                ),
               ),
-            ),
-            new SizedBox(
-              height: 15.0,
-              width: double.infinity,
-            ),
-            new CustomCardTopic("Reading Place"),
-            new SizedBox(
-              height: 15.0,
-              width: double.infinity,
-            ),
-            new Container(
-              height: 480,
-              child: StreamBuilder(
-                stream: location_list,
-                builder: (context, AsyncSnapshot<QuerySnapshot> snapshot) {
-                  if (snapshot.hasData) {
-                    return Column(
-                      children: <Widget>[
-                        InkWell(
-                          onTap: () {
-                            var route = new MaterialPageRoute(
-                                builder: (BuildContext context) =>
-                                    new DetailsPage(
-                                      value:
-                                          snapshot.data.documents.elementAt(0),
-                                    ));
-                            Navigator.of(context).push(route);
-                          },
-                          child: CustomCard(
-                            snapshot.data.documents
-                                .elementAt(0)
-                                .data['img_head'],
-                            snapshot.data.documents.elementAt(0).data['name'],
+              new SizedBox(
+                height: 15.0,
+                width: double.infinity,
+              ),
+              Card(
+                color: HexColor(cardReadingMain()),
+                child: Column(
+                  children: <Widget>[
+                    CustomCardTopic("Reading Place"),
+                    Container(
+                      child: Row(
+                        children: <Widget>[
+                          Expanded(
+                            child: new Container(
+                              height: 480,
+                              child: StreamBuilder(
+                                stream: location_list,
+                                builder: (context,
+                                    AsyncSnapshot<QuerySnapshot> snapshot) {
+                                  if (snapshot.hasData) {
+                                    return Column(
+                                      children: <Widget>[
+                                        InkWell(
+                                          onTap: () {
+                                            var route = new MaterialPageRoute(
+                                                builder:
+                                                    (BuildContext context) =>
+                                                        new DetailsPage(
+                                                          value: snapshot
+                                                              .data.documents
+                                                              .elementAt(0),
+                                                        ));
+                                            Navigator.of(context).push(route);
+                                          },
+                                          child: CustomCard(
+                                            snapshot.data.documents
+                                                .elementAt(0)
+                                                .data['img_head'],
+                                            snapshot.data.documents
+                                                .elementAt(0)
+                                                .data['name'],
+                                          ),
+                                        ),
+                                        InkWell(
+                                          onTap: () {
+                                            var route = new MaterialPageRoute(
+                                                builder:
+                                                    (BuildContext context) =>
+                                                        new DetailsPage(
+                                                          value: snapshot
+                                                              .data.documents
+                                                              .elementAt(1),
+                                                        ));
+                                            Navigator.of(context).push(route);
+                                          },
+                                          child: CustomCard(
+                                            snapshot.data.documents
+                                                .elementAt(1)
+                                                .data['img_head'],
+                                            snapshot.data.documents
+                                                .elementAt(1)
+                                                .data['name'],
+                                          ),
+                                        ),
+                                      ],
+                                    );
+                                  } else {
+                                    return Center(
+                                        child: CircularProgressIndicator());
+                                  }
+                                },
+                              ),
+                            ),
+                          )
+                        ],
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+              new SizedBox(
+                height: 15.0,
+                width: double.infinity,
+              ),
+              Card(
+                color: HexColor(cardReadingMain()),
+                child: Column(
+                  children: <Widget>[
+                    CustomCardTopic("Reading Book"),
+                    new SizedBox(
+                      height: 10.0,
+                      width: double.infinity,
+                    ),
+                    new Text(
+                      categories[0].title,
+                      style:
+                          TextStyle(fontFamily: GetTextStyle(), fontSize: 20.0),
+                    ),
+                    Container(
+                      child: Row(
+                        children: <Widget>[
+                          Expanded(
+                            child: Container(
+                              height: 138,
+                              child: ListView.builder(
+                                scrollDirection: Axis.horizontal,
+                                itemCount: 5,
+                                itemBuilder: (BuildContext context, int ind) {
+                                  try {
+                                    return InkWell(
+                                      onTap: () {
+                                        var route = new MaterialPageRoute(
+                                          builder: (BuildContext context) =>
+                                              new BookDetails(
+                                                value: allCategory[
+                                                        categories[0].encode]
+                                                    .results
+                                                    .books[ind],
+                                              ),
+                                        );
+                                        Navigator.of(context).push(route);
+                                      },
+                                      child: CustomBookCard(
+                                        allCategory[categories[0].encode]
+                                            .results
+                                            .books[ind]
+                                            .bookImage,
+                                      ),
+                                    );
+                                  } catch (e) {
+                                    return Center(
+                                      child: CircularProgressIndicator(),
+                                    );
+                                  }
+                                },
+                              ),
+                            ),
                           ),
-                        ),
-                        InkWell(
-                          onTap: () {
-                            var route = new MaterialPageRoute(
-                                builder: (BuildContext context) =>
-                                    new DetailsPage(
-                                      value:
-                                          snapshot.data.documents.elementAt(1),
-                                    ));
-                            Navigator.of(context).push(route);
-                          },
-                          child: CustomCard(
-                            snapshot.data.documents
-                                .elementAt(1)
-                                .data['img_head'],
-                            snapshot.data.documents.elementAt(1).data['name'],
-                          ),
-                        ),
-                      ],
-                    );
-                  } else {
-                    return Center(
-                      child: Text(
-                        'No data found',
-                        style: TextStyle(
-                          fontFamily: GetTextStyle(),
-                        ),
+                        ],
                       ),
-                    );
-                  }
-                },
-              ),
-            ),
-            new CustomCardTopic("Reading Book"),
-            new SizedBox(
-              height: 10.0,
-              width: double.infinity,
-            ),
-            new Text(
-              categories[0].title,
-              style: TextStyle(fontFamily: GetTextStyle(), fontSize: 20.0),
-            ),
-            new SizedBox(
-              height: 10.0,
-              width: double.infinity,
-            ),
-            Container(
-              height: 138,
-              child: ListView.builder(
-                scrollDirection: Axis.horizontal,
-                itemCount: 5,
-                itemBuilder: (BuildContext context, int ind) {
-                  try {
-                    return InkWell(
-                      onTap: () {
-                        var route = new MaterialPageRoute(
-                          builder: (BuildContext context) => new BookDetails(
-                                value: allCategory[categories[0].encode]
+                    ),
+                    new SizedBox(
+                      height: 10.0,
+                      width: double.infinity,
+                    ),
+                    new Text(
+                      categories[1].title,
+                      style:
+                          TextStyle(fontFamily: GetTextStyle(), fontSize: 20.0),
+                    ),
+                    Container(
+                      height: 138,
+                      child: ListView.builder(
+                        scrollDirection: Axis.horizontal,
+                        itemCount: 5,
+                        itemBuilder: (BuildContext context, int ind) {
+                          try {
+                            return InkWell(
+                              onTap: () {
+                                var route = new MaterialPageRoute(
+                                  builder: (BuildContext context) =>
+                                      new BookDetails(
+                                        value: allCategory[categories[1].encode]
+                                            .results
+                                            .books[ind],
+                                      ),
+                                );
+                                Navigator.of(context).push(route);
+                              },
+                              child: CustomBookCard(
+                                allCategory[categories[1].encode]
                                     .results
-                                    .books[ind],
+                                    .books[ind]
+                                    .bookImage,
                               ),
-                        );
-                        Navigator.of(context).push(route);
-                      },
-                      child: CustomBookCard(
-                        allCategory[categories[0].encode]
-                            .results
-                            .books[ind]
-                            .bookImage,
+                            );
+                          } catch (e) {
+                            return Center(
+                              child: CircularProgressIndicator(),
+                            );
+                          }
+                        },
                       ),
-                    );
-                  } catch (e) {
-                    return Center(
-                      child: CircularProgressIndicator(),
-                    );
-                  }
-                },
-              ),
-            ),
-            new SizedBox(
-              height: 10.0,
-              width: double.infinity,
-            ),
-            new Text(
-              categories[1].title,
-              style: TextStyle(fontFamily: GetTextStyle(), fontSize: 20.0),
-            ),
-            new SizedBox(
-              height: 10.0,
-              width: double.infinity,
-            ),
-            Container(
-              height: 138,
-              child: ListView.builder(
-                scrollDirection: Axis.horizontal,
-                itemCount: 5,
-                itemBuilder: (BuildContext context, int ind) {
-                  try {
-                    InkWell(
-                      onTap: () {
-                        var route = new MaterialPageRoute(
-                          builder: (BuildContext context) => new BookDetails(
-                                value: allCategory[categories[1].encode]
+                    ),
+                    new SizedBox(
+                      height: 10.0,
+                      width: double.infinity,
+                    ),
+                    new Text(
+                      categories[2].title,
+                      style:
+                          TextStyle(fontFamily: GetTextStyle(), fontSize: 20.0),
+                    ),
+                    Container(
+                      height: 138,
+                      child: ListView.builder(
+                        scrollDirection: Axis.horizontal,
+                        itemCount: 5,
+                        itemBuilder: (BuildContext context, int ind) {
+                          try {
+                            return InkWell(
+                              onTap: () {
+                                var route = new MaterialPageRoute(
+                                  builder: (BuildContext context) =>
+                                      new BookDetails(
+                                        value: allCategory[categories[2].encode]
+                                            .results
+                                            .books[ind],
+                                      ),
+                                );
+                                Navigator.of(context).push(route);
+                              },
+                              child: CustomBookCard(
+                                allCategory[categories[2].encode]
                                     .results
-                                    .books[ind],
+                                    .books[ind]
+                                    .bookImage,
                               ),
-                        );
-                        Navigator.of(context).push(route);
-                      },
-                      child: CustomBookCard(
-                        allCategory[categories[1].encode]
-                            .results
-                            .books[ind]
-                            .bookImage,
+                            );
+                          } catch (e) {
+                            return Center(
+                              child: CircularProgressIndicator(),
+                            );
+                          }
+                        },
                       ),
-                    );
-                  } catch (e) {
-                    return Center(
-                      child: CircularProgressIndicator(),
-                    );
-                  }
-                },
-              ),
-            ),
-            new SizedBox(
-              height: 10.0,
-              width: double.infinity,
-            ),
-            new Text(
-              categories[2].title,
-              style: TextStyle(fontFamily: GetTextStyle(), fontSize: 20.0),
-            ),
-            new SizedBox(
-              height: 10.0,
-              width: double.infinity,
-            ),
-            Container(
-              height: 138,
-              child: ListView.builder(
-                scrollDirection: Axis.horizontal,
-                itemCount: 5,
-                itemBuilder: (BuildContext context, int ind) {
-                  try {
-                    return InkWell(
-                      onTap: () {
-                        var route = new MaterialPageRoute(
-                          builder: (BuildContext context) => new BookDetails(
-                                value: allCategory[categories[2].encode]
+                    ),
+                    new SizedBox(
+                      height: 10.0,
+                      width: double.infinity,
+                    ),
+                    new Text(
+                      categories[3].title,
+                      style:
+                          TextStyle(fontFamily: GetTextStyle(), fontSize: 20.0),
+                    ),
+                    Container(
+                      height: 138,
+                      child: ListView.builder(
+                        scrollDirection: Axis.horizontal,
+                        itemCount: 5,
+                        itemBuilder: (BuildContext context, int ind) {
+                          try {
+                            return InkWell(
+                              onTap: () {
+                                var route = new MaterialPageRoute(
+                                  builder: (BuildContext context) =>
+                                      new BookDetails(
+                                        value: allCategory[categories[2].encode]
+                                            .results
+                                            .books[ind],
+                                      ),
+                                );
+                                Navigator.of(context).push(route);
+                              },
+                              child: CustomBookCard(
+                                allCategory[categories[3].encode]
                                     .results
-                                    .books[ind],
+                                    .books[ind]
+                                    .bookImage,
                               ),
-                        );
-                        Navigator.of(context).push(route);
-                      },
-                      child: CustomBookCard(
-                        allCategory[categories[2].encode]
-                            .results
-                            .books[ind]
-                            .bookImage,
+                            );
+                          } catch (e) {
+                            return Center(
+                              child: CircularProgressIndicator(),
+                            );
+                          }
+                        },
                       ),
-                    );
-                  } catch (e) {
-                    return Center(
-                      child: CircularProgressIndicator(),
-                    );
-                  }
-                },
+                    ),
+                  ],
+                ),
               ),
-            ),
-            new Text(
-              categories[3].title,
-              style: TextStyle(fontFamily: GetTextStyle(), fontSize: 20.0),
-            ),
-            new SizedBox(
-              height: 10.0,
-              width: double.infinity,
-            ),
-            Container(
-              height: 138,
-              child: ListView.builder(
-                scrollDirection: Axis.horizontal,
-                itemCount: 5,
-                itemBuilder: (BuildContext context, int ind) {
-                  try {
-                    return InkWell(
-                      onTap: () {
-                        var route = new MaterialPageRoute(
-                          builder: (BuildContext context) => new BookDetails(
-                                value: allCategory[categories[2].encode]
-                                    .results
-                                    .books[ind],
-                              ),
-                        );
-                        Navigator.of(context).push(route);
-                      },
-                      child: CustomBookCard(
-                        allCategory[categories[3].encode]
-                            .results
-                            .books[ind]
-                            .bookImage,
-                      ),
-                    );
-                  } catch (e) {
-                    return Center(
-                      child: CircularProgressIndicator(),
-                    );
-                  }
-                },
-              ),
-            ),
-          ],
+            ],
+          ),
         ),
       ),
     );

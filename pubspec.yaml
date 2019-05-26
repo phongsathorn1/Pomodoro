@@ -22,10 +22,16 @@ dependencies:
   carousel_slider: ^1.3.0
   url_launcher: ^5.0.2
   http: ^0.12.0+2
-
+  circular_bottom_navigation: ^1.0.0
+  firebase_core: ^0.3.4
+  firebase_auth: ^0.8.4+2
+  path_provider: ^0.5.0+1
+  curved_navigation_bar: ^0.2.1
+  image_picker: ^0.5.3+1
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.
   cupertino_icons: ^0.1.2
+  intro_slider: ^1.1.4
 
 dev_dependencies:
   flutter_test:
@@ -53,7 +59,11 @@ flutter:
     - resource/Label_book.png
     - resource/Label_Place.png
     - resource/Label_timer_2.png
-
+    - resource/book_reviews.png
+    - resource/book.png
+    - resource/building.png
+    - resource/timer.png
+    
     - assets/animated/train_animated.gif
     - assets/animated/train_animated_circle.gif
     - assets/animated/train_circle.png

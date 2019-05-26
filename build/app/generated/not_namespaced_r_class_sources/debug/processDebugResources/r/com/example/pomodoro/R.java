@@ -668,7 +668,7 @@ public final class R {
      * <tr><th>Attribute</th><th>Description</th></tr>
      * <tr><td><code>{@link #ColorStateListItem_android_color android:color}</code></td><td></td></tr>
      * <tr><td><code>{@link #ColorStateListItem_android_alpha android:alpha}</code></td><td></td></tr>
-     * <tr><td><code>{@link #ColorStateListItem_alpha com.example.pomodoro:alpha}</code></td><td>Alpha multiplier applied to the base color.</td></tr>
+     * <tr><td><code>{@link #ColorStateListItem_alpha com.myapp.pomodoro:alpha}</code></td><td>Alpha multiplier applied to the base color.</td></tr>
      * </table>
      * @see #ColorStateListItem_android_color
      * @see #ColorStateListItem_android_alpha
@@ -705,7 +705,7 @@ public final class R {
      *
      * <p>May be a floating point value, such as "<code>1.2</code>".
      *
-     * @attr name com.example.pomodoro:alpha
+     * @attr name com.myapp.pomodoro:alpha
      */
     public static final int ColorStateListItem_alpha=2;
     /**
@@ -715,9 +715,9 @@ public final class R {
      * <colgroup align="left" />
      * <colgroup align="left" />
      * <tr><th>Attribute</th><th>Description</th></tr>
-     * <tr><td><code>{@link #CoordinatorLayout_keylines com.example.pomodoro:keylines}</code></td><td>A reference to an array of integers representing the
+     * <tr><td><code>{@link #CoordinatorLayout_keylines com.myapp.pomodoro:keylines}</code></td><td>A reference to an array of integers representing the
      * locations of horizontal keylines in dp from the starting edge.</td></tr>
-     * <tr><td><code>{@link #CoordinatorLayout_statusBarBackground com.example.pomodoro:statusBarBackground}</code></td><td>Drawable to display behind the status bar when the view is set to draw behind it.</td></tr>
+     * <tr><td><code>{@link #CoordinatorLayout_statusBarBackground com.myapp.pomodoro:statusBarBackground}</code></td><td>Drawable to display behind the status bar when the view is set to draw behind it.</td></tr>
      * </table>
      * @see #CoordinatorLayout_keylines
      * @see #CoordinatorLayout_statusBarBackground
@@ -739,7 +739,7 @@ public final class R {
      * attribute in the form
      * "<code>?[<i>package</i>:]<i>type</i>/<i>name</i></code>".
      *
-     * @attr name com.example.pomodoro:keylines
+     * @attr name com.myapp.pomodoro:keylines
      */
     public static final int CoordinatorLayout_keylines=0;
     /**
@@ -755,7 +755,7 @@ public final class R {
      * "<code>#<i>argb</i></code>", "<code>#<i>rrggbb</i></code>", or
      * "<code>#<i>aarrggbb</i></code>".
      *
-     * @attr name com.example.pomodoro:statusBarBackground
+     * @attr name com.myapp.pomodoro:statusBarBackground
      */
     public static final int CoordinatorLayout_statusBarBackground=1;
     /**
@@ -766,15 +766,15 @@ public final class R {
      * <colgroup align="left" />
      * <tr><th>Attribute</th><th>Description</th></tr>
      * <tr><td><code>{@link #CoordinatorLayout_Layout_android_layout_gravity android:layout_gravity}</code></td><td></td></tr>
-     * <tr><td><code>{@link #CoordinatorLayout_Layout_layout_anchor com.example.pomodoro:layout_anchor}</code></td><td>The id of an anchor view that this view should position relative to.</td></tr>
-     * <tr><td><code>{@link #CoordinatorLayout_Layout_layout_anchorGravity com.example.pomodoro:layout_anchorGravity}</code></td><td>Specifies how an object should position relative to an anchor, on both the X and Y axes,
+     * <tr><td><code>{@link #CoordinatorLayout_Layout_layout_anchor com.myapp.pomodoro:layout_anchor}</code></td><td>The id of an anchor view that this view should position relative to.</td></tr>
+     * <tr><td><code>{@link #CoordinatorLayout_Layout_layout_anchorGravity com.myapp.pomodoro:layout_anchorGravity}</code></td><td>Specifies how an object should position relative to an anchor, on both the X and Y axes,
      * within its parent's bounds.</td></tr>
-     * <tr><td><code>{@link #CoordinatorLayout_Layout_layout_behavior com.example.pomodoro:layout_behavior}</code></td><td>The class name of a Behavior class defining special runtime behavior
+     * <tr><td><code>{@link #CoordinatorLayout_Layout_layout_behavior com.myapp.pomodoro:layout_behavior}</code></td><td>The class name of a Behavior class defining special runtime behavior
      * for this child view.</td></tr>
-     * <tr><td><code>{@link #CoordinatorLayout_Layout_layout_dodgeInsetEdges com.example.pomodoro:layout_dodgeInsetEdges}</code></td><td>Specifies how this view dodges the inset edges of the CoordinatorLayout.</td></tr>
-     * <tr><td><code>{@link #CoordinatorLayout_Layout_layout_insetEdge com.example.pomodoro:layout_insetEdge}</code></td><td>Specifies how this view insets the CoordinatorLayout and make some other views
+     * <tr><td><code>{@link #CoordinatorLayout_Layout_layout_dodgeInsetEdges com.myapp.pomodoro:layout_dodgeInsetEdges}</code></td><td>Specifies how this view dodges the inset edges of the CoordinatorLayout.</td></tr>
+     * <tr><td><code>{@link #CoordinatorLayout_Layout_layout_insetEdge com.myapp.pomodoro:layout_insetEdge}</code></td><td>Specifies how this view insets the CoordinatorLayout and make some other views
      * dodge it.</td></tr>
-     * <tr><td><code>{@link #CoordinatorLayout_Layout_layout_keyline com.example.pomodoro:layout_keyline}</code></td><td>The index of a keyline this view should position relative to.</td></tr>
+     * <tr><td><code>{@link #CoordinatorLayout_Layout_layout_keyline com.myapp.pomodoro:layout_keyline}</code></td><td>The index of a keyline this view should position relative to.</td></tr>
      * </table>
      * @see #CoordinatorLayout_Layout_android_layout_gravity
      * @see #CoordinatorLayout_Layout_layout_anchor
@@ -827,7 +827,7 @@ public final class R {
      * attribute in the form
      * "<code>?[<i>package</i>:]<i>type</i>/<i>name</i></code>".
      *
-     * @attr name com.example.pomodoro:layout_anchor
+     * @attr name com.myapp.pomodoro:layout_anchor
      */
     public static final int CoordinatorLayout_Layout_layout_anchor=1;
     /**
@@ -864,7 +864,7 @@ public final class R {
      * <tr><td>top</td><td>30</td><td>Push object to the top of its container, not changing its size.</td></tr>
      * </table>
      *
-     * @attr name com.example.pomodoro:layout_anchorGravity
+     * @attr name com.myapp.pomodoro:layout_anchorGravity
      */
     public static final int CoordinatorLayout_Layout_layout_anchorGravity=2;
     /**
@@ -876,7 +876,7 @@ public final class R {
      * <p>May be a string value, using '\\;' to escape characters such as
      * '\\n' or '\\uxxxx' for a unicode character;
      *
-     * @attr name com.example.pomodoro:layout_behavior
+     * @attr name com.myapp.pomodoro:layout_behavior
      */
     public static final int CoordinatorLayout_Layout_layout_behavior=3;
     /**
@@ -900,7 +900,7 @@ public final class R {
      * <tr><td>top</td><td>30</td><td>Dodge the top inset edge.</td></tr>
      * </table>
      *
-     * @attr name com.example.pomodoro:layout_dodgeInsetEdges
+     * @attr name com.myapp.pomodoro:layout_dodgeInsetEdges
      */
     public static final int CoordinatorLayout_Layout_layout_dodgeInsetEdges=4;
     /**
@@ -924,7 +924,7 @@ public final class R {
      * <tr><td>top</td><td>30</td><td>Inset the top edge.</td></tr>
      * </table>
      *
-     * @attr name com.example.pomodoro:layout_insetEdge
+     * @attr name com.myapp.pomodoro:layout_insetEdge
      */
     public static final int CoordinatorLayout_Layout_layout_insetEdge=5;
     /**
@@ -936,7 +936,7 @@ public final class R {
      *
      * <p>May be an integer value, such as "<code>100</code>".
      *
-     * @attr name com.example.pomodoro:layout_keyline
+     * @attr name com.myapp.pomodoro:layout_keyline
      */
     public static final int CoordinatorLayout_Layout_layout_keyline=6;
     /**
@@ -946,12 +946,12 @@ public final class R {
      * <colgroup align="left" />
      * <colgroup align="left" />
      * <tr><th>Attribute</th><th>Description</th></tr>
-     * <tr><td><code>{@link #FontFamily_fontProviderAuthority com.example.pomodoro:fontProviderAuthority}</code></td><td>The authority of the Font Provider to be used for the request.</td></tr>
-     * <tr><td><code>{@link #FontFamily_fontProviderCerts com.example.pomodoro:fontProviderCerts}</code></td><td>The sets of hashes for the certificates the provider should be signed with.</td></tr>
-     * <tr><td><code>{@link #FontFamily_fontProviderFetchStrategy com.example.pomodoro:fontProviderFetchStrategy}</code></td><td>The strategy to be used when fetching font data from a font provider in XML layouts.</td></tr>
-     * <tr><td><code>{@link #FontFamily_fontProviderFetchTimeout com.example.pomodoro:fontProviderFetchTimeout}</code></td><td>The length of the timeout during fetching.</td></tr>
-     * <tr><td><code>{@link #FontFamily_fontProviderPackage com.example.pomodoro:fontProviderPackage}</code></td><td>The package for the Font Provider to be used for the request.</td></tr>
-     * <tr><td><code>{@link #FontFamily_fontProviderQuery com.example.pomodoro:fontProviderQuery}</code></td><td>The query to be sent over to the provider.</td></tr>
+     * <tr><td><code>{@link #FontFamily_fontProviderAuthority com.myapp.pomodoro:fontProviderAuthority}</code></td><td>The authority of the Font Provider to be used for the request.</td></tr>
+     * <tr><td><code>{@link #FontFamily_fontProviderCerts com.myapp.pomodoro:fontProviderCerts}</code></td><td>The sets of hashes for the certificates the provider should be signed with.</td></tr>
+     * <tr><td><code>{@link #FontFamily_fontProviderFetchStrategy com.myapp.pomodoro:fontProviderFetchStrategy}</code></td><td>The strategy to be used when fetching font data from a font provider in XML layouts.</td></tr>
+     * <tr><td><code>{@link #FontFamily_fontProviderFetchTimeout com.myapp.pomodoro:fontProviderFetchTimeout}</code></td><td>The length of the timeout during fetching.</td></tr>
+     * <tr><td><code>{@link #FontFamily_fontProviderPackage com.myapp.pomodoro:fontProviderPackage}</code></td><td>The package for the Font Provider to be used for the request.</td></tr>
+     * <tr><td><code>{@link #FontFamily_fontProviderQuery com.myapp.pomodoro:fontProviderQuery}</code></td><td>The query to be sent over to the provider.</td></tr>
      * </table>
      * @see #FontFamily_fontProviderAuthority
      * @see #FontFamily_fontProviderCerts
@@ -972,7 +972,7 @@ public final class R {
      * <p>May be a string value, using '\\;' to escape characters such as
      * '\\n' or '\\uxxxx' for a unicode character;
      *
-     * @attr name com.example.pomodoro:fontProviderAuthority
+     * @attr name com.myapp.pomodoro:fontProviderAuthority
      */
     public static final int FontFamily_fontProviderAuthority=0;
     /**
@@ -989,7 +989,7 @@ public final class R {
      * attribute in the form
      * "<code>?[<i>package</i>:]<i>type</i>/<i>name</i></code>".
      *
-     * @attr name com.example.pomodoro:fontProviderCerts
+     * @attr name com.myapp.pomodoro:fontProviderCerts
      */
     public static final int FontFamily_fontProviderCerts=1;
     /**
@@ -1021,7 +1021,7 @@ public final class R {
      * default typeface will be used instead.</td></tr>
      * </table>
      *
-     * @attr name com.example.pomodoro:fontProviderFetchStrategy
+     * @attr name com.myapp.pomodoro:fontProviderFetchStrategy
      */
     public static final int FontFamily_fontProviderFetchStrategy=2;
     /**
@@ -1040,7 +1040,7 @@ public final class R {
      * timeout and wait until a reply is received from the font provider.</td></tr>
      * </table>
      *
-     * @attr name com.example.pomodoro:fontProviderFetchTimeout
+     * @attr name com.myapp.pomodoro:fontProviderFetchTimeout
      */
     public static final int FontFamily_fontProviderFetchTimeout=3;
     /**
@@ -1052,7 +1052,7 @@ public final class R {
      * <p>May be a string value, using '\\;' to escape characters such as
      * '\\n' or '\\uxxxx' for a unicode character;
      *
-     * @attr name com.example.pomodoro:fontProviderPackage
+     * @attr name com.myapp.pomodoro:fontProviderPackage
      */
     public static final int FontFamily_fontProviderPackage=4;
     /**
@@ -1064,7 +1064,7 @@ public final class R {
      * <p>May be a string value, using '\\;' to escape characters such as
      * '\\n' or '\\uxxxx' for a unicode character;
      *
-     * @attr name com.example.pomodoro:fontProviderQuery
+     * @attr name com.myapp.pomodoro:fontProviderQuery
      */
     public static final int FontFamily_fontProviderQuery=5;
     /**
@@ -1079,11 +1079,11 @@ public final class R {
      * <tr><td><code>{@link #FontFamilyFont_android_fontStyle android:fontStyle}</code></td><td></td></tr>
      * <tr><td><code>{@link #FontFamilyFont_android_ttcIndex android:ttcIndex}</code></td><td></td></tr>
      * <tr><td><code>{@link #FontFamilyFont_android_fontVariationSettings android:fontVariationSettings}</code></td><td></td></tr>
-     * <tr><td><code>{@link #FontFamilyFont_font com.example.pomodoro:font}</code></td><td>The reference to the font file to be used.</td></tr>
-     * <tr><td><code>{@link #FontFamilyFont_fontStyle com.example.pomodoro:fontStyle}</code></td><td>The style of the given font file.</td></tr>
-     * <tr><td><code>{@link #FontFamilyFont_fontVariationSettings com.example.pomodoro:fontVariationSettings}</code></td><td>The variation settings to be applied to the font.</td></tr>
-     * <tr><td><code>{@link #FontFamilyFont_fontWeight com.example.pomodoro:fontWeight}</code></td><td>The weight of the given font file.</td></tr>
-     * <tr><td><code>{@link #FontFamilyFont_ttcIndex com.example.pomodoro:ttcIndex}</code></td><td>The index of the font in the tcc font file.</td></tr>
+     * <tr><td><code>{@link #FontFamilyFont_font com.myapp.pomodoro:font}</code></td><td>The reference to the font file to be used.</td></tr>
+     * <tr><td><code>{@link #FontFamilyFont_fontStyle com.myapp.pomodoro:fontStyle}</code></td><td>The style of the given font file.</td></tr>
+     * <tr><td><code>{@link #FontFamilyFont_fontVariationSettings com.myapp.pomodoro:fontVariationSettings}</code></td><td>The variation settings to be applied to the font.</td></tr>
+     * <tr><td><code>{@link #FontFamilyFont_fontWeight com.myapp.pomodoro:fontWeight}</code></td><td>The weight of the given font file.</td></tr>
+     * <tr><td><code>{@link #FontFamilyFont_ttcIndex com.myapp.pomodoro:ttcIndex}</code></td><td>The index of the font in the tcc font file.</td></tr>
      * </table>
      * @see #FontFamilyFont_android_font
      * @see #FontFamilyFont_android_fontWeight
@@ -1170,7 +1170,7 @@ public final class R {
      * attribute in the form
      * "<code>?[<i>package</i>:]<i>type</i>/<i>name</i></code>".
      *
-     * @attr name com.example.pomodoro:font
+     * @attr name com.myapp.pomodoro:font
      */
     public static final int FontFamilyFont_font=5;
     /**
@@ -1190,7 +1190,7 @@ public final class R {
      * <tr><td>normal</td><td>0</td><td></td></tr>
      * </table>
      *
-     * @attr name com.example.pomodoro:fontStyle
+     * @attr name com.myapp.pomodoro:fontStyle
      */
     public static final int FontFamilyFont_fontStyle=6;
     /**
@@ -1204,7 +1204,7 @@ public final class R {
      * <p>May be a string value, using '\\;' to escape characters such as
      * '\\n' or '\\uxxxx' for a unicode character;
      *
-     * @attr name com.example.pomodoro:fontVariationSettings
+     * @attr name com.myapp.pomodoro:fontVariationSettings
      */
     public static final int FontFamilyFont_fontVariationSettings=7;
     /**
@@ -1218,7 +1218,7 @@ public final class R {
      *
      * <p>May be an integer value, such as "<code>100</code>".
      *
-     * @attr name com.example.pomodoro:fontWeight
+     * @attr name com.myapp.pomodoro:fontWeight
      */
     public static final int FontFamilyFont_fontWeight=8;
     /**
@@ -1229,7 +1229,7 @@ public final class R {
      *
      * <p>May be an integer value, such as "<code>100</code>".
      *
-     * @attr name com.example.pomodoro:ttcIndex
+     * @attr name com.myapp.pomodoro:ttcIndex
      */
     public static final int FontFamilyFont_ttcIndex=9;
     /**
@@ -1482,9 +1482,9 @@ public final class R {
      * <colgroup align="left" />
      * <colgroup align="left" />
      * <tr><th>Attribute</th><th>Description</th></tr>
-     * <tr><td><code>{@link #LoadingImageView_circleCrop com.example.pomodoro:circleCrop}</code></td><td></td></tr>
-     * <tr><td><code>{@link #LoadingImageView_imageAspectRatio com.example.pomodoro:imageAspectRatio}</code></td><td></td></tr>
-     * <tr><td><code>{@link #LoadingImageView_imageAspectRatioAdjust com.example.pomodoro:imageAspectRatioAdjust}</code></td><td></td></tr>
+     * <tr><td><code>{@link #LoadingImageView_circleCrop com.myapp.pomodoro:circleCrop}</code></td><td></td></tr>
+     * <tr><td><code>{@link #LoadingImageView_imageAspectRatio com.myapp.pomodoro:imageAspectRatio}</code></td><td></td></tr>
+     * <tr><td><code>{@link #LoadingImageView_imageAspectRatioAdjust com.myapp.pomodoro:imageAspectRatioAdjust}</code></td><td></td></tr>
      * </table>
      * @see #LoadingImageView_circleCrop
      * @see #LoadingImageView_imageAspectRatio
@@ -1494,26 +1494,26 @@ public final class R {
       0x7f01000a, 0x7f010017, 0x7f010018
     };
     /**
-     * <p>This symbol is the offset where the {@link com.example.pomodoro.R.attr#circleCrop}
+     * <p>This symbol is the offset where the {@link com.myapp.pomodoro.R.attr#circleCrop}
      * attribute's value can be found in the {@link #LoadingImageView} array.
      *
      * <p>May be a boolean value, such as "<code>true</code>" or
      * "<code>false</code>".
      *
-     * @attr name com.example.pomodoro:circleCrop
+     * @attr name com.myapp.pomodoro:circleCrop
      */
     public static final int LoadingImageView_circleCrop=0;
     /**
-     * <p>This symbol is the offset where the {@link com.example.pomodoro.R.attr#imageAspectRatio}
+     * <p>This symbol is the offset where the {@link com.myapp.pomodoro.R.attr#imageAspectRatio}
      * attribute's value can be found in the {@link #LoadingImageView} array.
      *
      * <p>May be a floating point value, such as "<code>1.2</code>".
      *
-     * @attr name com.example.pomodoro:imageAspectRatio
+     * @attr name com.myapp.pomodoro:imageAspectRatio
      */
     public static final int LoadingImageView_imageAspectRatio=1;
     /**
-     * <p>This symbol is the offset where the {@link com.example.pomodoro.R.attr#imageAspectRatioAdjust}
+     * <p>This symbol is the offset where the {@link com.myapp.pomodoro.R.attr#imageAspectRatioAdjust}
      * attribute's value can be found in the {@link #LoadingImageView} array.
      *
      * <p>Must be one of the following constant values.</p>
@@ -1527,7 +1527,7 @@ public final class R {
      * <tr><td>none</td><td>0</td><td></td></tr>
      * </table>
      *
-     * @attr name com.example.pomodoro:imageAspectRatioAdjust
+     * @attr name com.myapp.pomodoro:imageAspectRatioAdjust
      */
     public static final int LoadingImageView_imageAspectRatioAdjust=2;
     /**
@@ -1537,30 +1537,30 @@ public final class R {
      * <colgroup align="left" />
      * <colgroup align="left" />
      * <tr><th>Attribute</th><th>Description</th></tr>
-     * <tr><td><code>{@link #MapAttrs_ambientEnabled com.example.pomodoro:ambientEnabled}</code></td><td></td></tr>
-     * <tr><td><code>{@link #MapAttrs_cameraBearing com.example.pomodoro:cameraBearing}</code></td><td></td></tr>
-     * <tr><td><code>{@link #MapAttrs_cameraMaxZoomPreference com.example.pomodoro:cameraMaxZoomPreference}</code></td><td></td></tr>
-     * <tr><td><code>{@link #MapAttrs_cameraMinZoomPreference com.example.pomodoro:cameraMinZoomPreference}</code></td><td></td></tr>
-     * <tr><td><code>{@link #MapAttrs_cameraTargetLat com.example.pomodoro:cameraTargetLat}</code></td><td></td></tr>
-     * <tr><td><code>{@link #MapAttrs_cameraTargetLng com.example.pomodoro:cameraTargetLng}</code></td><td></td></tr>
-     * <tr><td><code>{@link #MapAttrs_cameraTilt com.example.pomodoro:cameraTilt}</code></td><td></td></tr>
-     * <tr><td><code>{@link #MapAttrs_cameraZoom com.example.pomodoro:cameraZoom}</code></td><td></td></tr>
-     * <tr><td><code>{@link #MapAttrs_latLngBoundsNorthEastLatitude com.example.pomodoro:latLngBoundsNorthEastLatitude}</code></td><td></td></tr>
-     * <tr><td><code>{@link #MapAttrs_latLngBoundsNorthEastLongitude com.example.pomodoro:latLngBoundsNorthEastLongitude}</code></td><td></td></tr>
-     * <tr><td><code>{@link #MapAttrs_latLngBoundsSouthWestLatitude com.example.pomodoro:latLngBoundsSouthWestLatitude}</code></td><td></td></tr>
-     * <tr><td><code>{@link #MapAttrs_latLngBoundsSouthWestLongitude com.example.pomodoro:latLngBoundsSouthWestLongitude}</code></td><td></td></tr>
-     * <tr><td><code>{@link #MapAttrs_liteMode com.example.pomodoro:liteMode}</code></td><td></td></tr>
-     * <tr><td><code>{@link #MapAttrs_mapType com.example.pomodoro:mapType}</code></td><td></td></tr>
-     * <tr><td><code>{@link #MapAttrs_uiCompass com.example.pomodoro:uiCompass}</code></td><td></td></tr>
-     * <tr><td><code>{@link #MapAttrs_uiMapToolbar com.example.pomodoro:uiMapToolbar}</code></td><td></td></tr>
-     * <tr><td><code>{@link #MapAttrs_uiRotateGestures com.example.pomodoro:uiRotateGestures}</code></td><td></td></tr>
-     * <tr><td><code>{@link #MapAttrs_uiScrollGestures com.example.pomodoro:uiScrollGestures}</code></td><td></td></tr>
-     * <tr><td><code>{@link #MapAttrs_uiScrollGesturesDuringRotateOrZoom com.example.pomodoro:uiScrollGesturesDuringRotateOrZoom}</code></td><td></td></tr>
-     * <tr><td><code>{@link #MapAttrs_uiTiltGestures com.example.pomodoro:uiTiltGestures}</code></td><td></td></tr>
-     * <tr><td><code>{@link #MapAttrs_uiZoomControls com.example.pomodoro:uiZoomControls}</code></td><td></td></tr>
-     * <tr><td><code>{@link #MapAttrs_uiZoomGestures com.example.pomodoro:uiZoomGestures}</code></td><td></td></tr>
-     * <tr><td><code>{@link #MapAttrs_useViewLifecycle com.example.pomodoro:useViewLifecycle}</code></td><td></td></tr>
-     * <tr><td><code>{@link #MapAttrs_zOrderOnTop com.example.pomodoro:zOrderOnTop}</code></td><td></td></tr>
+     * <tr><td><code>{@link #MapAttrs_ambientEnabled com.myapp.pomodoro:ambientEnabled}</code></td><td></td></tr>
+     * <tr><td><code>{@link #MapAttrs_cameraBearing com.myapp.pomodoro:cameraBearing}</code></td><td></td></tr>
+     * <tr><td><code>{@link #MapAttrs_cameraMaxZoomPreference com.myapp.pomodoro:cameraMaxZoomPreference}</code></td><td></td></tr>
+     * <tr><td><code>{@link #MapAttrs_cameraMinZoomPreference com.myapp.pomodoro:cameraMinZoomPreference}</code></td><td></td></tr>
+     * <tr><td><code>{@link #MapAttrs_cameraTargetLat com.myapp.pomodoro:cameraTargetLat}</code></td><td></td></tr>
+     * <tr><td><code>{@link #MapAttrs_cameraTargetLng com.myapp.pomodoro:cameraTargetLng}</code></td><td></td></tr>
+     * <tr><td><code>{@link #MapAttrs_cameraTilt com.myapp.pomodoro:cameraTilt}</code></td><td></td></tr>
+     * <tr><td><code>{@link #MapAttrs_cameraZoom com.myapp.pomodoro:cameraZoom}</code></td><td></td></tr>
+     * <tr><td><code>{@link #MapAttrs_latLngBoundsNorthEastLatitude com.myapp.pomodoro:latLngBoundsNorthEastLatitude}</code></td><td></td></tr>
+     * <tr><td><code>{@link #MapAttrs_latLngBoundsNorthEastLongitude com.myapp.pomodoro:latLngBoundsNorthEastLongitude}</code></td><td></td></tr>
+     * <tr><td><code>{@link #MapAttrs_latLngBoundsSouthWestLatitude com.myapp.pomodoro:latLngBoundsSouthWestLatitude}</code></td><td></td></tr>
+     * <tr><td><code>{@link #MapAttrs_latLngBoundsSouthWestLongitude com.myapp.pomodoro:latLngBoundsSouthWestLongitude}</code></td><td></td></tr>
+     * <tr><td><code>{@link #MapAttrs_liteMode com.myapp.pomodoro:liteMode}</code></td><td></td></tr>
+     * <tr><td><code>{@link #MapAttrs_mapType com.myapp.pomodoro:mapType}</code></td><td></td></tr>
+     * <tr><td><code>{@link #MapAttrs_uiCompass com.myapp.pomodoro:uiCompass}</code></td><td></td></tr>
+     * <tr><td><code>{@link #MapAttrs_uiMapToolbar com.myapp.pomodoro:uiMapToolbar}</code></td><td></td></tr>
+     * <tr><td><code>{@link #MapAttrs_uiRotateGestures com.myapp.pomodoro:uiRotateGestures}</code></td><td></td></tr>
+     * <tr><td><code>{@link #MapAttrs_uiScrollGestures com.myapp.pomodoro:uiScrollGestures}</code></td><td></td></tr>
+     * <tr><td><code>{@link #MapAttrs_uiScrollGesturesDuringRotateOrZoom com.myapp.pomodoro:uiScrollGesturesDuringRotateOrZoom}</code></td><td></td></tr>
+     * <tr><td><code>{@link #MapAttrs_uiTiltGestures com.myapp.pomodoro:uiTiltGestures}</code></td><td></td></tr>
+     * <tr><td><code>{@link #MapAttrs_uiZoomControls com.myapp.pomodoro:uiZoomControls}</code></td><td></td></tr>
+     * <tr><td><code>{@link #MapAttrs_uiZoomGestures com.myapp.pomodoro:uiZoomGestures}</code></td><td></td></tr>
+     * <tr><td><code>{@link #MapAttrs_useViewLifecycle com.myapp.pomodoro:useViewLifecycle}</code></td><td></td></tr>
+     * <tr><td><code>{@link #MapAttrs_zOrderOnTop com.myapp.pomodoro:zOrderOnTop}</code></td><td></td></tr>
      * </table>
      * @see #MapAttrs_ambientEnabled
      * @see #MapAttrs_cameraBearing
@@ -1596,126 +1596,126 @@ public final class R {
       0x7f01002f, 0x7f010030, 0x7f010031, 0x7f010032
     };
     /**
-     * <p>This symbol is the offset where the {@link com.example.pomodoro.R.attr#ambientEnabled}
+     * <p>This symbol is the offset where the {@link com.myapp.pomodoro.R.attr#ambientEnabled}
      * attribute's value can be found in the {@link #MapAttrs} array.
      *
      * <p>May be a boolean value, such as "<code>true</code>" or
      * "<code>false</code>".
      *
-     * @attr name com.example.pomodoro:ambientEnabled
+     * @attr name com.myapp.pomodoro:ambientEnabled
      */
     public static final int MapAttrs_ambientEnabled=0;
     /**
-     * <p>This symbol is the offset where the {@link com.example.pomodoro.R.attr#cameraBearing}
+     * <p>This symbol is the offset where the {@link com.myapp.pomodoro.R.attr#cameraBearing}
      * attribute's value can be found in the {@link #MapAttrs} array.
      *
      * <p>May be a floating point value, such as "<code>1.2</code>".
      *
-     * @attr name com.example.pomodoro:cameraBearing
+     * @attr name com.myapp.pomodoro:cameraBearing
      */
     public static final int MapAttrs_cameraBearing=1;
     /**
-     * <p>This symbol is the offset where the {@link com.example.pomodoro.R.attr#cameraMaxZoomPreference}
+     * <p>This symbol is the offset where the {@link com.myapp.pomodoro.R.attr#cameraMaxZoomPreference}
      * attribute's value can be found in the {@link #MapAttrs} array.
      *
      * <p>May be a floating point value, such as "<code>1.2</code>".
      *
-     * @attr name com.example.pomodoro:cameraMaxZoomPreference
+     * @attr name com.myapp.pomodoro:cameraMaxZoomPreference
      */
     public static final int MapAttrs_cameraMaxZoomPreference=2;
     /**
-     * <p>This symbol is the offset where the {@link com.example.pomodoro.R.attr#cameraMinZoomPreference}
+     * <p>This symbol is the offset where the {@link com.myapp.pomodoro.R.attr#cameraMinZoomPreference}
      * attribute's value can be found in the {@link #MapAttrs} array.
      *
      * <p>May be a floating point value, such as "<code>1.2</code>".
      *
-     * @attr name com.example.pomodoro:cameraMinZoomPreference
+     * @attr name com.myapp.pomodoro:cameraMinZoomPreference
      */
     public static final int MapAttrs_cameraMinZoomPreference=3;
     /**
-     * <p>This symbol is the offset where the {@link com.example.pomodoro.R.attr#cameraTargetLat}
+     * <p>This symbol is the offset where the {@link com.myapp.pomodoro.R.attr#cameraTargetLat}
      * attribute's value can be found in the {@link #MapAttrs} array.
      *
      * <p>May be a floating point value, such as "<code>1.2</code>".
      *
-     * @attr name com.example.pomodoro:cameraTargetLat
+     * @attr name com.myapp.pomodoro:cameraTargetLat
      */
     public static final int MapAttrs_cameraTargetLat=4;
     /**
-     * <p>This symbol is the offset where the {@link com.example.pomodoro.R.attr#cameraTargetLng}
+     * <p>This symbol is the offset where the {@link com.myapp.pomodoro.R.attr#cameraTargetLng}
      * attribute's value can be found in the {@link #MapAttrs} array.
      *
      * <p>May be a floating point value, such as "<code>1.2</code>".
      *
-     * @attr name com.example.pomodoro:cameraTargetLng
+     * @attr name com.myapp.pomodoro:cameraTargetLng
      */
     public static final int MapAttrs_cameraTargetLng=5;
     /**
-     * <p>This symbol is the offset where the {@link com.example.pomodoro.R.attr#cameraTilt}
+     * <p>This symbol is the offset where the {@link com.myapp.pomodoro.R.attr#cameraTilt}
      * attribute's value can be found in the {@link #MapAttrs} array.
      *
      * <p>May be a floating point value, such as "<code>1.2</code>".
      *
-     * @attr name com.example.pomodoro:cameraTilt
+     * @attr name com.myapp.pomodoro:cameraTilt
      */
     public static final int MapAttrs_cameraTilt=6;
     /**
-     * <p>This symbol is the offset where the {@link com.example.pomodoro.R.attr#cameraZoom}
+     * <p>This symbol is the offset where the {@link com.myapp.pomodoro.R.attr#cameraZoom}
      * attribute's value can be found in the {@link #MapAttrs} array.
      *
      * <p>May be a floating point value, such as "<code>1.2</code>".
      *
-     * @attr name com.example.pomodoro:cameraZoom
+     * @attr name com.myapp.pomodoro:cameraZoom
      */
     public static final int MapAttrs_cameraZoom=7;
     /**
-     * <p>This symbol is the offset where the {@link com.example.pomodoro.R.attr#latLngBoundsNorthEastLatitude}
+     * <p>This symbol is the offset where the {@link com.myapp.pomodoro.R.attr#latLngBoundsNorthEastLatitude}
      * attribute's value can be found in the {@link #MapAttrs} array.
      *
      * <p>May be a floating point value, such as "<code>1.2</code>".
      *
-     * @attr name com.example.pomodoro:latLngBoundsNorthEastLatitude
+     * @attr name com.myapp.pomodoro:latLngBoundsNorthEastLatitude
      */
     public static final int MapAttrs_latLngBoundsNorthEastLatitude=8;
     /**
-     * <p>This symbol is the offset where the {@link com.example.pomodoro.R.attr#latLngBoundsNorthEastLongitude}
+     * <p>This symbol is the offset where the {@link com.myapp.pomodoro.R.attr#latLngBoundsNorthEastLongitude}
      * attribute's value can be found in the {@link #MapAttrs} array.
      *
      * <p>May be a floating point value, such as "<code>1.2</code>".
      *
-     * @attr name com.example.pomodoro:latLngBoundsNorthEastLongitude
+     * @attr name com.myapp.pomodoro:latLngBoundsNorthEastLongitude
      */
     public static final int MapAttrs_latLngBoundsNorthEastLongitude=9;
     /**
-     * <p>This symbol is the offset where the {@link com.example.pomodoro.R.attr#latLngBoundsSouthWestLatitude}
+     * <p>This symbol is the offset where the {@link com.myapp.pomodoro.R.attr#latLngBoundsSouthWestLatitude}
      * attribute's value can be found in the {@link #MapAttrs} array.
      *
      * <p>May be a floating point value, such as "<code>1.2</code>".
      *
-     * @attr name com.example.pomodoro:latLngBoundsSouthWestLatitude
+     * @attr name com.myapp.pomodoro:latLngBoundsSouthWestLatitude
      */
     public static final int MapAttrs_latLngBoundsSouthWestLatitude=10;
     /**
-     * <p>This symbol is the offset where the {@link com.example.pomodoro.R.attr#latLngBoundsSouthWestLongitude}
+     * <p>This symbol is the offset where the {@link com.myapp.pomodoro.R.attr#latLngBoundsSouthWestLongitude}
      * attribute's value can be found in the {@link #MapAttrs} array.
      *
      * <p>May be a floating point value, such as "<code>1.2</code>".
      *
-     * @attr name com.example.pomodoro:latLngBoundsSouthWestLongitude
+     * @attr name com.myapp.pomodoro:latLngBoundsSouthWestLongitude
      */
     public static final int MapAttrs_latLngBoundsSouthWestLongitude=11;
     /**
-     * <p>This symbol is the offset where the {@link com.example.pomodoro.R.attr#liteMode}
+     * <p>This symbol is the offset where the {@link com.myapp.pomodoro.R.attr#liteMode}
      * attribute's value can be found in the {@link #MapAttrs} array.
      *
      * <p>May be a boolean value, such as "<code>true</code>" or
      * "<code>false</code>".
      *
-     * @attr name com.example.pomodoro:liteMode
+     * @attr name com.myapp.pomodoro:liteMode
      */
     public static final int MapAttrs_liteMode=12;
     /**
-     * <p>This symbol is the offset where the {@link com.example.pomodoro.R.attr#mapType}
+     * <p>This symbol is the offset where the {@link com.myapp.pomodoro.R.attr#mapType}
      * attribute's value can be found in the {@link #MapAttrs} array.
      *
      * <p>Must be one of the following constant values.</p>
@@ -1731,107 +1731,107 @@ public final class R {
      * <tr><td>terrain</td><td>3</td><td></td></tr>
      * </table>
      *
-     * @attr name com.example.pomodoro:mapType
+     * @attr name com.myapp.pomodoro:mapType
      */
     public static final int MapAttrs_mapType=13;
     /**
-     * <p>This symbol is the offset where the {@link com.example.pomodoro.R.attr#uiCompass}
+     * <p>This symbol is the offset where the {@link com.myapp.pomodoro.R.attr#uiCompass}
      * attribute's value can be found in the {@link #MapAttrs} array.
      *
      * <p>May be a boolean value, such as "<code>true</code>" or
      * "<code>false</code>".
      *
-     * @attr name com.example.pomodoro:uiCompass
+     * @attr name com.myapp.pomodoro:uiCompass
      */
     public static final int MapAttrs_uiCompass=14;
     /**
-     * <p>This symbol is the offset where the {@link com.example.pomodoro.R.attr#uiMapToolbar}
+     * <p>This symbol is the offset where the {@link com.myapp.pomodoro.R.attr#uiMapToolbar}
      * attribute's value can be found in the {@link #MapAttrs} array.
      *
      * <p>May be a boolean value, such as "<code>true</code>" or
      * "<code>false</code>".
      *
-     * @attr name com.example.pomodoro:uiMapToolbar
+     * @attr name com.myapp.pomodoro:uiMapToolbar
      */
     public static final int MapAttrs_uiMapToolbar=15;
     /**
-     * <p>This symbol is the offset where the {@link com.example.pomodoro.R.attr#uiRotateGestures}
+     * <p>This symbol is the offset where the {@link com.myapp.pomodoro.R.attr#uiRotateGestures}
      * attribute's value can be found in the {@link #MapAttrs} array.
      *
      * <p>May be a boolean value, such as "<code>true</code>" or
      * "<code>false</code>".
      *
-     * @attr name com.example.pomodoro:uiRotateGestures
+     * @attr name com.myapp.pomodoro:uiRotateGestures
      */
     public static final int MapAttrs_uiRotateGestures=16;
     /**
-     * <p>This symbol is the offset where the {@link com.example.pomodoro.R.attr#uiScrollGestures}
+     * <p>This symbol is the offset where the {@link com.myapp.pomodoro.R.attr#uiScrollGestures}
      * attribute's value can be found in the {@link #MapAttrs} array.
      *
      * <p>May be a boolean value, such as "<code>true</code>" or
      * "<code>false</code>".
      *
-     * @attr name com.example.pomodoro:uiScrollGestures
+     * @attr name com.myapp.pomodoro:uiScrollGestures
      */
     public static final int MapAttrs_uiScrollGestures=17;
     /**
-     * <p>This symbol is the offset where the {@link com.example.pomodoro.R.attr#uiScrollGesturesDuringRotateOrZoom}
+     * <p>This symbol is the offset where the {@link com.myapp.pomodoro.R.attr#uiScrollGesturesDuringRotateOrZoom}
      * attribute's value can be found in the {@link #MapAttrs} array.
      *
      * <p>May be a boolean value, such as "<code>true</code>" or
      * "<code>false</code>".
      *
-     * @attr name com.example.pomodoro:uiScrollGesturesDuringRotateOrZoom
+     * @attr name com.myapp.pomodoro:uiScrollGesturesDuringRotateOrZoom
      */
     public static final int MapAttrs_uiScrollGesturesDuringRotateOrZoom=18;
     /**
-     * <p>This symbol is the offset where the {@link com.example.pomodoro.R.attr#uiTiltGestures}
+     * <p>This symbol is the offset where the {@link com.myapp.pomodoro.R.attr#uiTiltGestures}
      * attribute's value can be found in the {@link #MapAttrs} array.
      *
      * <p>May be a boolean value, such as "<code>true</code>" or
      * "<code>false</code>".
      *
-     * @attr name com.example.pomodoro:uiTiltGestures
+     * @attr name com.myapp.pomodoro:uiTiltGestures
      */
     public static final int MapAttrs_uiTiltGestures=19;
     /**
-     * <p>This symbol is the offset where the {@link com.example.pomodoro.R.attr#uiZoomControls}
+     * <p>This symbol is the offset where the {@link com.myapp.pomodoro.R.attr#uiZoomControls}
      * attribute's value can be found in the {@link #MapAttrs} array.
      *
      * <p>May be a boolean value, such as "<code>true</code>" or
      * "<code>false</code>".
      *
-     * @attr name com.example.pomodoro:uiZoomControls
+     * @attr name com.myapp.pomodoro:uiZoomControls
      */
     public static final int MapAttrs_uiZoomControls=20;
     /**
-     * <p>This symbol is the offset where the {@link com.example.pomodoro.R.attr#uiZoomGestures}
+     * <p>This symbol is the offset where the {@link com.myapp.pomodoro.R.attr#uiZoomGestures}
      * attribute's value can be found in the {@link #MapAttrs} array.
      *
      * <p>May be a boolean value, such as "<code>true</code>" or
      * "<code>false</code>".
      *
-     * @attr name com.example.pomodoro:uiZoomGestures
+     * @attr name com.myapp.pomodoro:uiZoomGestures
      */
     public static final int MapAttrs_uiZoomGestures=21;
     /**
-     * <p>This symbol is the offset where the {@link com.example.pomodoro.R.attr#useViewLifecycle}
+     * <p>This symbol is the offset where the {@link com.myapp.pomodoro.R.attr#useViewLifecycle}
      * attribute's value can be found in the {@link #MapAttrs} array.
      *
      * <p>May be a boolean value, such as "<code>true</code>" or
      * "<code>false</code>".
      *
-     * @attr name com.example.pomodoro:useViewLifecycle
+     * @attr name com.myapp.pomodoro:useViewLifecycle
      */
     public static final int MapAttrs_useViewLifecycle=22;
     /**
-     * <p>This symbol is the offset where the {@link com.example.pomodoro.R.attr#zOrderOnTop}
+     * <p>This symbol is the offset where the {@link com.myapp.pomodoro.R.attr#zOrderOnTop}
      * attribute's value can be found in the {@link #MapAttrs} array.
      *
      * <p>May be a boolean value, such as "<code>true</code>" or
      * "<code>false</code>".
      *
-     * @attr name com.example.pomodoro:zOrderOnTop
+     * @attr name com.myapp.pomodoro:zOrderOnTop
      */
     public static final int MapAttrs_zOrderOnTop=23;
     /**
@@ -1841,9 +1841,9 @@ public final class R {
      * <colgroup align="left" />
      * <colgroup align="left" />
      * <tr><th>Attribute</th><th>Description</th></tr>
-     * <tr><td><code>{@link #SignInButton_buttonSize com.example.pomodoro:buttonSize}</code></td><td></td></tr>
-     * <tr><td><code>{@link #SignInButton_colorScheme com.example.pomodoro:colorScheme}</code></td><td></td></tr>
-     * <tr><td><code>{@link #SignInButton_scopeUris com.example.pomodoro:scopeUris}</code></td><td></td></tr>
+     * <tr><td><code>{@link #SignInButton_buttonSize com.myapp.pomodoro:buttonSize}</code></td><td></td></tr>
+     * <tr><td><code>{@link #SignInButton_colorScheme com.myapp.pomodoro:colorScheme}</code></td><td></td></tr>
+     * <tr><td><code>{@link #SignInButton_scopeUris com.myapp.pomodoro:scopeUris}</code></td><td></td></tr>
      * </table>
      * @see #SignInButton_buttonSize
      * @see #SignInButton_colorScheme
@@ -1853,7 +1853,7 @@ public final class R {
       0x7f010002, 0x7f01000b, 0x7f010026
     };
     /**
-     * <p>This symbol is the offset where the {@link com.example.pomodoro.R.attr#buttonSize}
+     * <p>This symbol is the offset where the {@link com.myapp.pomodoro.R.attr#buttonSize}
      * attribute's value can be found in the {@link #SignInButton} array.
      *
      * <p>May be a reference to another resource, in the form
@@ -1871,11 +1871,11 @@ public final class R {
      * <tr><td>wide</td><td>1</td><td></td></tr>
      * </table>
      *
-     * @attr name com.example.pomodoro:buttonSize
+     * @attr name com.myapp.pomodoro:buttonSize
      */
     public static final int SignInButton_buttonSize=0;
     /**
-     * <p>This symbol is the offset where the {@link com.example.pomodoro.R.attr#colorScheme}
+     * <p>This symbol is the offset where the {@link com.myapp.pomodoro.R.attr#colorScheme}
      * attribute's value can be found in the {@link #SignInButton} array.
      *
      * <p>May be a reference to another resource, in the form
@@ -1893,11 +1893,11 @@ public final class R {
      * <tr><td>light</td><td>1</td><td></td></tr>
      * </table>
      *
-     * @attr name com.example.pomodoro:colorScheme
+     * @attr name com.myapp.pomodoro:colorScheme
      */
     public static final int SignInButton_colorScheme=1;
     /**
-     * <p>This symbol is the offset where the {@link com.example.pomodoro.R.attr#scopeUris}
+     * <p>This symbol is the offset where the {@link com.myapp.pomodoro.R.attr#scopeUris}
      * attribute's value can be found in the {@link #SignInButton} array.
      *
      * <p>May be a reference to another resource, in the form
@@ -1907,8 +1907,11 @@ public final class R {
      * <p>May be a string value, using '\\;' to escape characters such as
      * '\\n' or '\\uxxxx' for a unicode character;
      *
-     * @attr name com.example.pomodoro:scopeUris
+     * @attr name com.myapp.pomodoro:scopeUris
      */
     public static final int SignInButton_scopeUris=2;
+  }
+  public static final class xml {
+    public static final int flutter_image_picker_file_paths=0x7f0c0000;
   }
 }

@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="default_web_client_id" translatable="false">744971163099-27091m5k9r5usl42cbmo21onpba8kh5k.apps.googleusercontent.com</string>
-    <string name="firebase_database_url" translatable="false">https://locations-for-pomodoro-api.firebaseio.com</string>
-    <string name="gcm_defaultSenderId" translatable="false">744971163099</string>
-    <string name="google_api_key" translatable="false">AIzaSyB4chSITyCrMX540qQH_IQdDPQOHTVpg9w</string>
-    <string name="google_app_id" translatable="false">1:744971163099:android:9b6fa628188436b9</string>
-    <string name="google_crash_reporting_api_key" translatable="false">AIzaSyB4chSITyCrMX540qQH_IQdDPQOHTVpg9w</string>
-    <string name="google_storage_bucket" translatable="false">locations-for-pomodoro-api.appspot.com</string>
-    <string name="project_id" translatable="false">locations-for-pomodoro-api</string>
+    <string name="default_web_client_id" translatable="false">351053539953-53uvlo1f794jgbhojhbhs3j021dp1b0n.apps.googleusercontent.com</string>
+    <string name="firebase_database_url" translatable="false">https://pomodoro-kmitl.firebaseio.com</string>
+    <string name="gcm_defaultSenderId" translatable="false">351053539953</string>
+    <string name="google_api_key" translatable="false">AIzaSyAydX9n5OVb47_9mqiH2mHJWaV_vsFglZo</string>
+    <string name="google_app_id" translatable="false">1:351053539953:android:374782a60ab29ea7</string>
+    <string name="google_crash_reporting_api_key" translatable="false">AIzaSyAydX9n5OVb47_9mqiH2mHJWaV_vsFglZo</string>
+    <string name="google_storage_bucket" translatable="false">pomodoro-kmitl.appspot.com</string>
+    <string name="project_id" translatable="false">pomodoro-kmitl</string>
 </resources>

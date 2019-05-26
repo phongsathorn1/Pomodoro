@@ -196,6 +196,10 @@
         "source": "C:\\Users\\Cystle0\\.gradle\\caches\\transforms-1\\files-1.1\\jetified-play-services-base-16.0.1.aar\\ae363149b8f57c741e0e2357110f6b33\\res\\drawable\\common_google_signin_btn_icon_light.xml"
     },
     {
+        "merged": "C:\\Users\\Cystle0\\Desktop\\jameproject\\build\\app\\intermediates\\res\\merged\\debug\\xml_flutter_image_picker_file_paths.xml.flat",
+        "source": "C:\\Users\\Cystle0\\Desktop\\jameproject\\build\\image_picker\\intermediates\\packaged_res\\debug\\xml\\flutter_image_picker_file_paths.xml"
+    },
+    {
         "merged": "C:\\Users\\Cystle0\\Desktop\\jameproject\\build\\app\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4_notification_bg_normal_pressed.9.png.flat",
         "source": "C:\\Users\\Cystle0\\.gradle\\caches\\transforms-1\\files-1.1\\core-1.0.0.aar\\f39364ca47605eb30648ef59a907c14b\\res\\drawable-mdpi-v4\\notification_bg_normal_pressed.9.png"
     },

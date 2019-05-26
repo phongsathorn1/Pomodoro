@@ -44,7 +44,7 @@ class BookDetailsState extends State<BookDetails> {
     return Scaffold(
       appBar: AppBar(
         title: Text(
-          'รายละเอียดหนังสือ',
+          'Book details',
           overflow: TextOverflow.ellipsis,
           style: TextStyle(
             fontFamily: GetTextStyle(),

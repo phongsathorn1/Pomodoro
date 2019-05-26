@@ -1,1 +1,1 @@
-com.example.pomodoro
+com.myapp.pomodoro
