@@ -38,11 +38,16 @@ class _SliverWithTabBarState extends State<SliverWithTabBar>
               });
             },
             tabs: [
+              TabItem(),
+            ],
+            /*
+            [
               Tab(icon: Icon(Icons.home)),
               Tab(icon: Icon(Icons.alarm)),
               Tab(icon: Icon(Icons.account_balance)),
               Tab(icon: Icon(Icons.book)),
             ],
+            */
             controller: controller,
           ),
         ),

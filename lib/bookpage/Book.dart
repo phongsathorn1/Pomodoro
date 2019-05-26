@@ -3,8 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 import 'package:pomodoro/bookpage/bookDetails.dart';
 import 'package:pomodoro/fonts/fonts.dart';
-import 'Model/bookcategory.dart';
-import 'Service/book_service.dart';
+import 'package:pomodoro/bookpage/Model/bookcategory.dart';
+import 'package:pomodoro/bookpage/Service/book_service.dart';
 
 class BookPage extends StatefulWidget {
   @override
