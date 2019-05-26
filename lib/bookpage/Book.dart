@@ -122,15 +122,15 @@ class BookState extends State<BookPage> {
                                   );
                                   Navigator.of(context).push(route);
                                 },
-                                child: Column(
-                                  children: <Widget>[
-                                    Image.network(
-                                      snapshot.data.results.books
-                                          .elementAt(index)
-                                          .bookImage,
+                                child: 
+                                  Container(
+                                    decoration: BoxDecoration(
+                                      image: DecorationImage(
+                                        image: NetworkImage(snapshot.data.results.books.elementAt(index).bookImage),
+                                        fit: BoxFit.fill
+                                      )
                                     ),
-                                  ],
-                                ),
+                                  )
                               ),
                             ),
                           );
