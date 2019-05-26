@@ -19,9 +19,12 @@ class _LocationPageState extends State<LocationPage> {
   String _searchText = "";
   List names = new List();
   List filteredName = new List();
-  Icon _searchIcon = new Icon(Icons.search);
+  Icon _searchIcon = new Icon(
+    Icons.search,
+    color: Colors.white,
+  );
   Widget _appBarTitle = new Text(
-    "ค้นหาสถานที่",
+    "Search Locations",
     style: TextStyle(
       fontFamily: GetTextStyle(),
       color: Colors.white,
@@ -54,7 +57,7 @@ class _LocationPageState extends State<LocationPage> {
       location_list =
           _store.collection("location_detail").orderBy('name').snapshots();
       floatIcon = [Icon(Icons.filter_list), Icon(Icons.star)];
-      floatText = [Text('เรียงตามชื่อ'), Text('เรียงตามคะแนน')];
+      floatText = [Text('sort by name'), Text('sort by rate')];
       floatState = 0;
     });
   }
@@ -72,7 +75,10 @@ class _LocationPageState extends State<LocationPage> {
             labelStyle: TextStyle(
               color: Colors.white,
             ),
-            prefixIcon: new Icon(Icons.search),
+            prefixIcon: new Icon(
+              Icons.search,
+              color: Colors.white ,
+            ),
             prefixStyle: TextStyle(
               color: Colors.white,
             ),
@@ -81,7 +87,7 @@ class _LocationPageState extends State<LocationPage> {
                 color: Colors.white,
               ),
             ),
-            hintText: 'ค้นหาชื่อ...',
+            hintText: 'search locations...',
           ),
           style: TextStyle(
             fontFamily: GetTextStyle(),
@@ -94,7 +100,7 @@ class _LocationPageState extends State<LocationPage> {
           color: Colors.white,
         );
         this._appBarTitle = new Text(
-          "ค้นหาสถานที่",
+          "Search locations",
           style: TextStyle(
             fontFamily: GetTextStyle(),
             color: Colors.white,
@@ -249,9 +255,8 @@ class _LocationPageState extends State<LocationPage> {
                                     ),
                                   ),
                                   FlutterRatingBarIndicator(
-                                    rating: snapshot.data.documents
-                                        .elementAt(index)
-                                        .data['rate'],
+                                    rating: double.parse(
+                                        "${snapshot.data.documents.elementAt(index).data['rate']}"),
                                     itemCount: 5,
                                     itemSize: 15,
                                     fillColor: Colors.amber,

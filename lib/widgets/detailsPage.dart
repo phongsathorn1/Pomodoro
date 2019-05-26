@@ -215,7 +215,7 @@ class _DetailsPageState extends State<DetailsPage> {
                             padding: EdgeInsets.all(20),
                             child: Center(
                               child: FlutterRatingBarIndicator(
-                                rating: widget.value['rate'],
+                                rating: double.parse("${widget.value['rate']}"),
                                 itemCount: 5,
                                 itemSize: 20,
                                 fillColor: Colors.amber,

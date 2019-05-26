@@ -1,5 +1,7 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:pomodoro/bookpage/bookDetails.dart';
+import 'package:pomodoro/color/colorUI.dart';
 import 'package:pomodoro/insert/homepage.dart';
 import 'package:pomodoro/views/timer_screen.dart';
 import 'package:pomodoro/widgets/detailsPage.dart';
@@ -21,6 +23,8 @@ class MyApp extends StatelessWidget {
       ),*/
         theme: ThemeData(
           fontFamily: 'Sukhumvit',
+          cursorColor: Colors.white,
+          primaryColor: HexColor(tabColor()),
         ),
         initialRoute: '/',
         routes: {

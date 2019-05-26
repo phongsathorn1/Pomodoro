@@ -1,7 +1,9 @@
 import 'dart:convert';
 import 'package:flutter/material.dart';
+import 'package:flutter/painting.dart';
 import 'package:http/http.dart' as http;
 import 'package:pomodoro/bookpage/bookDetails.dart';
+import 'package:pomodoro/color/colorUI.dart';
 import 'package:pomodoro/fonts/fonts.dart';
 import 'package:pomodoro/bookpage/Model/bookcategory.dart';
 import 'package:pomodoro/bookpage/Service/book_service.dart';
@@ -18,39 +20,6 @@ Map<String, Book> allCategory = new Map<String, Book>();
 
 class BookState extends State<BookPage> {
   Book booklist = new Book();
-  final TextEditingController _filter = new TextEditingController();
-  Icon searchIcon = new Icon(Icons.search);
-  Widget appBarTitle = new Text(
-    'Recommended Book',
-    style: TextStyle(fontFamily: GetTextStyle()),
-  );
-  void searchPressed() {
-    setState(() {
-      if (this.searchIcon.icon == Icons.search) {
-        this.searchIcon = new Icon(Icons.close);
-        this.appBarTitle = new TextField(
-          controller: _filter,
-          decoration: new InputDecoration(hintText: 'Search Book...'),
-        );
-      } else {
-        this.searchIcon = new Icon(Icons.search);
-        this.appBarTitle = new Text(
-          'Recommended Book',
-          style: TextStyle(fontFamily: GetTextStyle()),
-        );
-//        filteredNames = names;
-        _filter.clear();
-      }
-    });
-  }
-
-  @override
-  Widget buildBar(BuildContext context) {
-    return new AppBar(
-        leading: IconButton(icon: searchIcon, onPressed: searchPressed),
-        title: appBarTitle,
-        backgroundColor: Colors.blue[200]);
-  }
 
   Future<Book> fetchPost(Categories name) async {
     if (allCategory[name.encode] != null) {
@@ -76,13 +45,24 @@ class BookState extends State<BookPage> {
     // TODO: implement build
     return Scaffold(
       resizeToAvoidBottomPadding: false,
-      appBar: buildBar(context),
+      appBar: AppBar(
+        title: Center(
+          child: Text(
+            'Recommended Books',
+            style: TextStyle(
+              color: Colors.white,
+            ),
+          ),
+        ),
+        backgroundColor: HexColor(tabColor()),
+      ),
       body: DefaultTabController(
         length: categories.length,
         child: Scaffold(
           appBar: TabBar(
+            indicatorColor: HexColor(tabColor()),
             unselectedLabelColor: Colors.black,
-            labelColor: Colors.blue[200],
+            labelColor: HexColor(tabColor()),
             isScrollable: true,
             tabs: categories.map((Categories choice) {
               return Tab(
@@ -113,25 +93,24 @@ class BookState extends State<BookPage> {
                               clipBehavior: Clip.antiAlias,
                               elevation: 10.0,
                               child: InkWell(
-                                onTap: () {
-                                  var route = new MaterialPageRoute(
-                                    builder: (BuildContext context) =>
-                                        new BookDetails(
-                                            value: snapshot.data.results.books
-                                                .elementAt(index)),
-                                  );
-                                  Navigator.of(context).push(route);
-                                },
-                                child: 
-                                  Container(
+                                  onTap: () {
+                                    var route = new MaterialPageRoute(
+                                      builder: (BuildContext context) =>
+                                          new BookDetails(
+                                              value: snapshot.data.results.books
+                                                  .elementAt(index)),
+                                    );
+                                    Navigator.of(context).push(route);
+                                  },
+                                  child: Container(
                                     decoration: BoxDecoration(
-                                      image: DecorationImage(
-                                        image: NetworkImage(snapshot.data.results.books.elementAt(index).bookImage),
-                                        fit: BoxFit.fill
-                                      )
-                                    ),
-                                  )
-                              ),
+                                        image: DecorationImage(
+                                            image: NetworkImage(snapshot
+                                                .data.results.books
+                                                .elementAt(index)
+                                                .bookImage),
+                                            fit: BoxFit.fill)),
+                                  )),
                             ),
                           );
                         },
