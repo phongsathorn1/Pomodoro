@@ -6,6 +6,7 @@ import 'package:pomodoro/insert/homepage.dart';
 import 'package:pomodoro/views/timer_screen.dart';
 import 'package:pomodoro/widgets/detailsPage.dart';
 import 'package:pomodoro/widgets/locationPage.dart';
+import 'package:pomodoro/slides.dart';
 
 void main() {
   runApp(new MyApp());

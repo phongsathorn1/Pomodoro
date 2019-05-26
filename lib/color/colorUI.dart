@@ -19,3 +19,11 @@ String tabColor() {
 String pageBackgroundColor() {
   return '#F8F8FF';
 }
+
+String cardLocationColor() {
+  return '#754668';
+}
+
+String cardReadingMain() {
+  return '#e9e3f0';
+}

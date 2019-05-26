@@ -77,7 +77,7 @@ class _LocationPageState extends State<LocationPage> {
             ),
             prefixIcon: new Icon(
               Icons.search,
-              color: Colors.white ,
+              color: Colors.white,
             ),
             prefixStyle: TextStyle(
               color: Colors.white,
@@ -179,7 +179,7 @@ class _LocationPageState extends State<LocationPage> {
                   return new Container();
                 else {
                   return new Card(
-                    color: Colors.red[800],
+                    color: HexColor(cardLocationColor()),
                     margin: EdgeInsets.only(top: 35, left: 15, right: 15),
                     child: Column(
                       mainAxisSize: MainAxisSize.min,
@@ -207,7 +207,10 @@ class _LocationPageState extends State<LocationPage> {
                             children: <Widget>[
                               Row(
                                 children: <Widget>[
-                                  Icon(Icons.location_on),
+                                  Icon(
+                                    Icons.location_on,
+                                    color: Colors.white,
+                                  ),
                                   Expanded(
                                     child: Text(
                                       ' ' +
@@ -217,6 +220,7 @@ class _LocationPageState extends State<LocationPage> {
                                       overflow: TextOverflow.ellipsis,
                                       style: TextStyle(
                                         fontFamily: GetTextStyle(),
+                                        color: Colors.white,
                                       ),
                                     ),
                                   ),
@@ -227,7 +231,10 @@ class _LocationPageState extends State<LocationPage> {
                               ),
                               Row(
                                 children: <Widget>[
-                                  Icon(Icons.access_time),
+                                  Icon(
+                                    Icons.access_time,
+                                    color: Colors.white,
+                                  ),
                                   Text(
                                     ' ' +
                                         snapshot.data.documents
@@ -239,6 +246,7 @@ class _LocationPageState extends State<LocationPage> {
                                             .data['time'],
                                     style: TextStyle(
                                       fontFamily: GetTextStyle(),
+                                      color: Colors.white,
                                     ),
                                   ),
                                 ],
@@ -252,6 +260,7 @@ class _LocationPageState extends State<LocationPage> {
                                     'คะแนน: ',
                                     style: TextStyle(
                                       fontFamily: GetTextStyle(),
+                                      color: Colors.white,
                                     ),
                                   ),
                                   FlutterRatingBarIndicator(

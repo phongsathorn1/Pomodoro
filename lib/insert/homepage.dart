@@ -32,6 +32,7 @@ class _SliverWithTabBarState extends State<SliverWithTabBar>
         bottomNavigationBar: Container(
           color: HexColor(tabColor()),
           child: TabBar(
+            indicatorColor: Colors.white,
             onTap: (index) {
               setState(() {
                 tabIndex = index;
