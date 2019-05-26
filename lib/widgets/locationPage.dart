@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/painting.dart';
+import 'package:flutter/rendering.dart';
 import 'package:pomodoro/fonts/fonts.dart';
 import 'package:pomodoro/widgets/detailsPage.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
+import 'package:pomodoro/color/colorUI.dart';
 
 class LocationPage extends StatefulWidget {
   @override
@@ -22,6 +24,7 @@ class _LocationPageState extends State<LocationPage> {
     "ค้นหาสถานที่",
     style: TextStyle(
       fontFamily: GetTextStyle(),
+      color: Colors.white,
     ),
   );
   Stream<QuerySnapshot> location_list;
@@ -59,18 +62,42 @@ class _LocationPageState extends State<LocationPage> {
   void _searchPressed() {
     setState(() {
       if (this._searchIcon.icon == Icons.search) {
-        this._searchIcon = new Icon(Icons.close);
+        this._searchIcon = new Icon(
+          Icons.close,
+          color: Colors.white,
+        );
         this._appBarTitle = new TextField(
           controller: _filter,
           decoration: new InputDecoration(
-              prefixIcon: new Icon(Icons.search), hintText: 'ค้นหาชื่อ...'),
+            labelStyle: TextStyle(
+              color: Colors.white,
+            ),
+            prefixIcon: new Icon(Icons.search),
+            prefixStyle: TextStyle(
+              color: Colors.white,
+            ),
+            focusedBorder: UnderlineInputBorder(
+              borderSide: BorderSide(
+                color: Colors.white,
+              ),
+            ),
+            hintText: 'ค้นหาชื่อ...',
+          ),
+          style: TextStyle(
+            fontFamily: GetTextStyle(),
+            color: Colors.white,
+          ),
         );
       } else {
-        this._searchIcon = new Icon(Icons.search);
+        this._searchIcon = new Icon(
+          Icons.search,
+          color: Colors.white,
+        );
         this._appBarTitle = new Text(
           "ค้นหาสถานที่",
           style: TextStyle(
             fontFamily: GetTextStyle(),
+            color: Colors.white,
           ),
         );
         filteredName = names;
@@ -93,7 +120,7 @@ class _LocationPageState extends State<LocationPage> {
 
   Widget _buildBar(BuildContext context) {
     return new AppBar(
-      backgroundColor: Colors.grey[350],
+      backgroundColor: HexColor(tabColor()),
       centerTitle: true,
       title: _appBarTitle,
       leading: new IconButton(
@@ -128,7 +155,7 @@ class _LocationPageState extends State<LocationPage> {
 
   Widget _buildList() {
     return Container(
-      color: Colors.grey[350],
+      color: HexColor(pageBackgroundColor()),
       child: StreamBuilder(
         stream: location_list,
         builder: (context, AsyncSnapshot<QuerySnapshot> snapshot) {

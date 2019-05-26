@@ -1,8 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:pomodoro/bookpage/Book.dart';
+import 'package:pomodoro/color/colorUI.dart';
 import 'package:pomodoro/insert/mainpage.dart';
 import 'package:pomodoro/widgets/locationPage.dart';
 import 'package:pomodoro/views/timer_screen.dart';
+import 'package:circular_bottom_navigation/circular_bottom_navigation.dart';
+import 'package:circular_bottom_navigation/tab_item.dart';
 
 class SliverWithTabBar extends StatefulWidget {
   @override
@@ -27,7 +30,7 @@ class _SliverWithTabBarState extends State<SliverWithTabBar>
       initialIndex: tabIndex,
       child: Scaffold(
         bottomNavigationBar: Container(
-          color: HexColor("#f3b7c3"),
+          color: HexColor(tabColor()),
           child: TabBar(
             onTap: (index) {
               setState(() {
@@ -56,16 +59,4 @@ class _SliverWithTabBarState extends State<SliverWithTabBar>
     );
     ;
   }
-}
-
-class HexColor extends Color {
-  static int _getColorFromHex(String hexColor) {
-    hexColor = hexColor.toUpperCase().replaceAll("#", "");
-    if (hexColor.length == 6) {
-      hexColor = "FF" + hexColor;
-    }
-    return int.parse(hexColor, radix: 16);
-  }
-
-  HexColor(final String hexColor) : super(_getColorFromHex(hexColor));
 }

@@ -103,14 +103,15 @@ class BookState extends State<BookPage> {
                           crossAxisCount: 3,
                           childAspectRatio: 2 / 3,
                           crossAxisSpacing: 10,
-                          mainAxisSpacing: 10,  
+                          mainAxisSpacing: 10,
                         ),
                         itemCount: snapshot.data.results.books.length,
                         itemBuilder: (BuildContext context, int index) {
                           //get data from each book by snapshot.data.results.books.elementAt(index).'SOMeTHING'
                           return Container(
                             child: Card(
-                              elevation: 15.0,
+                              clipBehavior: Clip.antiAlias,
+                              elevation: 10.0,
                               child: InkWell(
                                 onTap: () {
                                   var route = new MaterialPageRoute(
