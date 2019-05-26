@@ -101,14 +101,16 @@ class BookState extends State<BookPage> {
                       child: GridView.builder(
                         gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
                           crossAxisCount: 3,
-                          childAspectRatio: 0.5,
+                          childAspectRatio: 2 / 3,
+                          crossAxisSpacing: 10,
+                          mainAxisSpacing: 10,  
                         ),
                         itemCount: snapshot.data.results.books.length,
                         itemBuilder: (BuildContext context, int index) {
                           //get data from each book by snapshot.data.results.books.elementAt(index).'SOMeTHING'
                           return Container(
-                            width: 200,
                             child: Card(
+                              elevation: 15.0,
                               child: InkWell(
                                 onTap: () {
                                   var route = new MaterialPageRoute(
@@ -122,24 +124,9 @@ class BookState extends State<BookPage> {
                                 child: Column(
                                   children: <Widget>[
                                     Image.network(
-                                        snapshot.data.results.books
-                                            .elementAt(index)
-                                            .bookImage,
-                                        width: 150,
-                                        height: 200),
-                                    Container(
-                                      margin: EdgeInsets.only(left: 5),
-                                      child: Text(
-                                        snapshot.data.results.books
-                                            .elementAt(index)
-                                            .title,
-                                        overflow: TextOverflow.ellipsis,
-                                        style: TextStyle(
-                                          fontFamily: GetTextStyle(),
-                                          fontSize: 14,
-                                        ),
-                                        textDirection: TextDirection.ltr,
-                                      ),
+                                      snapshot.data.results.books
+                                          .elementAt(index)
+                                          .bookImage,
                                     ),
                                   ],
                                 ),

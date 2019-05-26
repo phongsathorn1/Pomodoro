@@ -239,7 +239,7 @@ class _LocationPageState extends State<LocationPage> {
                           transform: Matrix4.translationValues(0, -10, 0),
                           child: RaisedButton(
                             child: Text(
-                              'รายละเอียด',
+                              'details',
                               style: TextStyle(
                                 fontFamily: GetTextStyle(),
                               ),
@@ -265,12 +265,7 @@ class _LocationPageState extends State<LocationPage> {
             );
           } else {
             return Center(
-              child: Text(
-                'No data found',
-                style: TextStyle(
-                  fontFamily: GetTextStyle(),
-                ),
-              ),
+              child: new CircularProgressIndicator(),
             );
           }
         },
