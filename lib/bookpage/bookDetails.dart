@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
+// import 'package:pomodoro/bookpage/Comment/comment.dart';
+import 'package:pomodoro/color/colorUI.dart';
 import 'package:pomodoro/fonts/fonts.dart';
+import 'package:pomodoro/views/book_review_screen.dart';
 import 'Model/bookcategory.dart';
 
 class BookDetails extends StatefulWidget {
@@ -152,6 +155,19 @@ class BookDetailsState extends State<BookDetails> {
             ),
           ),
         ),
+      ),
+      floatingActionButton: FloatingActionButton(
+        backgroundColor: HexColor(tabColor()),
+        onPressed: () {
+          print(book);
+          Navigator.push(
+            context,
+            MaterialPageRoute(
+                builder: (context) =>
+                    BookReviewScreen(value: book.primaryIsbn10)),
+          );
+        },
+        child: Icon(Icons.add),
       ),
     );
   }

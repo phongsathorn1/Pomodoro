@@ -120,7 +120,7 @@ class _HomeScreen extends State<HomeState> with SingleTickerProviderStateMixin {
                   // child: Text("Drawer Header")
                 ),
                 decoration: BoxDecoration(
-                  color: Colors.blue,
+                  color: HexColor(tabColor()),
                 )),
             ListTile(
               leading: Icon(Icons.account_circle),

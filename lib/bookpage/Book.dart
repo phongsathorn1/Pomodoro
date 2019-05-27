@@ -45,17 +45,6 @@ class BookState extends State<BookPage> {
     // TODO: implement build
     return Scaffold(
       resizeToAvoidBottomPadding: false,
-      appBar: AppBar(
-        title: Center(
-          child: Text(
-            'Recommended Books',
-            style: TextStyle(
-              color: Colors.white,
-            ),
-          ),
-        ),
-        backgroundColor: HexColor(tabColor()),
-      ),
       body: DefaultTabController(
         length: categories.length,
         child: Scaffold(

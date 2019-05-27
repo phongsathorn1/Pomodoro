@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:pomodoro/fonts/fonts.dart';
 
 final FirebaseAuth _auth = FirebaseAuth.instance;
 
@@ -23,10 +24,10 @@ class RegisterScreenState extends State<RegisterScreen> {
   TextEditingController _password = TextEditingController();
   TextEditingController _passwordConfirm = TextEditingController();
 
-  Widget _loadingIndicator(){
-    if(this._isLoading){
+  Widget _loadingIndicator() {
+    if (this._isLoading) {
       return CircularProgressIndicator();
-    }else{
+    } else {
       return Container();
     }
   }
@@ -34,7 +35,16 @@ class RegisterScreenState extends State<RegisterScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: AppBar(),
+        appBar: AppBar(
+          title: new Center(
+              child: Text(
+            "Register",
+            style: TextStyle(
+                fontFamily: GetTextStyle(),
+                fontSize: 30.0,
+                color: Colors.white),
+          )),
+        ),
         body: Form(
             key: _formKey,
             child: SingleChildScrollView(
@@ -50,7 +60,12 @@ class RegisterScreenState extends State<RegisterScreen> {
                           child: TextFormField(
                             controller: _name,
                             autocorrect: false,
-                            decoration: InputDecoration(labelText: "Name"),
+                            decoration: InputDecoration(
+                              labelText: "Name",
+                              hintText: "Name",
+                              icon: Icon(Icons.account_box,
+                                  size: 40, color: Color(0xFF4e69a2)),
+                            ),
                             validator: (value) {
                               if (value.isEmpty) {
                                 return "Please fill name";
@@ -64,8 +79,12 @@ class RegisterScreenState extends State<RegisterScreen> {
                                 child: TextFormField(
                                   controller: _surname,
                                   autocorrect: false,
-                                  decoration:
-                                      InputDecoration(labelText: "Surname"),
+                                  decoration: InputDecoration(
+                                    labelText: "Surname",
+                                    hintText: "Surname",
+                                    icon: Icon(Icons.account_box,
+                                        size: 40, color: Color(0xFF4e69a2)),
+                                  ),
                                   validator: (value) {
                                     if (value.isEmpty) {
                                       return "Please fill surname";
@@ -74,9 +93,14 @@ class RegisterScreenState extends State<RegisterScreen> {
                                 ))),
                       ]),
                       TextFormField(
+                        decoration: InputDecoration(
+                          labelText: "Email",
+                          hintText: "Email Address",
+                          icon: Icon(Icons.account_box,
+                              size: 40, color: Color(0xFF4e69a2)),
+                        ),
                         controller: _email,
                         autocorrect: false,
-                        decoration: InputDecoration(labelText: "Email Address"),
                         keyboardType: TextInputType.emailAddress,
                         validator: (value) {
                           if (value.isEmpty) {
@@ -88,7 +112,12 @@ class RegisterScreenState extends State<RegisterScreen> {
                         controller: _password,
                         autocorrect: false,
                         obscureText: true,
-                        decoration: InputDecoration(labelText: "Password"),
+                        decoration: InputDecoration(
+                          labelText: "Password",
+                          hintText: "Password",
+                          icon: Icon(Icons.lock,
+                              size: 40, color: Color(0xFF4e69a2)),
+                        ),
                         validator: (value) {
                           if (value.isEmpty) {
                             return "Please fill password";
@@ -102,8 +131,12 @@ class RegisterScreenState extends State<RegisterScreen> {
                         controller: _passwordConfirm,
                         autocorrect: false,
                         obscureText: true,
-                        decoration:
-                            InputDecoration(labelText: "Password Confirm"),
+                        decoration: InputDecoration(
+                          labelText: "Password Confirm",
+                          hintText: "Password Confirm",
+                          icon: Icon(Icons.lock,
+                              size: 40, color: Color(0xFF4e69a2)),
+                        ),
                         validator: (value) {
                           if (value.isEmpty) {
                             return "Please fill password confirm";
@@ -128,7 +161,8 @@ class RegisterScreenState extends State<RegisterScreen> {
                                         FlatButton(
                                           child: Text("Done"),
                                           onPressed: () {
-                                            Navigator.of(context).popAndPushNamed('/welcome');
+                                            Navigator.of(context)
+                                                .popAndPushNamed('/login');
                                             // Navigator.of(context).pop();
                                             // Navigator.of(context).pop();
                                           },
@@ -136,23 +170,23 @@ class RegisterScreenState extends State<RegisterScreen> {
                                       ],
                                     );
                                   });
-                            }else{
+                            } else {
                               showDialog(
-                                context: context,
-                                builder: (BuildContext context) {
-                                  return AlertDialog(
-                                    title: Text("Register"),
-                                    content: Text("Register Failed"),
-                                    actions: <Widget>[
-                                      FlatButton(
-                                        child: Text("Done"),
-                                        onPressed: () {
-                                          Navigator.of(context).pop();
-                                        },
-                                      )
-                                    ],
-                                  );
-                                });
+                                  context: context,
+                                  builder: (BuildContext context) {
+                                    return AlertDialog(
+                                      title: Text("Register"),
+                                      content: Text("Register Failed"),
+                                      actions: <Widget>[
+                                        FlatButton(
+                                          child: Text("Done"),
+                                          onPressed: () {
+                                            Navigator.of(context).pop();
+                                          },
+                                        )
+                                      ],
+                                    );
+                                  });
                             }
                           }
                         },
@@ -170,11 +204,10 @@ class RegisterScreenState extends State<RegisterScreen> {
       this._isLoading = true;
     });
 
-    try{
+    try {
       this.user = await _auth.createUserWithEmailAndPassword(
-        email: _email.text, password: _password.text);
-    }
-    catch(e){
+          email: _email.text, password: _password.text);
+    } catch (e) {
       setState(() {
         this._isLoading = false;
       });

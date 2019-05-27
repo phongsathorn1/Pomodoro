@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:pomodoro/fonts/fonts.dart';
 
 final _auth = FirebaseAuth.instance;
 
@@ -11,7 +12,6 @@ class ForgotScreen extends StatefulWidget {
 }
 
 class ForgotScreenState extends State<ForgotScreen> {
-
   bool _isLoading = false;
 
   final _formKey = GlobalKey<FormState>();
@@ -19,10 +19,10 @@ class ForgotScreenState extends State<ForgotScreen> {
 
   TextEditingController _email = TextEditingController();
 
-  Widget _loadingIndicator(){
-    if(this._isLoading){
+  Widget _loadingIndicator() {
+    if (this._isLoading) {
       return CircularProgressIndicator();
-    }else{
+    } else {
       return Container();
     }
   }
@@ -32,7 +32,15 @@ class ForgotScreenState extends State<ForgotScreen> {
     return Scaffold(
       key: _scaffoldKey,
       appBar: AppBar(
-        title: Text("Forgot password"),
+        title: Center(
+          child: Text(
+            "Forgot password",
+            style: TextStyle(
+                fontFamily: GetTextStyle(),
+                fontSize: 30.0,
+                color: Colors.white),
+          ),
+        ),
       ),
       body: Form(
         key: _formKey,
@@ -41,7 +49,12 @@ class ForgotScreenState extends State<ForgotScreen> {
           child: Column(children: <Widget>[
             TextFormField(
               controller: _email,
-              decoration: InputDecoration(labelText: "Email Address"),
+              decoration: InputDecoration(
+                labelText: "Email Address",
+                hintText: "Email Address",
+                icon:
+                    Icon(Icons.account_box, size: 40, color: Color(0xFF4e69a2)),
+              ),
               validator: (value) {
                 if (value.isEmpty) {
                   return "Please enter email address";
@@ -51,7 +64,7 @@ class ForgotScreenState extends State<ForgotScreen> {
             RaisedButton(
               child: Text("Continue"),
               onPressed: () {
-                if (_formKey.currentState.validate()){
+                if (_formKey.currentState.validate()) {
                   this.resetPassword(context);
                 }
               },
@@ -67,7 +80,7 @@ class ForgotScreenState extends State<ForgotScreen> {
     setState(() {
       this._isLoading = true;
     });
-    try{
+    try {
       await _auth.sendPasswordResetEmail(email: this._email.text.trim());
 
       setState(() {
@@ -75,49 +88,40 @@ class ForgotScreenState extends State<ForgotScreen> {
       });
 
       showDialog(
-        context: context,
-        builder: (BuildContext context){
-          return AlertDialog(
-            title: Text("Reset Password"),
-            content: Text("We send the email for reset your password. Please check your email's inbox."),
-            actions: <Widget>[
-              FlatButton(
-                child: Text("Done"),
-                onPressed: () {
-                  Navigator.of(context).pop();
-                  Navigator.of(context).pop();
-                },
-              )
-            ],
-          );
-        }
-      );
-    }
-    catch(error){
+          context: context,
+          builder: (BuildContext context) {
+            return AlertDialog(
+              title: Text("Reset Password"),
+              content: Text(
+                  "We send the email for reset your password. Please check your email's inbox."),
+              actions: <Widget>[
+                FlatButton(
+                  child: Text("Done"),
+                  onPressed: () {
+                    Navigator.of(context).pop();
+                    Navigator.of(context).pop();
+                  },
+                )
+              ],
+            );
+          });
+    } catch (error) {
       setState(() {
         this._isLoading = false;
       });
 
       String errorMsg = 'Error!';
 
-      if(error.code == 'ERROR_USER_NOT_FOUND'){
+      if (error.code == 'ERROR_USER_NOT_FOUND') {
         errorMsg = 'We not found your email in our record.';
-      }
-      else if(error.code == 'ERROR_INVALID_EMAIL'){
+      } else if (error.code == 'ERROR_INVALID_EMAIL') {
         errorMsg = 'Invalid email address.';
       }
 
-      _scaffoldKey.currentState.showSnackBar(
-        SnackBar(
-          content: Text(errorMsg,
-            style: TextStyle(
-              color: Colors.white
-            )
-          ),
-          backgroundColor: Colors.red,
-        )
-      );
-
+      _scaffoldKey.currentState.showSnackBar(SnackBar(
+        content: Text(errorMsg, style: TextStyle(color: Colors.white)),
+        backgroundColor: Colors.red,
+      ));
     }
   }
 }

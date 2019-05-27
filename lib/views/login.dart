@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:pomodoro/feature/feature.dart';
+import 'package:pomodoro/fonts/fonts.dart';
 import 'package:pomodoro/insert/homepage.dart';
 import 'package:pomodoro/models/user.dart';
 
@@ -32,15 +33,28 @@ class LoginScreenState extends State<LoginScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(),
+      appBar: AppBar(
+        title: new Center(
+            child: Text(
+          "Reading Guide",
+          style: TextStyle(
+              fontFamily: GetTextStyle(), fontSize: 30.0, color: Colors.white),
+        )),
+      ),
       body: Container(
-          padding: EdgeInsets.symmetric(horizontal: 30.0, vertical: 10.0),
+          padding: EdgeInsets.symmetric(horizontal: 50.0, vertical: 20.0),
           child: Form(
             key: _formKey,
             child: Column(children: <Widget>[
               TextFormField(
                 controller: _email,
-                decoration: InputDecoration(labelText: "Email"),
+                decoration: InputDecoration(
+                  labelText: "Email",
+                  hintText: "Email",
+                  icon: Icon(Icons.account_box,
+                      size: 40, color: Color(0xFF4e69a2)),
+                ),
+                keyboardType: TextInputType.text,
                 validator: (value) {
                   if (value.isEmpty) {
                     return "Please fill email";
@@ -49,16 +63,20 @@ class LoginScreenState extends State<LoginScreen> {
               ),
               TextFormField(
                 controller: _password,
-                decoration: InputDecoration(labelText: "Password"),
                 obscureText: true,
                 autocorrect: false,
+                decoration: InputDecoration(
+                  labelText: "Password",
+                  hintText: "Password",
+                  icon: Icon(Icons.lock, size: 40, color: Color(0xFF4e69a2)),
+                ),
+                keyboardType: TextInputType.text,
                 validator: (value) {
                   if (value.isEmpty) {
                     return "Plesae fill password";
                   }
                 },
               ),
-              this._loadingIndicator(),
               RaisedButton(
                 child: Text("Login"),
                 onPressed: () async {
@@ -78,13 +96,27 @@ class LoginScreenState extends State<LoginScreen> {
                       setState(() {
                         this._isLoading = false;
                       });
-
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                          builder: (context) => IntroScreen(),
-                        ),
-                      );
+                      showDialog(
+                          context: context,
+                          builder: (BuildContext context) {
+                            return AlertDialog(
+                              title: Text("Login"),
+                              content: Text("Login Success"),
+                              actions: <Widget>[
+                                FlatButton(
+                                  child: Text("Done"),
+                                  onPressed: () {
+                                    Navigator.push(
+                                      context,
+                                      MaterialPageRoute(
+                                        builder: (context) => IntroScreen(),
+                                      ),
+                                    );
+                                  },
+                                )
+                              ],
+                            );
+                          });
                     } catch (e) {
                       setState(() {
                         this._isLoading = false;
@@ -110,6 +142,7 @@ class LoginScreenState extends State<LoginScreen> {
                   }
                 },
               ),
+              this._loadingIndicator(),
               Row(
                 children: <Widget>[
                   FlatButton(
