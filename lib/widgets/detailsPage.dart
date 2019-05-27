@@ -15,6 +15,7 @@ class _DetailsPageState extends State<DetailsPage> {
   GoogleMapController myController;
   Set<Marker> markers = new Set<Marker>();
   List<String> listImg = new List<String>();
+  var top = 0.0;
 
   @override
   void initState() {
@@ -42,21 +43,42 @@ class _DetailsPageState extends State<DetailsPage> {
               expandedHeight: 200,
               floating: false,
               pinned: true,
-              flexibleSpace: FlexibleSpaceBar(
-                background: Image.network(
-                  widget.value['img_head'],
-                  fit: BoxFit.cover,
-                ),
-                title: Text(
-                  widget.value['name'],
-                  overflow: TextOverflow.ellipsis,
-                  style: TextStyle(
-                    fontSize: 16,
-                    fontFamily: GetTextStyle(),
+              flexibleSpace: LayoutBuilder(builder: (BuildContext context, BoxConstraints constraints) {
+                top = constraints.biggest.height;
+                Color textColor;
+                EdgeInsets textPadding;
+                if(top == 80){
+                  textColor = Color(0x009474b4);
+                  textPadding = EdgeInsets.symmetric(vertical: 0, horizontal: 0);
+                }else{
+                  textColor = Color(0xE69474b4);
+                  textPadding = EdgeInsets.symmetric(vertical: 5, horizontal: 10);
+                }
+                return FlexibleSpaceBar(
+                  centerTitle: true,
+                  title: AnimatedOpacity(
+                      duration: Duration(milliseconds: 300),
+                      opacity: 1.0,
+                      child: Container(
+                        padding: textPadding,
+                        decoration: BoxDecoration(
+                          color: textColor
+                        ),
+                        child: Text(
+                          widget.value['name'],
+                          style: TextStyle(
+                            fontSize: 12.0,
+                            fontWeight: FontWeight.bold
+                          ),
+                        )
+                      ),
                   ),
-                ),
-              ),
-            ),
+                  background: Image.network(
+                    widget.value['img_head'],
+                    fit: BoxFit.cover,
+                  ));
+              }),
+            )
           ];
         },
         body: Container(
@@ -75,6 +97,7 @@ class _DetailsPageState extends State<DetailsPage> {
                       children: <Widget>[
                         Container(
                           height: 100,
+                          width: 130,
                           child: Padding(
                             padding: EdgeInsets.all(10),
                             child: Center(
@@ -115,6 +138,7 @@ class _DetailsPageState extends State<DetailsPage> {
                       children: <Widget>[
                         Container(
                           height: 70,
+                          width: 130,
                           child: Padding(
                             padding: EdgeInsets.all(10),
                             child: Center(
@@ -157,6 +181,7 @@ class _DetailsPageState extends State<DetailsPage> {
                       children: <Widget>[
                         Container(
                           height: 70,
+                          width: 130,
                           child: Padding(
                             padding: EdgeInsets.all(10),
                             child: Center(
@@ -197,6 +222,7 @@ class _DetailsPageState extends State<DetailsPage> {
                       children: <Widget>[
                         Container(
                           height: 70,
+                          width: 130,
                           child: Padding(
                             padding: EdgeInsets.all(10),
                             child: Center(
@@ -232,48 +258,101 @@ class _DetailsPageState extends State<DetailsPage> {
                 padding: EdgeInsets.only(left: 5, right: 5, top: 3, bottom: 3),
                 child: Container(
                   margin: EdgeInsets.only(bottom: 5),
-                  height: 150,
-                  width: 250,
-                  child: GoogleMap(
-                    onMapCreated: (controller) {
-                      setState(() {
-                        myController = controller;
-                      });
-                    },
-                    initialCameraPosition: CameraPosition(
-                        target: LatLng(widget.value['latlng'].latitude,
-                            widget.value['latlng'].longitude),
-                        zoom: 15.0),
-                    markers: markers,
+                  child: Card(
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.stretch,
+                      children: <Widget>[
+                        Container(
+                          padding: EdgeInsets.symmetric(horizontal: 13, vertical: 5),
+                          child: Row(
+                            children: <Widget>[
+                              Icon(
+                                Icons.map,
+                                size: 25,
+                              ),
+                              Text(
+                                ' Map',
+                                style: TextStyle(
+                                  fontSize: 23
+                                )),
+                            ],
+                          ),
+                        ),
+                        Container(
+                          height: 300,
+                          child: GoogleMap(
+                            onMapCreated: (controller) {
+                              setState(() {
+                                myController = controller;
+                              });
+                            },
+                            initialCameraPosition: CameraPosition(
+                                target: LatLng(widget.value['latlng'].latitude,
+                                    widget.value['latlng'].longitude),
+                                zoom: 15.0),
+                            markers: markers,
+                          ),
+                        )
+                      ]
+                    )
                   ),
                 ),
               ),
               //image slider
-              Stack(
-                children: <Widget>[
-                  CarouselSlider(
-                    initialPage: 0,
-                    height: 400,
-                    enableInfiniteScroll: false,
-                    items: listImg.map((i) {
-                      return Builder(
-                        builder: (BuildContext context) {
-                          return Container(
-                            width: MediaQuery.of(context).size.width,
-                            margin: EdgeInsets.symmetric(horizontal: 5.0),
-                            decoration: BoxDecoration(
-                                color: Colors.black.withAlpha(70)),
-                            child: Image.network(
-                              i,
-                              height: 400,
-                            ),
-                          );
-                        },
-                      );
-                    }).toList(),
-                  ),
-                ],
-              ),
+              Card(
+                child: Container(
+                  padding: EdgeInsets.only(bottom: 15),
+                  child: Column(
+                    children: <Widget>[
+                      Container(
+                          padding: EdgeInsets.symmetric(horizontal: 13, vertical: 5),
+                          child: Row(
+                            children: <Widget>[
+                              Icon(
+                                Icons.photo_library,
+                                size: 25,
+                              ),
+                              Text(
+                                ' Photos',
+                                style: TextStyle(
+                                  fontSize: 23
+                                )),
+                            ],
+                          ),
+                        ),
+                      Stack(
+                        children: <Widget>[
+                          CarouselSlider(
+                            initialPage: 0,
+                            enableInfiniteScroll: false,
+                            items: listImg.map((i) {
+                              return Builder(
+                                builder: (BuildContext context) {
+                                  return Container(
+                                    width: MediaQuery.of(context).size.width,
+                                    margin: EdgeInsets.symmetric(horizontal: 5.0),
+                                    // decoration: BoxDecoration(
+                                    //     color: Colors.black.withAlpha(70)),
+                                    child: Container(
+                                      decoration: BoxDecoration(
+                                        borderRadius: BorderRadius.all(Radius.circular(10)),
+                                        image: DecorationImage(
+                                            image: NetworkImage(i),
+                                            fit: BoxFit.cover
+                                        )
+                                      ),
+                                    )
+                                  );
+                                },
+                              );
+                            }).toList(),
+                          ),
+                        ],
+                      ),
+                    ],
+                  )
+                ),
+              )
             ],
           ),
         ),
