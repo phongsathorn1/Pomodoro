@@ -32,6 +32,9 @@ class BookReviewScreenState extends State<BookReviewScreen> {
 
   Widget _getSubtitleText(AsyncSnapshot<QuerySnapshot> snapshotReview,
       AsyncSnapshot<QuerySnapshot> snapshotUser, int index) {
+    // if (snapshotReview == null || snapshotUser == null) {
+    //   return Container();
+    // }
     String uid = snapshotUser.data.documents.elementAt(0).documentID;
     String review_id =
         snapshotReview.data.documents.elementAt(index).documentID;
@@ -85,7 +88,7 @@ class BookReviewScreenState extends State<BookReviewScreen> {
               .where('isbn', isEqualTo: widget.value)
               .snapshots(),
           builder: (context, AsyncSnapshot<QuerySnapshot> snapshotReview) {
-            print(List.from(snapshotReview.data.documents));
+            // print(List.from(snapshotReview.data.documents));
             if (snapshotReview.hasError) {
               return Text('Error: ${snapshotReview.error}');
             }

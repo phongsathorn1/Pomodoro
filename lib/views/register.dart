@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:pomodoro/fonts/fonts.dart';
 
 final FirebaseAuth _auth = FirebaseAuth.instance;
 
@@ -35,16 +34,7 @@ class RegisterScreenState extends State<RegisterScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: AppBar(
-          title: new Center(
-              child: Text(
-            "Register",
-            style: TextStyle(
-                fontFamily: GetTextStyle(),
-                fontSize: 30.0,
-                color: Colors.white),
-          )),
-        ),
+        appBar: AppBar(title: Text('Register')),
         body: Form(
             key: _formKey,
             child: SingleChildScrollView(
@@ -63,7 +53,7 @@ class RegisterScreenState extends State<RegisterScreen> {
                             decoration: InputDecoration(
                               labelText: "Name",
                               hintText: "Name",
-                              icon: Icon(Icons.account_box,
+                              icon: Icon(Icons.lock,
                                   size: 40, color: Color(0xFF4e69a2)),
                             ),
                             validator: (value) {
@@ -82,7 +72,7 @@ class RegisterScreenState extends State<RegisterScreen> {
                                   decoration: InputDecoration(
                                     labelText: "Surname",
                                     hintText: "Surname",
-                                    icon: Icon(Icons.account_box,
+                                    icon: Icon(Icons.lock,
                                         size: 40, color: Color(0xFF4e69a2)),
                                   ),
                                   validator: (value) {
@@ -93,14 +83,14 @@ class RegisterScreenState extends State<RegisterScreen> {
                                 ))),
                       ]),
                       TextFormField(
-                        decoration: InputDecoration(
-                          labelText: "Email",
-                          hintText: "Email Address",
-                          icon: Icon(Icons.account_box,
-                              size: 40, color: Color(0xFF4e69a2)),
-                        ),
                         controller: _email,
                         autocorrect: false,
+                        decoration: InputDecoration(
+                          labelText: "Email Address",
+                          hintText: "Email Address",
+                          icon: Icon(Icons.account_circle,
+                              size: 40, color: Color(0xFF4e69a2)),
+                        ),
                         keyboardType: TextInputType.emailAddress,
                         validator: (value) {
                           if (value.isEmpty) {
@@ -162,7 +152,7 @@ class RegisterScreenState extends State<RegisterScreen> {
                                           child: Text("Done"),
                                           onPressed: () {
                                             Navigator.of(context)
-                                                .popAndPushNamed('/login');
+                                                .popAndPushNamed('/welcome');
                                             // Navigator.of(context).pop();
                                             // Navigator.of(context).pop();
                                           },

@@ -43,40 +43,38 @@ class _DetailsPageState extends State<DetailsPage> {
               expandedHeight: 200,
               floating: false,
               pinned: true,
-              flexibleSpace: LayoutBuilder(builder: (BuildContext context, BoxConstraints constraints) {
+              flexibleSpace: LayoutBuilder(
+                  builder: (BuildContext context, BoxConstraints constraints) {
                 top = constraints.biggest.height;
                 Color textColor;
                 EdgeInsets textPadding;
-                if(top == 80){
+                if (top == 80) {
                   textColor = Color(0x009474b4);
-                  textPadding = EdgeInsets.symmetric(vertical: 0, horizontal: 0);
-                }else{
+                  textPadding =
+                      EdgeInsets.symmetric(vertical: 0, horizontal: 0);
+                } else {
                   textColor = Color(0xE69474b4);
-                  textPadding = EdgeInsets.symmetric(vertical: 5, horizontal: 10);
+                  textPadding =
+                      EdgeInsets.symmetric(vertical: 5, horizontal: 10);
                 }
                 return FlexibleSpaceBar(
-                  centerTitle: true,
-                  title: AnimatedOpacity(
+                    centerTitle: true,
+                    title: AnimatedOpacity(
                       duration: Duration(milliseconds: 300),
                       opacity: 1.0,
                       child: Container(
-                        padding: textPadding,
-                        decoration: BoxDecoration(
-                          color: textColor
-                        ),
-                        child: Text(
-                          widget.value['name'],
-                          style: TextStyle(
-                            fontSize: 12.0,
-                            fontWeight: FontWeight.bold
-                          ),
-                        )
-                      ),
-                  ),
-                  background: Image.network(
-                    widget.value['img_head'],
-                    fit: BoxFit.cover,
-                  ));
+                          padding: textPadding,
+                          decoration: BoxDecoration(color: textColor),
+                          child: Text(
+                            widget.value['name'],
+                            style: TextStyle(
+                                fontSize: 12.0, fontWeight: FontWeight.bold),
+                          )),
+                    ),
+                    background: Image.network(
+                      widget.value['img_head'],
+                      fit: BoxFit.cover,
+                    ));
               }),
             )
           ];
@@ -259,22 +257,19 @@ class _DetailsPageState extends State<DetailsPage> {
                 child: Container(
                   margin: EdgeInsets.only(bottom: 5),
                   child: Card(
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.stretch,
-                      children: <Widget>[
+                      child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.stretch,
+                          children: <Widget>[
                         Container(
-                          padding: EdgeInsets.symmetric(horizontal: 13, vertical: 5),
+                          padding:
+                              EdgeInsets.symmetric(horizontal: 13, vertical: 5),
                           child: Row(
                             children: <Widget>[
                               Icon(
                                 Icons.map,
                                 size: 25,
                               ),
-                              Text(
-                                ' Map',
-                                style: TextStyle(
-                                  fontSize: 23
-                                )),
+                              Text(' Map', style: TextStyle(fontSize: 23)),
                             ],
                           ),
                         ),
@@ -293,65 +288,59 @@ class _DetailsPageState extends State<DetailsPage> {
                             markers: markers,
                           ),
                         )
-                      ]
-                    )
-                  ),
+                      ])),
                 ),
               ),
               //image slider
               Card(
                 child: Container(
-                  padding: EdgeInsets.only(bottom: 15),
-                  child: Column(
-                    children: <Widget>[
-                      Container(
-                          padding: EdgeInsets.symmetric(horizontal: 13, vertical: 5),
+                    padding: EdgeInsets.only(bottom: 15),
+                    child: Column(
+                      children: <Widget>[
+                        Container(
+                          padding:
+                              EdgeInsets.symmetric(horizontal: 13, vertical: 5),
                           child: Row(
                             children: <Widget>[
                               Icon(
                                 Icons.photo_library,
                                 size: 25,
                               ),
-                              Text(
-                                ' Photos',
-                                style: TextStyle(
-                                  fontSize: 23
-                                )),
+                              Text(' Photos', style: TextStyle(fontSize: 23)),
                             ],
                           ),
                         ),
-                      Stack(
-                        children: <Widget>[
-                          CarouselSlider(
-                            initialPage: 0,
-                            enableInfiniteScroll: false,
-                            items: listImg.map((i) {
-                              return Builder(
-                                builder: (BuildContext context) {
-                                  return Container(
-                                    width: MediaQuery.of(context).size.width,
-                                    margin: EdgeInsets.symmetric(horizontal: 5.0),
-                                    // decoration: BoxDecoration(
-                                    //     color: Colors.black.withAlpha(70)),
-                                    child: Container(
-                                      decoration: BoxDecoration(
-                                        borderRadius: BorderRadius.all(Radius.circular(10)),
-                                        image: DecorationImage(
-                                            image: NetworkImage(i),
-                                            fit: BoxFit.cover
-                                        )
-                                      ),
-                                    )
-                                  );
-                                },
-                              );
-                            }).toList(),
-                          ),
-                        ],
-                      ),
-                    ],
-                  )
-                ),
+                        Stack(
+                          children: <Widget>[
+                            CarouselSlider(
+                              initialPage: 0,
+                              enableInfiniteScroll: false,
+                              items: listImg.map((i) {
+                                return Builder(
+                                  builder: (BuildContext context) {
+                                    return Container(
+                                        width:
+                                            MediaQuery.of(context).size.width,
+                                        margin: EdgeInsets.symmetric(
+                                            horizontal: 5.0),
+                                        // decoration: BoxDecoration(
+                                        //     color: Colors.black.withAlpha(70)),
+                                        child: Container(
+                                          decoration: BoxDecoration(
+                                              borderRadius: BorderRadius.all(
+                                                  Radius.circular(10)),
+                                              image: DecorationImage(
+                                                  image: NetworkImage(i),
+                                                  fit: BoxFit.cover)),
+                                        ));
+                                  },
+                                );
+                              }).toList(),
+                            ),
+                          ],
+                        ),
+                      ],
+                    )),
               )
             ],
           ),

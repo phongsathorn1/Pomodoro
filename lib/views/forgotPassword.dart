@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
-import 'package:pomodoro/fonts/fonts.dart';
 
 final _auth = FirebaseAuth.instance;
 
@@ -32,15 +31,7 @@ class ForgotScreenState extends State<ForgotScreen> {
     return Scaffold(
       key: _scaffoldKey,
       appBar: AppBar(
-        title: Center(
-          child: Text(
-            "Forgot password",
-            style: TextStyle(
-                fontFamily: GetTextStyle(),
-                fontSize: 30.0,
-                color: Colors.white),
-          ),
-        ),
+        title: Text("Forgot password"),
       ),
       body: Form(
         key: _formKey,

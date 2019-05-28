@@ -2,7 +2,7 @@ import 'dart:math' as math;
 
 import 'package:flutter/material.dart';
 import 'package:pomodoro/fonts/fonts.dart';
-// import 'package:flutter_local_notifications/flutter_local_notifications.dart';
+import 'package:flutter_local_notifications/flutter_local_notifications.dart';
 
 class TimerScreen extends StatefulWidget {
   TimerScreen({
@@ -34,16 +34,16 @@ class TimerState extends State<TimerScreen> with TickerProviderStateMixin {
     return '${(duration.inMinutes).toString().padLeft(2, '0')}:${(duration.inSeconds % 60).toString().padLeft(2, '0')}';
   }
 
-  // FlutterLocalNotificationsPlugin flutterLocalNotificationsPlugin =
-  //     FlutterLocalNotificationsPlugin();
+  FlutterLocalNotificationsPlugin flutterLocalNotificationsPlugin =
+      FlutterLocalNotificationsPlugin();
 
   @override
   void initState() {
     super.initState();
-    // var android = AndroidInitializationSettings('mipmap/ic_launcher');
-    // var ios = IOSInitializationSettings();
-    // var platform = InitializationSettings(android, ios);
-    // flutterLocalNotificationsPlugin.initialize(platform);
+    var android = AndroidInitializationSettings('mipmap/ic_launcher');
+    var ios = IOSInitializationSettings();
+    var platform = InitializationSettings(android, ios);
+    flutterLocalNotificationsPlugin.initialize(platform);
 
     actualEvent = ActualEvent.pomodoro;
 
@@ -91,14 +91,14 @@ class TimerState extends State<TimerScreen> with TickerProviderStateMixin {
   }
 
   showNotification(String message) async {
-    // var android = AndroidNotificationDetails(
-    //     'CHANNEL ID', "CHANNEL NAME", "CHANNEL DESCRIPTION",
-    //     importance: Importance.High);
-    // var iOS = IOSNotificationDetails();
-    // var platform = NotificationDetails(android, iOS);
+    var android = AndroidNotificationDetails(
+        'CHANNEL ID', "CHANNEL NAME", "CHANNEL DESCRIPTION",
+        importance: Importance.High);
+    var iOS = IOSNotificationDetails();
+    var platform = NotificationDetails(android, iOS);
 
-    // await flutterLocalNotificationsPlugin.show(
-    //     0, "Breaktime", "$message", platform);
+    await flutterLocalNotificationsPlugin.show(
+        0, "Breaktime", "$message", platform);
   }
 
   @override
@@ -273,6 +273,7 @@ class TimerState extends State<TimerScreen> with TickerProviderStateMixin {
                                 fontFamily: GetTextStyle(),
                                 fontSize: screenWidth * 0.035,
                                 fontWeight: FontWeight.w100,
+                                color: Colors.white,
                               ),
                             ),
                             // AnimatedBuilder(

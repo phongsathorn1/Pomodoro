@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:pomodoro/feature/feature.dart';
-import 'package:pomodoro/fonts/fonts.dart';
 import 'package:pomodoro/insert/homepage.dart';
 import 'package:pomodoro/models/user.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 final FirebaseAuth _auth = FirebaseAuth.instance;
 
@@ -30,19 +30,22 @@ class LoginScreenState extends State<LoginScreen> {
     }
   }
 
+  setValue(var user) {
+    User.lastname = user.displayName.split(' ')[0];
+    User.firstname = user.displayName.split(' ')[1];
+    User.email = user.email;
+    User.userid = user.uid;
+    User.photoUrl = user.photoUrl;
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: new Center(
-            child: Text(
-          "Reading Guide",
-          style: TextStyle(
-              fontFamily: GetTextStyle(), fontSize: 30.0, color: Colors.white),
-        )),
+        title: Text('Pomodoro'),
       ),
       body: Container(
-          padding: EdgeInsets.symmetric(horizontal: 50.0, vertical: 20.0),
+          padding: EdgeInsets.symmetric(horizontal: 30.0, vertical: 10.0),
           child: Form(
             key: _formKey,
             child: Column(children: <Widget>[
@@ -54,7 +57,6 @@ class LoginScreenState extends State<LoginScreen> {
                   icon: Icon(Icons.account_box,
                       size: 40, color: Color(0xFF4e69a2)),
                 ),
-                keyboardType: TextInputType.text,
                 validator: (value) {
                   if (value.isEmpty) {
                     return "Please fill email";
@@ -63,14 +65,13 @@ class LoginScreenState extends State<LoginScreen> {
               ),
               TextFormField(
                 controller: _password,
-                obscureText: true,
-                autocorrect: false,
                 decoration: InputDecoration(
                   labelText: "Password",
                   hintText: "Password",
                   icon: Icon(Icons.lock, size: 40, color: Color(0xFF4e69a2)),
                 ),
-                keyboardType: TextInputType.text,
+                obscureText: true,
+                autocorrect: false,
                 validator: (value) {
                   if (value.isEmpty) {
                     return "Plesae fill password";
@@ -89,34 +90,27 @@ class LoginScreenState extends State<LoginScreen> {
                       var user = await _auth.signInWithEmailAndPassword(
                           email: _email.text.trim(),
                           password: _password.text.trim());
-                      User.lastname = user.displayName.split(' ')[0];
-                      User.firstname = user.displayName.split(' ')[1];
-                      User.email = user.email;
-                      User.userid = user.uid;
+                      final pref = await SharedPreferences.getInstance();
+                      await pref.setString('userid', user.uid);
+                      await pref.setString('email', user.email);
+                      await pref.setString(
+                          'firstname', user.displayName.split(' ')[1]);
+                      await pref.setString(
+                          'lastname', user.displayName.split(' ')[0]);
+                      await pref.setString('photoURL', user.photoUrl);
+
+                      setValue(user);
+
                       setState(() {
                         this._isLoading = false;
                       });
-                      showDialog(
-                          context: context,
-                          builder: (BuildContext context) {
-                            return AlertDialog(
-                              title: Text("Login"),
-                              content: Text("Login Success"),
-                              actions: <Widget>[
-                                FlatButton(
-                                  child: Text("Done"),
-                                  onPressed: () {
-                                    Navigator.push(
-                                      context,
-                                      MaterialPageRoute(
-                                        builder: (context) => IntroScreen(),
-                                      ),
-                                    );
-                                  },
-                                )
-                              ],
-                            );
-                          });
+
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => IntroScreen(),
+                        ),
+                      );
                     } catch (e) {
                       setState(() {
                         this._isLoading = false;

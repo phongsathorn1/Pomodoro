@@ -1,10 +1,9 @@
 -- Merging decision tree log ---
 manifest
-ADDED from C:\Users\Cystle0\Desktop\projectnewver\Pomodoro\android\app\src\main\AndroidManifest.xml:1:1-48:12
-INJECTED from C:\Users\Cystle0\Desktop\projectnewver\Pomodoro\android\app\src\main\AndroidManifest.xml:1:1-48:12
-INJECTED from C:\Users\Cystle0\Desktop\projectnewver\Pomodoro\android\app\src\main\AndroidManifest.xml:1:1-48:12
-INJECTED from C:\Users\Cystle0\Desktop\projectnewver\Pomodoro\android\app\src\main\AndroidManifest.xml:1:1-48:12
-MERGED from C:\Users\Cystle0\Desktop\projectnewver\Pomodoro\android\app\src\main\AndroidManifest.xml:1:1-48:12
+ADDED from C:\Users\Cystle0\Desktop\projectnewver\Pomodoro\android\app\src\main\AndroidManifest.xml:1:1-45:12
+INJECTED from C:\Users\Cystle0\Desktop\projectnewver\Pomodoro\android\app\src\main\AndroidManifest.xml:1:1-45:12
+INJECTED from C:\Users\Cystle0\Desktop\projectnewver\Pomodoro\android\app\src\main\AndroidManifest.xml:1:1-45:12
+INJECTED from C:\Users\Cystle0\Desktop\projectnewver\Pomodoro\android\app\src\main\AndroidManifest.xml:1:1-45:12
 MERGED from [:fluttertoast] C:\Users\Cystle0\Desktop\projectnewver\Pomodoro\build\fluttertoast\intermediates\library_manifest\debug\AndroidManifest.xml:2:1-7:12
 MERGED from [:firebase_storage] C:\Users\Cystle0\Desktop\projectnewver\Pomodoro\build\firebase_storage\intermediates\library_manifest\debug\AndroidManifest.xml:2:1-7:12
 MERGED from [:sqflite] C:\Users\Cystle0\Desktop\projectnewver\Pomodoro\build\sqflite\intermediates\library_manifest\debug\AndroidManifest.xml:2:1-7:12
@@ -12,8 +11,10 @@ MERGED from [:url_launcher] C:\Users\Cystle0\Desktop\projectnewver\Pomodoro\buil
 MERGED from [:camera] C:\Users\Cystle0\Desktop\projectnewver\Pomodoro\build\camera\intermediates\library_manifest\debug\AndroidManifest.xml:2:1-10:12
 MERGED from [:path_provider] C:\Users\Cystle0\Desktop\projectnewver\Pomodoro\build\path_provider\intermediates\library_manifest\debug\AndroidManifest.xml:2:1-7:12
 MERGED from [:image_cropper] C:\Users\Cystle0\Desktop\projectnewver\Pomodoro\build\image_cropper\intermediates\library_manifest\debug\AndroidManifest.xml:2:1-7:12
+MERGED from [:flutter_local_notifications] C:\Users\Cystle0\Desktop\projectnewver\Pomodoro\build\flutter_local_notifications\intermediates\library_manifest\debug\AndroidManifest.xml:2:1-7:12
 MERGED from [:cloud_firestore] C:\Users\Cystle0\Desktop\projectnewver\Pomodoro\build\cloud_firestore\intermediates\library_manifest\debug\AndroidManifest.xml:2:1-7:12
 MERGED from [:google_maps_flutter] C:\Users\Cystle0\Desktop\projectnewver\Pomodoro\build\google_maps_flutter\intermediates\library_manifest\debug\AndroidManifest.xml:2:1-7:12
+MERGED from [:shared_preferences] C:\Users\Cystle0\Desktop\projectnewver\Pomodoro\build\shared_preferences\intermediates\library_manifest\debug\AndroidManifest.xml:2:1-7:12
 MERGED from [:intro_slider] C:\Users\Cystle0\Desktop\projectnewver\Pomodoro\build\intro_slider\intermediates\library_manifest\debug\AndroidManifest.xml:2:1-7:12
 MERGED from [:image_picker] C:\Users\Cystle0\Desktop\projectnewver\Pomodoro\build\image_picker\intermediates\library_manifest\debug\AndroidManifest.xml:2:1-22:12
 MERGED from [:firebase_core] C:\Users\Cystle0\Desktop\projectnewver\Pomodoro\build\firebase_core\intermediates\library_manifest\debug\AndroidManifest.xml:2:1-7:12
@@ -72,31 +73,29 @@ MERGED from [androidx.localbroadcastmanager:localbroadcastmanager:1.0.0] C:\User
 MERGED from [androidx.print:print:1.0.0] C:\Users\Cystle0\.gradle\caches\transforms-1\files-1.1\print-1.0.0.aar\2f9519512bbf4707b2c3b4ccd471e82c\AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.interpolator:interpolator:1.0.0] C:\Users\Cystle0\.gradle\caches\transforms-1\files-1.1\interpolator-1.0.0.aar\42a3e0da2e283d50e000f19890d49c01\AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.lifecycle:lifecycle-viewmodel:2.0.0] C:\Users\Cystle0\.gradle\caches\transforms-1\files-1.1\lifecycle-viewmodel-2.0.0.aar\a3403f4a0bf6f94ea0d5e48153b18ed0\AndroidManifest.xml:17:1-22:12
+MERGED from [io.grpc:grpc-android:1.16.1] C:\Users\Cystle0\.gradle\caches\transforms-1\files-1.1\grpc-android-1.16.1.aar\43ada90ee77ed91c3bbb2fb8e1957881\AndroidManifest.xml:2:1-13:12
 MERGED from [com.google.firebase:firebase-database-collection:16.0.1] C:\Users\Cystle0\.gradle\caches\transforms-1\files-1.1\firebase-database-collection-16.0.1.aar\22cafcac23b94077474f7ad9c15df312\AndroidManifest.xml:2:1-7:12
 MERGED from [com.google.firebase:protolite-well-known-types:16.0.1] C:\Users\Cystle0\.gradle\caches\transforms-1\files-1.1\protolite-well-known-types-16.0.1.aar\a0b27b1df56f823f394a69741930a6ce\AndroidManifest.xml:2:1-11:12
-MERGED from [io.grpc:grpc-android:1.16.1] C:\Users\Cystle0\.gradle\caches\transforms-1\files-1.1\grpc-android-1.16.1.aar\43ada90ee77ed91c3bbb2fb8e1957881\AndroidManifest.xml:2:1-13:12
 MERGED from [com.google.android.gms:play-services-measurement-base:16.0.3] C:\Users\Cystle0\.gradle\caches\transforms-1\files-1.1\play-services-measurement-base-16.0.3.aar\89c8286acbf7db4551f276d08a1df7b7\AndroidManifest.xml:2:1-9:12
-INJECTED from C:\Users\Cystle0\Desktop\projectnewver\Pomodoro\android\app\src\debug\AndroidManifest.xml:1:1-7:12
-INJECTED from C:\Users\Cystle0\Desktop\projectnewver\Pomodoro\android\app\src\debug\AndroidManifest.xml:1:1-7:12
-INJECTED from C:\Users\Cystle0\Desktop\projectnewver\Pomodoro\android\app\src\debug\AndroidManifest.xml:1:1-7:12
+INJECTED from C:\Users\Cystle0\Desktop\projectnewver\Pomodoro\android\app\src\main\AndroidManifest.xml:1:1-45:12
+INJECTED from C:\Users\Cystle0\Desktop\projectnewver\Pomodoro\android\app\src\main\AndroidManifest.xml:1:1-45:12
+INJECTED from C:\Users\Cystle0\Desktop\projectnewver\Pomodoro\android\app\src\main\AndroidManifest.xml:1:1-45:12
 	package
 		ADDED from C:\Users\Cystle0\Desktop\projectnewver\Pomodoro\android\app\src\main\AndroidManifest.xml:2:5-35
 		INJECTED from C:\Users\Cystle0\Desktop\projectnewver\Pomodoro\android\app\src\main\AndroidManifest.xml
-		INJECTED from C:\Users\Cystle0\Desktop\projectnewver\Pomodoro\android\app\src\debug\AndroidManifest.xml
+		INJECTED from C:\Users\Cystle0\Desktop\projectnewver\Pomodoro\android\app\src\main\AndroidManifest.xml
 	android:versionName
 		INJECTED from C:\Users\Cystle0\Desktop\projectnewver\Pomodoro\android\app\src\main\AndroidManifest.xml
-		ADDED from C:\Users\Cystle0\Desktop\projectnewver\Pomodoro\android\app\src\main\AndroidManifest.xml:1:1-48:12
-		INJECTED from C:\Users\Cystle0\Desktop\projectnewver\Pomodoro\android\app\src\debug\AndroidManifest.xml
+		ADDED from C:\Users\Cystle0\Desktop\projectnewver\Pomodoro\android\app\src\main\AndroidManifest.xml:1:1-45:12
+		INJECTED from C:\Users\Cystle0\Desktop\projectnewver\Pomodoro\android\app\src\main\AndroidManifest.xml
 	android:versionCode
 		INJECTED from C:\Users\Cystle0\Desktop\projectnewver\Pomodoro\android\app\src\main\AndroidManifest.xml
-		ADDED from C:\Users\Cystle0\Desktop\projectnewver\Pomodoro\android\app\src\main\AndroidManifest.xml:1:1-48:12
-		INJECTED from C:\Users\Cystle0\Desktop\projectnewver\Pomodoro\android\app\src\debug\AndroidManifest.xml
+		ADDED from C:\Users\Cystle0\Desktop\projectnewver\Pomodoro\android\app\src\main\AndroidManifest.xml:1:1-45:12
+		INJECTED from C:\Users\Cystle0\Desktop\projectnewver\Pomodoro\android\app\src\main\AndroidManifest.xml
 	xmlns:android
 		ADDED from C:\Users\Cystle0\Desktop\projectnewver\Pomodoro\android\app\src\main\AndroidManifest.xml:1:11-69
 uses-permission#android.permission.INTERNET
 ADDED from C:\Users\Cystle0\Desktop\projectnewver\Pomodoro\android\app\src\main\AndroidManifest.xml:8:5-66
-MERGED from C:\Users\Cystle0\Desktop\projectnewver\Pomodoro\android\app\src\main\AndroidManifest.xml:8:5-66
-MERGED from C:\Users\Cystle0\Desktop\projectnewver\Pomodoro\android\app\src\main\AndroidManifest.xml:8:5-66
 MERGED from [com.google.firebase:firebase-firestore:18.2.0] C:\Users\Cystle0\.gradle\caches\transforms-1\files-1.1\jetified-firebase-firestore-18.2.0.aar\18b7231df93dbf8495235d020bd063cc\AndroidManifest.xml:14:5-67
 MERGED from [com.google.firebase:firebase-firestore:18.2.0] C:\Users\Cystle0\.gradle\caches\transforms-1\files-1.1\jetified-firebase-firestore-18.2.0.aar\18b7231df93dbf8495235d020bd063cc\AndroidManifest.xml:14:5-67
 MERGED from [com.google.android.gms:play-services-maps:16.1.0] C:\Users\Cystle0\.gradle\caches\transforms-1\files-1.1\jetified-play-services-maps-16.1.0.aar\c69dceb76eb0f5ae579aaf14f33421b9\AndroidManifest.xml:24:5-67
@@ -121,26 +120,8 @@ uses-permission#android.permission.ACCESS_COARSE_LOCATION
 ADDED from C:\Users\Cystle0\Desktop\projectnewver\Pomodoro\android\app\src\main\AndroidManifest.xml:10:5-80
 	android:name
 		ADDED from C:\Users\Cystle0\Desktop\projectnewver\Pomodoro\android\app\src\main\AndroidManifest.xml:10:22-78
-uses-permission#android.permission.CAMERA
-ADDED from C:\Users\Cystle0\Desktop\projectnewver\Pomodoro\android\app\src\main\AndroidManifest.xml:11:5-64
-MERGED from [:camera] C:\Users\Cystle0\Desktop\projectnewver\Pomodoro\build\camera\intermediates\library_manifest\debug\AndroidManifest.xml:7:5-65
-MERGED from [:camera] C:\Users\Cystle0\Desktop\projectnewver\Pomodoro\build\camera\intermediates\library_manifest\debug\AndroidManifest.xml:7:5-65
-	android:name
-		ADDED from C:\Users\Cystle0\Desktop\projectnewver\Pomodoro\android\app\src\main\AndroidManifest.xml:11:22-62
-uses-permission#android.permission.WRITE_EXTERNAL_STORAGE
-ADDED from C:\Users\Cystle0\Desktop\projectnewver\Pomodoro\android\app\src\main\AndroidManifest.xml:12:5-80
-MERGED from [:image_picker] C:\Users\Cystle0\Desktop\projectnewver\Pomodoro\build\image_picker\intermediates\library_manifest\debug\AndroidManifest.xml:8:5-81
-MERGED from [:image_picker] C:\Users\Cystle0\Desktop\projectnewver\Pomodoro\build\image_picker\intermediates\library_manifest\debug\AndroidManifest.xml:8:5-81
-	android:name
-		ADDED from C:\Users\Cystle0\Desktop\projectnewver\Pomodoro\android\app\src\main\AndroidManifest.xml:12:22-78
-uses-permission#android.permission.READ_EXTERNAL_STORAGE
-ADDED from C:\Users\Cystle0\Desktop\projectnewver\Pomodoro\android\app\src\main\AndroidManifest.xml:13:5-79
-MERGED from [:image_picker] C:\Users\Cystle0\Desktop\projectnewver\Pomodoro\build\image_picker\intermediates\library_manifest\debug\AndroidManifest.xml:7:5-80
-MERGED from [:image_picker] C:\Users\Cystle0\Desktop\projectnewver\Pomodoro\build\image_picker\intermediates\library_manifest\debug\AndroidManifest.xml:7:5-80
-	android:name
-		ADDED from C:\Users\Cystle0\Desktop\projectnewver\Pomodoro\android\app\src\main\AndroidManifest.xml:13:22-77
 application
-ADDED from C:\Users\Cystle0\Desktop\projectnewver\Pomodoro\android\app\src\main\AndroidManifest.xml:20:5-46:19
+ADDED from C:\Users\Cystle0\Desktop\projectnewver\Pomodoro\android\app\src\main\AndroidManifest.xml:17:5-43:19
 MERGED from [:url_launcher] C:\Users\Cystle0\Desktop\projectnewver\Pomodoro\build\url_launcher\intermediates\library_manifest\debug\AndroidManifest.xml:7:5-12:19
 MERGED from [:url_launcher] C:\Users\Cystle0\Desktop\projectnewver\Pomodoro\build\url_launcher\intermediates\library_manifest\debug\AndroidManifest.xml:7:5-12:19
 MERGED from [:image_picker] C:\Users\Cystle0\Desktop\projectnewver\Pomodoro\build\image_picker\intermediates\library_manifest\debug\AndroidManifest.xml:10:5-20:19
@@ -192,47 +173,47 @@ MERGED from [com.google.android.gms:play-services-measurement-base:16.0.3] C:\Us
 	android:appComponentFactory
 		ADDED from [androidx.core:core:1.0.2] C:\Users\Cystle0\.gradle\caches\transforms-1\files-1.1\core-1.0.2.aar\102bc83f6400e63e8470456cad82c79a\AndroidManifest.xml:22:18-86
 	android:label
-		ADDED from C:\Users\Cystle0\Desktop\projectnewver\Pomodoro\android\app\src\main\AndroidManifest.xml:22:9-33
+		ADDED from C:\Users\Cystle0\Desktop\projectnewver\Pomodoro\android\app\src\main\AndroidManifest.xml:19:9-33
 	android:icon
-		ADDED from C:\Users\Cystle0\Desktop\projectnewver\Pomodoro\android\app\src\main\AndroidManifest.xml:23:9-43
+		ADDED from C:\Users\Cystle0\Desktop\projectnewver\Pomodoro\android\app\src\main\AndroidManifest.xml:20:9-43
 	android:name
-		ADDED from C:\Users\Cystle0\Desktop\projectnewver\Pomodoro\android\app\src\main\AndroidManifest.xml:21:9-57
+		ADDED from C:\Users\Cystle0\Desktop\projectnewver\Pomodoro\android\app\src\main\AndroidManifest.xml:18:9-57
 meta-data#com.google.android.geo.API_KEY
-ADDED from C:\Users\Cystle0\Desktop\projectnewver\Pomodoro\android\app\src\main\AndroidManifest.xml:24:9-25:73
+ADDED from C:\Users\Cystle0\Desktop\projectnewver\Pomodoro\android\app\src\main\AndroidManifest.xml:21:9-22:73
 	android:value
-		ADDED from C:\Users\Cystle0\Desktop\projectnewver\Pomodoro\android\app\src\main\AndroidManifest.xml:25:16-71
+		ADDED from C:\Users\Cystle0\Desktop\projectnewver\Pomodoro\android\app\src\main\AndroidManifest.xml:22:16-71
 	android:name
-		ADDED from C:\Users\Cystle0\Desktop\projectnewver\Pomodoro\android\app\src\main\AndroidManifest.xml:24:20-65
+		ADDED from C:\Users\Cystle0\Desktop\projectnewver\Pomodoro\android\app\src\main\AndroidManifest.xml:21:20-65
 activity#com.example.pomodoro.MainActivity
-ADDED from C:\Users\Cystle0\Desktop\projectnewver\Pomodoro\android\app\src\main\AndroidManifest.xml:26:9-44:20
+ADDED from C:\Users\Cystle0\Desktop\projectnewver\Pomodoro\android\app\src\main\AndroidManifest.xml:23:9-41:20
 	android:launchMode
-		ADDED from C:\Users\Cystle0\Desktop\projectnewver\Pomodoro\android\app\src\main\AndroidManifest.xml:28:13-43
+		ADDED from C:\Users\Cystle0\Desktop\projectnewver\Pomodoro\android\app\src\main\AndroidManifest.xml:25:13-43
 	android:hardwareAccelerated
-		ADDED from C:\Users\Cystle0\Desktop\projectnewver\Pomodoro\android\app\src\main\AndroidManifest.xml:31:13-47
+		ADDED from C:\Users\Cystle0\Desktop\projectnewver\Pomodoro\android\app\src\main\AndroidManifest.xml:28:13-47
 	android:windowSoftInputMode
-		ADDED from C:\Users\Cystle0\Desktop\projectnewver\Pomodoro\android\app\src\main\AndroidManifest.xml:32:13-55
+		ADDED from C:\Users\Cystle0\Desktop\projectnewver\Pomodoro\android\app\src\main\AndroidManifest.xml:29:13-55
 	android:configChanges
-		ADDED from C:\Users\Cystle0\Desktop\projectnewver\Pomodoro\android\app\src\main\AndroidManifest.xml:30:13-137
+		ADDED from C:\Users\Cystle0\Desktop\projectnewver\Pomodoro\android\app\src\main\AndroidManifest.xml:27:13-137
 	android:theme
-		ADDED from C:\Users\Cystle0\Desktop\projectnewver\Pomodoro\android\app\src\main\AndroidManifest.xml:29:13-47
+		ADDED from C:\Users\Cystle0\Desktop\projectnewver\Pomodoro\android\app\src\main\AndroidManifest.xml:26:13-47
 	android:name
-		ADDED from C:\Users\Cystle0\Desktop\projectnewver\Pomodoro\android\app\src\main\AndroidManifest.xml:27:13-41
+		ADDED from C:\Users\Cystle0\Desktop\projectnewver\Pomodoro\android\app\src\main\AndroidManifest.xml:24:13-41
 meta-data#io.flutter.app.android.SplashScreenUntilFirstFrame
-ADDED from C:\Users\Cystle0\Desktop\projectnewver\Pomodoro\android\app\src\main\AndroidManifest.xml:37:13-39:40
+ADDED from C:\Users\Cystle0\Desktop\projectnewver\Pomodoro\android\app\src\main\AndroidManifest.xml:34:13-36:40
 	android:value
-		ADDED from C:\Users\Cystle0\Desktop\projectnewver\Pomodoro\android\app\src\main\AndroidManifest.xml:39:17-37
+		ADDED from C:\Users\Cystle0\Desktop\projectnewver\Pomodoro\android\app\src\main\AndroidManifest.xml:36:17-37
 	android:name
-		ADDED from C:\Users\Cystle0\Desktop\projectnewver\Pomodoro\android\app\src\main\AndroidManifest.xml:38:17-82
+		ADDED from C:\Users\Cystle0\Desktop\projectnewver\Pomodoro\android\app\src\main\AndroidManifest.xml:35:17-82
 intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
-ADDED from C:\Users\Cystle0\Desktop\projectnewver\Pomodoro\android\app\src\main\AndroidManifest.xml:40:13-43:29
+ADDED from C:\Users\Cystle0\Desktop\projectnewver\Pomodoro\android\app\src\main\AndroidManifest.xml:37:13-40:29
 action#android.intent.action.MAIN
-ADDED from C:\Users\Cystle0\Desktop\projectnewver\Pomodoro\android\app\src\main\AndroidManifest.xml:41:17-68
+ADDED from C:\Users\Cystle0\Desktop\projectnewver\Pomodoro\android\app\src\main\AndroidManifest.xml:38:17-68
 	android:name
-		ADDED from C:\Users\Cystle0\Desktop\projectnewver\Pomodoro\android\app\src\main\AndroidManifest.xml:41:25-66
+		ADDED from C:\Users\Cystle0\Desktop\projectnewver\Pomodoro\android\app\src\main\AndroidManifest.xml:38:25-66
 category#android.intent.category.LAUNCHER
-ADDED from C:\Users\Cystle0\Desktop\projectnewver\Pomodoro\android\app\src\main\AndroidManifest.xml:42:17-76
+ADDED from C:\Users\Cystle0\Desktop\projectnewver\Pomodoro\android\app\src\main\AndroidManifest.xml:39:17-76
 	android:name
-		ADDED from C:\Users\Cystle0\Desktop\projectnewver\Pomodoro\android\app\src\main\AndroidManifest.xml:42:27-74
+		ADDED from C:\Users\Cystle0\Desktop\projectnewver\Pomodoro\android\app\src\main\AndroidManifest.xml:39:27-74
 uses-sdk
 INJECTED from C:\Users\Cystle0\Desktop\projectnewver\Pomodoro\android\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
 INJECTED from C:\Users\Cystle0\Desktop\projectnewver\Pomodoro\android\app\src\main\AndroidManifest.xml
@@ -251,10 +232,14 @@ MERGED from [:path_provider] C:\Users\Cystle0\Desktop\projectnewver\Pomodoro\bui
 MERGED from [:path_provider] C:\Users\Cystle0\Desktop\projectnewver\Pomodoro\build\path_provider\intermediates\library_manifest\debug\AndroidManifest.xml:5:5-44
 MERGED from [:image_cropper] C:\Users\Cystle0\Desktop\projectnewver\Pomodoro\build\image_cropper\intermediates\library_manifest\debug\AndroidManifest.xml:5:5-44
 MERGED from [:image_cropper] C:\Users\Cystle0\Desktop\projectnewver\Pomodoro\build\image_cropper\intermediates\library_manifest\debug\AndroidManifest.xml:5:5-44
+MERGED from [:flutter_local_notifications] C:\Users\Cystle0\Desktop\projectnewver\Pomodoro\build\flutter_local_notifications\intermediates\library_manifest\debug\AndroidManifest.xml:5:5-44
+MERGED from [:flutter_local_notifications] C:\Users\Cystle0\Desktop\projectnewver\Pomodoro\build\flutter_local_notifications\intermediates\library_manifest\debug\AndroidManifest.xml:5:5-44
 MERGED from [:cloud_firestore] C:\Users\Cystle0\Desktop\projectnewver\Pomodoro\build\cloud_firestore\intermediates\library_manifest\debug\AndroidManifest.xml:5:5-44
 MERGED from [:cloud_firestore] C:\Users\Cystle0\Desktop\projectnewver\Pomodoro\build\cloud_firestore\intermediates\library_manifest\debug\AndroidManifest.xml:5:5-44
 MERGED from [:google_maps_flutter] C:\Users\Cystle0\Desktop\projectnewver\Pomodoro\build\google_maps_flutter\intermediates\library_manifest\debug\AndroidManifest.xml:5:5-44
 MERGED from [:google_maps_flutter] C:\Users\Cystle0\Desktop\projectnewver\Pomodoro\build\google_maps_flutter\intermediates\library_manifest\debug\AndroidManifest.xml:5:5-44
+MERGED from [:shared_preferences] C:\Users\Cystle0\Desktop\projectnewver\Pomodoro\build\shared_preferences\intermediates\library_manifest\debug\AndroidManifest.xml:5:5-44
+MERGED from [:shared_preferences] C:\Users\Cystle0\Desktop\projectnewver\Pomodoro\build\shared_preferences\intermediates\library_manifest\debug\AndroidManifest.xml:5:5-44
 MERGED from [:intro_slider] C:\Users\Cystle0\Desktop\projectnewver\Pomodoro\build\intro_slider\intermediates\library_manifest\debug\AndroidManifest.xml:5:5-44
 MERGED from [:intro_slider] C:\Users\Cystle0\Desktop\projectnewver\Pomodoro\build\intro_slider\intermediates\library_manifest\debug\AndroidManifest.xml:5:5-44
 MERGED from [:image_picker] C:\Users\Cystle0\Desktop\projectnewver\Pomodoro\build\image_picker\intermediates\library_manifest\debug\AndroidManifest.xml:5:5-44
@@ -371,22 +356,24 @@ MERGED from [androidx.interpolator:interpolator:1.0.0] C:\Users\Cystle0\.gradle\
 MERGED from [androidx.interpolator:interpolator:1.0.0] C:\Users\Cystle0\.gradle\caches\transforms-1\files-1.1\interpolator-1.0.0.aar\42a3e0da2e283d50e000f19890d49c01\AndroidManifest.xml:20:5-44
 MERGED from [androidx.lifecycle:lifecycle-viewmodel:2.0.0] C:\Users\Cystle0\.gradle\caches\transforms-1\files-1.1\lifecycle-viewmodel-2.0.0.aar\a3403f4a0bf6f94ea0d5e48153b18ed0\AndroidManifest.xml:20:5-44
 MERGED from [androidx.lifecycle:lifecycle-viewmodel:2.0.0] C:\Users\Cystle0\.gradle\caches\transforms-1\files-1.1\lifecycle-viewmodel-2.0.0.aar\a3403f4a0bf6f94ea0d5e48153b18ed0\AndroidManifest.xml:20:5-44
+MERGED from [io.grpc:grpc-android:1.16.1] C:\Users\Cystle0\.gradle\caches\transforms-1\files-1.1\grpc-android-1.16.1.aar\43ada90ee77ed91c3bbb2fb8e1957881\AndroidManifest.xml:7:5-9:41
+MERGED from [io.grpc:grpc-android:1.16.1] C:\Users\Cystle0\.gradle\caches\transforms-1\files-1.1\grpc-android-1.16.1.aar\43ada90ee77ed91c3bbb2fb8e1957881\AndroidManifest.xml:7:5-9:41
 MERGED from [com.google.firebase:firebase-database-collection:16.0.1] C:\Users\Cystle0\.gradle\caches\transforms-1\files-1.1\firebase-database-collection-16.0.1.aar\22cafcac23b94077474f7ad9c15df312\AndroidManifest.xml:5:5-44
 MERGED from [com.google.firebase:firebase-database-collection:16.0.1] C:\Users\Cystle0\.gradle\caches\transforms-1\files-1.1\firebase-database-collection-16.0.1.aar\22cafcac23b94077474f7ad9c15df312\AndroidManifest.xml:5:5-44
 MERGED from [com.google.firebase:protolite-well-known-types:16.0.1] C:\Users\Cystle0\.gradle\caches\transforms-1\files-1.1\protolite-well-known-types-16.0.1.aar\a0b27b1df56f823f394a69741930a6ce\AndroidManifest.xml:7:5-9:41
 MERGED from [com.google.firebase:protolite-well-known-types:16.0.1] C:\Users\Cystle0\.gradle\caches\transforms-1\files-1.1\protolite-well-known-types-16.0.1.aar\a0b27b1df56f823f394a69741930a6ce\AndroidManifest.xml:7:5-9:41
-MERGED from [io.grpc:grpc-android:1.16.1] C:\Users\Cystle0\.gradle\caches\transforms-1\files-1.1\grpc-android-1.16.1.aar\43ada90ee77ed91c3bbb2fb8e1957881\AndroidManifest.xml:7:5-9:41
-MERGED from [io.grpc:grpc-android:1.16.1] C:\Users\Cystle0\.gradle\caches\transforms-1\files-1.1\grpc-android-1.16.1.aar\43ada90ee77ed91c3bbb2fb8e1957881\AndroidManifest.xml:7:5-9:41
 MERGED from [com.google.android.gms:play-services-measurement-base:16.0.3] C:\Users\Cystle0\.gradle\caches\transforms-1\files-1.1\play-services-measurement-base-16.0.3.aar\89c8286acbf7db4551f276d08a1df7b7\AndroidManifest.xml:5:5-44
 MERGED from [com.google.android.gms:play-services-measurement-base:16.0.3] C:\Users\Cystle0\.gradle\caches\transforms-1\files-1.1\play-services-measurement-base-16.0.3.aar\89c8286acbf7db4551f276d08a1df7b7\AndroidManifest.xml:5:5-44
-INJECTED from C:\Users\Cystle0\Desktop\projectnewver\Pomodoro\android\app\src\debug\AndroidManifest.xml
-INJECTED from C:\Users\Cystle0\Desktop\projectnewver\Pomodoro\android\app\src\debug\AndroidManifest.xml
+INJECTED from C:\Users\Cystle0\Desktop\projectnewver\Pomodoro\android\app\src\main\AndroidManifest.xml
+INJECTED from C:\Users\Cystle0\Desktop\projectnewver\Pomodoro\android\app\src\main\AndroidManifest.xml
 	android:targetSdkVersion
 		INJECTED from C:\Users\Cystle0\Desktop\projectnewver\Pomodoro\android\app\src\main\AndroidManifest.xml
-		INJECTED from C:\Users\Cystle0\Desktop\projectnewver\Pomodoro\android\app\src\debug\AndroidManifest.xml
+		ADDED from C:\Users\Cystle0\Desktop\projectnewver\Pomodoro\android\app\src\main\AndroidManifest.xml
+		INJECTED from C:\Users\Cystle0\Desktop\projectnewver\Pomodoro\android\app\src\main\AndroidManifest.xml
 	android:minSdkVersion
 		INJECTED from C:\Users\Cystle0\Desktop\projectnewver\Pomodoro\android\app\src\main\AndroidManifest.xml
-		INJECTED from C:\Users\Cystle0\Desktop\projectnewver\Pomodoro\android\app\src\debug\AndroidManifest.xml
+		ADDED from C:\Users\Cystle0\Desktop\projectnewver\Pomodoro\android\app\src\main\AndroidManifest.xml
+		INJECTED from C:\Users\Cystle0\Desktop\projectnewver\Pomodoro\android\app\src\main\AndroidManifest.xml
 activity#io.flutter.plugins.urllauncher.UrlLauncherPlugin$WebViewActivity
 ADDED from [:url_launcher] C:\Users\Cystle0\Desktop\projectnewver\Pomodoro\build\url_launcher\intermediates\library_manifest\debug\AndroidManifest.xml:8:9-11:74
 	android:exported
@@ -395,10 +382,22 @@ ADDED from [:url_launcher] C:\Users\Cystle0\Desktop\projectnewver\Pomodoro\build
 		ADDED from [:url_launcher] C:\Users\Cystle0\Desktop\projectnewver\Pomodoro\build\url_launcher\intermediates\library_manifest\debug\AndroidManifest.xml:11:13-71
 	android:name
 		ADDED from [:url_launcher] C:\Users\Cystle0\Desktop\projectnewver\Pomodoro\build\url_launcher\intermediates\library_manifest\debug\AndroidManifest.xml:9:13-92
+uses-permission#android.permission.CAMERA
+ADDED from [:camera] C:\Users\Cystle0\Desktop\projectnewver\Pomodoro\build\camera\intermediates\library_manifest\debug\AndroidManifest.xml:7:5-65
+	android:name
+		ADDED from [:camera] C:\Users\Cystle0\Desktop\projectnewver\Pomodoro\build\camera\intermediates\library_manifest\debug\AndroidManifest.xml:7:22-62
 uses-permission#android.permission.RECORD_AUDIO
 ADDED from [:camera] C:\Users\Cystle0\Desktop\projectnewver\Pomodoro\build\camera\intermediates\library_manifest\debug\AndroidManifest.xml:8:5-71
 	android:name
 		ADDED from [:camera] C:\Users\Cystle0\Desktop\projectnewver\Pomodoro\build\camera\intermediates\library_manifest\debug\AndroidManifest.xml:8:22-68
+uses-permission#android.permission.READ_EXTERNAL_STORAGE
+ADDED from [:image_picker] C:\Users\Cystle0\Desktop\projectnewver\Pomodoro\build\image_picker\intermediates\library_manifest\debug\AndroidManifest.xml:7:5-80
+	android:name
+		ADDED from [:image_picker] C:\Users\Cystle0\Desktop\projectnewver\Pomodoro\build\image_picker\intermediates\library_manifest\debug\AndroidManifest.xml:7:22-77
+uses-permission#android.permission.WRITE_EXTERNAL_STORAGE
+ADDED from [:image_picker] C:\Users\Cystle0\Desktop\projectnewver\Pomodoro\build\image_picker\intermediates\library_manifest\debug\AndroidManifest.xml:8:5-81
+	android:name
+		ADDED from [:image_picker] C:\Users\Cystle0\Desktop\projectnewver\Pomodoro\build\image_picker\intermediates\library_manifest\debug\AndroidManifest.xml:8:22-78
 provider#io.flutter.plugins.imagepicker.ImagePickerFileProvider
 ADDED from [:image_picker] C:\Users\Cystle0\Desktop\projectnewver\Pomodoro\build\image_picker\intermediates\library_manifest\debug\AndroidManifest.xml:11:9-19:20
 	android:grantUriPermissions

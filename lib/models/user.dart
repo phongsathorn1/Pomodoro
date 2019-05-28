@@ -5,6 +5,7 @@ class User {
   static String firstname;
   static String lastname;
   static String email;
+  static String photoUrl;
 
   @override
   String toString() {

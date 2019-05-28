@@ -82,16 +82,6 @@ class _MyHomePageState extends State<MyHomePage> {
     for (var i in categories) fetchPost(i);
 
     return new Scaffold(
-      appBar: AppBar(
-        backgroundColor: HexColor(tabColor()),
-        title: Center(
-            child: Text(
-          'Reading Guide',
-          style: TextStyle(
-            fontFamily: GetTextStyle(),
-          ),
-        )),
-      ),
       body: Container(
         color: HexColor(pageBackgroundColor()),
         child: SingleChildScrollView(
